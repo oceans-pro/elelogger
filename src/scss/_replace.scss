@@ -1,0 +1,59 @@
+/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+                                              覆盖默认样式
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
+/* 去广告 */
+#ad_c1,
+#ad_c2,
+#ad_t2,
+#under_post_news,
+#poweredby,
+.c_ad_block {
+  display: none
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* 为什么要加:root ? 需要覆盖mdui的默认颜色 */
+:root body {
+  margin: 0;
+  padding: 0;
+  /* 需要覆盖mdui的默认颜色 */
+  color: var(--color-text-primary);
+  font-size: var(--text-h5);
+  line-height: 1.5;
+  background: var(--color-white);
+  /* font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif; */
+  font-weight: 400;
+  transition: all 300ms;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100% !important;
+}
+
+@media screen and (min-width: 0px){
+  :before, :after {
+    font-family: fontawesome, element-icons;
+  }
+}
+
+
+[v-cloak] {
+  display: none;
+  color: red;
+}
+
+/* 覆盖ElementUI */
+.el-tooltip__popper.is-light {
+  color: var(--color-black);
+}

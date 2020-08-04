@@ -1,0 +1,48 @@
+#cnblogs_post_body .video {
+  height: 0;
+  margin: 10px auto;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--DividColor);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+#cnblogs_post_body .video iframe,
+#cnblogs_post_body .video video {
+  position: absolute;
+  /*left: 0;*/
+  top: 0;
+  /*right:0;*/
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+#cnblogs_post_body .music {
+  height: 140px;
+  /*padding-bottom: 14.39%;*/
+  /* 16:9 */
+  position: relative;
+  width: 100%;
+}
+
+#cnblogs_post_body .music iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.imgtext {
+  /*font-size: var(--text7);*/
+  /* todo */
+  text-align: center;
+  color: var(--color-text-regular);
+}

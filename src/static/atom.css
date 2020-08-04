@@ -1,0 +1,74 @@
+/*** Atom OneDark 开始**/
+#home .hljs-comment,
+#home .hljs-quote {
+    color: #5c6370!important;
+    /* font-style: italic */
+}
+
+#home .hljs-doctag,
+#home .hljs-formula,
+#home .hljs-keyword {
+    color: #c678dd!important;
+}
+
+#home .hljs-deletion,
+#home .hljs-name,
+#home .hljs-section,
+#home .hljs-selector-tag,
+#home .hljs-subst {
+    color: #e06c75!important;
+}
+
+#home .hljs-literal {
+    color: #56b6c2!important;
+}
+
+#home .hljs-addition,
+#home .hljs-attribute,
+#home .hljs-meta-string,
+#home .hljs-regexp,
+#home .hljs-string {
+    color: #98c379!important;
+}
+
+#home .hljs-built_in,
+#home .hljs-class .hljs-title {
+    color: #e6c07b!important;
+}
+
+#home .hljs-attr,
+#home .hljs-number,
+#home .hljs-selector-attr,
+#home .hljs-selector-class,
+#home .hljs-selector-pseudo,
+#home .hljs-template-variable,
+#home .hljs-type,
+#home .hljs-variable {
+    color: #d19a66!important;
+}
+
+#home .hljs-bullet,
+#home .hljs-link,
+#home .hljs-meta,
+#home .hljs-selector-id,
+#home .hljs-symbol,
+#home .hljs-title {
+    color: #61aeee!important;
+}
+
+#home .hljs-emphasis {
+    font-style: italic!important;
+}
+
+#home .hljs-strong {
+    font-weight: 700!important;
+}
+
+#home .hljs-link {
+    text-decoration: underline!important;
+}
+
+#home .hljs-tag {
+    color: #abb2bf!important;
+}
+/*******  Atom OneDark 结束 ********/

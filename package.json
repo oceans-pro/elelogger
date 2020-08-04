@@ -1,0 +1,33 @@
+{
+  "name": "cnblog",
+  "version": "1.0.0",
+  "description": "",
+  "directories": {
+    "lib": "src/static/lib"
+  },
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "upload": "node build/upload-static.js",
+    "build-and-upload": "npm run build && npm run upload",
+    "build-and-uglify-and-upload": "cross-env NODE_ENV=production webpack && npm run upload"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/polyfill": "^7.10.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "babel-loader": "^8.1.0",
+    "cross-env": "^7.0.2",
+    "element-ui": "^2.13.2",
+    "node-sass": "^4.14.1",
+    "qiniu": "^7.3.2",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}

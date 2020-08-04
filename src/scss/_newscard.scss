@@ -1,0 +1,85 @@
+/****** 信息提示 *******/
+@media screen and (min-width: 0px) {
+
+  .newscard {
+    border-radius: 4px;
+    margin: 0px 0px 10px;
+    padding: 0px 10px;
+    line-height: 40px;
+    height: 40px;
+    overflow: hidden;
+    background-color: #dfedf8;
+    color: #3162ae;
+    box-shadow: 0 0.05rem 1rem rgba(50, 50, 50, .04);
+  }
+
+  .newscard ul {
+    height: 40px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .newstext {
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 40px;
+    line-height: 40px;
+    text-overflow: ellipsis;
+  }
+
+  .newscard i {
+    float: left;
+    margin: 0 10px;
+    font-size: inherit;
+    line-height: 40px;
+    vertical-align: middle !important;
+  }
+
+  .infocard {
+    border-radius: 4px;
+    margin: 10px 0;
+    padding: 10px 16px;
+    text-align: justify;
+    word-break: break-all;
+    line-height: inherit !important;
+    display: inline-grid;
+    grid-template-columns: auto 1fr;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .infocard i {
+    /*float: left;*/
+    margin-right: 16px;
+    font-size: inherit;
+    line-height: inherit !important;
+    vertical-align: middle !important;
+    display: inline-block;
+  }
+
+  .infocard p {
+    padding: 0 !important;
+    margin: 0 !important;
+    text-align: left;
+  }
+
+  .tip {
+    background-color: #d5f1e5;
+
+    color: #20704d;
+
+  }
+
+  .warning {
+    background-color: #f9e8de;
+
+    color: #a84229;
+  }
+
+  .normal {
+    background-color: #dfedf8;
+    color: #3162ae;
+  }
+}

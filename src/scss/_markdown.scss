@@ -1,0 +1,569 @@
+/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+                                              标题前面的提示
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
+#cnblogs_post_body {
+  h2, h3, h4 {
+    font-weight: bold !important;
+  }
+
+  h2:before {
+    content: "∮";
+    color: #40b8ff;
+    position: relative;
+    top: 0;
+    left: -12px;
+    font-size: 1.5em;
+  }
+
+  h3:before {
+    content: "✦  ";
+    color: #40b8ff;
+    position: relative;
+    top: 0;
+    left: -8px;
+    font-size: 1.0em;
+  }
+}
+
+/************** markdown 开始 ***************/
+@media screen and (min-width: 0) {
+  .cnblogs-markdown {
+    line-height: 1.8;
+  }
+
+  .cnblogs-markdown a {
+    color: var(--color-primary);
+  }
+
+  .fancybox-image {
+    max-width: 100% !important;
+  }
+
+  .img-caption {
+    text-align: center;
+    width: fit-content;
+    min-width: 20%;
+    max-width: 80%;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color-extra-linght);
+    font-size: 13px;
+    color: #999;
+  }
+
+  #cnblogs_post_body p img {
+    width: auto;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cnblogs-markdown pre code,
+  .cnblogs-markdown .hljs {
+    border: none !important;
+    color: #abb2bf;
+    font-size: var(--text-h6) !important;
+    padding: 0 0 0 10px !important;
+    /* padding-left: 10px; */
+    background: #282c34;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace !important;
+  }
+
+  #cnblogs_post_body ul {
+    margin-left: 0 !important;
+  }
+
+  .cnblogs-markdown li li li {
+    list-style-type: square !important;
+  }
+
+  .cnblogs-markdown blockquote {
+    margin: 0;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-right: 0px;
+  }
+
+  .cnblogs-markdown table {
+    width: 100% !important;
+    display: table !important;
+    border: none !important;
+  }
+
+  #cnblogs_post_body th,
+  #cnblogs_post_body td,
+  .cnblogs-post-body th,
+  .cnblogs-post-body td {
+    border: 1px solid var(--DividColor) !important;
+    word-break: break-all;
+    white-space: nowrap;
+  }
+}
+
+/************** markdown 结束 ***************/
+/************** github markdown 开始 ***************/
+@media screen and (min-width: 0) {
+  .cnblogs-markdown {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji !important;
+    font-size: 16px !important;
+    line-height: 1.8 !important;
+    /* word-wrap: break-word !important; */
+  }
+
+  .cnblogs-markdown kbd {
+    display: inline-block !important;
+    padding: 3px 5px !important;
+    font: 11px SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace !important;
+    line-height: 10px !important;
+    color: #444d56 !important;
+    vertical-align: middle !important;
+    background-color: #fafbfc !important;
+    border: 1px solid #d1d5da !important;
+    border-radius: 3px !important;
+    box-shadow: inset 0 -1px 0 #d1d5da !important;
+  }
+
+  .cnblogs-markdown:after,
+  .cnblogs-markdown:before {
+    display: table !important;
+    content: "" !important;
+  }
+
+  .cnblogs-markdown:after {
+    clear: both !important;
+  }
+
+  .cnblogs-markdown > :first-child {
+    margin-top: 0 !important
+  }
+
+  .cnblogs-markdown > :last-child {
+    margin-bottom: 0 !important
+  }
+
+  .cnblogs-markdown a:not([href]) {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  .cnblogs-markdown .absent {
+    color: #cb2431 !important;
+  }
+
+  .cnblogs-markdown .anchor {
+    float: left !important;
+    padding-right: 4px !important;
+    margin-left: -20px !important;
+    line-height: 1 !important;
+  }
+
+  .cnblogs-markdown .anchor:focus {
+    outline: none !important;
+  }
+
+  .cnblogs-markdown blockquote,
+  .cnblogs-markdown details,
+  .cnblogs-markdown dl,
+  .cnblogs-markdown ol,
+  .cnblogs-markdown p,
+  .cnblogs-markdown pre,
+  .cnblogs-markdown table,
+  .cnblogs-markdown ul {
+    margin-top: 0 !important;
+    margin-bottom: 16px !important;
+  }
+
+  .cnblogs-markdown hr {
+    height: .25em !important;
+    padding: 0 !important;
+    margin: 24px 0 !important;
+    background-color: #e1e4e8 !important;
+    border: 0 !important;
+  }
+
+  .cnblogs-markdown blockquote {
+    padding: 0 1em !important;
+    color: #6a737d !important;
+    border-left: .25em solid #dfe2e5 !important;
+  }
+
+  .cnblogs-markdown blockquote > :first-child {
+    margin-top: 0 !important;
+  }
+
+  .cnblogs-markdown blockquote > :last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .cnblogs-markdown h1,
+  .cnblogs-markdown h2,
+  .cnblogs-markdown h3,
+  .cnblogs-markdown h4,
+  .cnblogs-markdown h5,
+  .cnblogs-markdown h6 {
+    margin-top: 24px !important;
+    margin-bottom: 16px !important;
+    font-weight: 500 !important;
+    line-height: 1.8 !important;
+  }
+
+  .cnblogs-markdown h1 .octicon-link,
+  .cnblogs-markdown h2 .octicon-link,
+  .cnblogs-markdown h3 .octicon-link,
+  .cnblogs-markdown h4 .octicon-link,
+  .cnblogs-markdown h5 .octicon-link,
+  .cnblogs-markdown h6 .octicon-link {
+    color: #1b1f23 !important;
+    vertical-align: middle !important;
+    visibility: hidden !important;
+  }
+
+  .cnblogs-markdown h1:hover .anchor,
+  .cnblogs-markdown h2:hover .anchor,
+  .cnblogs-markdown h3:hover .anchor,
+  .cnblogs-markdown h4:hover .anchor,
+  .cnblogs-markdown h5:hover .anchor,
+  .cnblogs-markdown h6:hover .anchor {
+    text-decoration: none !important;
+  }
+
+  .cnblogs-markdown h1:hover .anchor .octicon-link,
+  .cnblogs-markdown h2:hover .anchor .octicon-link,
+  .cnblogs-markdown h3:hover .anchor .octicon-link,
+  .cnblogs-markdown h4:hover .anchor .octicon-link,
+  .cnblogs-markdown h5:hover .anchor .octicon-link,
+  .cnblogs-markdown h6:hover .anchor .octicon-link {
+    visibility: visible !important;
+  }
+
+  .cnblogs-markdown h1 code,
+  .cnblogs-markdown h1 tt,
+  .cnblogs-markdown h2 code,
+  .cnblogs-markdown h2 tt,
+  .cnblogs-markdown h3 code,
+  .cnblogs-markdown h3 tt,
+  .cnblogs-markdown h4 code,
+  .cnblogs-markdown h4 tt,
+  .cnblogs-markdown h5 code,
+  .cnblogs-markdown h5 tt,
+  .cnblogs-markdown h6 code,
+  .cnblogs-markdown h6 tt {
+    font-size: inherit !important;
+  }
+
+  .cnblogs-markdown h1 {
+    font-size: 2em !important;
+  }
+
+  .cnblogs-markdown h1,
+  .cnblogs-markdown h2 {
+    padding-bottom: .3em !important;
+    border-bottom: 1px solid var(--border-color-extra-linght) !important;
+  }
+
+  .cnblogs-markdown h2 {
+    font-size: 1.5em !important;
+  }
+
+  .cnblogs-markdown h3 {
+    font-size: 1.25em !important;
+  }
+
+  .cnblogs-markdown h4 {
+    font-size: 1em !important;
+  }
+
+  .cnblogs-markdown h5 {
+    font-size: .875em !important;
+  }
+
+  .cnblogs-markdown h6 {
+    font-size: .85em !important;
+    color: #6a737d !important;
+  }
+
+  .cnblogs-markdown ol,
+  .cnblogs-markdown ul {
+    padding-left: 2em !important;
+  }
+
+  .cnblogs-markdown ol.no-list,
+  .cnblogs-markdown ul.no-list {
+    padding: 0 !important;
+    list-style-type: none !important;
+  }
+
+  .cnblogs-markdown ol ol,
+  .cnblogs-markdown ol ul,
+  .cnblogs-markdown ul ol,
+  .cnblogs-markdown ul ul {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* todo */
+  /*.cnblogs-markdown li {*/
+  /*    word-wrap: break-all !important;*/
+  /*}*/
+  .cnblogs-markdown li > p {
+    margin-top: 16px !important;
+  }
+
+  .cnblogs-markdown li + li {
+    margin-top: .25em !important;
+  }
+
+  .cnblogs-markdown dl {
+    padding: 0 !important;
+  }
+
+  .cnblogs-markdown dl dt {
+    padding: 0 !important;
+    margin-top: 16px !important;
+    font-size: 1em !important;
+    font-style: italic !important;
+    font-weight: 600 !important;
+  }
+
+  .cnblogs-markdown dl dd {
+    padding: 0 16px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .cnblogs-markdown table {
+    display: table !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+  }
+
+  .cnblogs-markdown table th {
+    font-weight: 600 !important;
+  }
+
+  .cnblogs-markdown table td,
+  .cnblogs-markdown table th {
+    padding: 6px 13px !important;
+    border: 1px solid #dfe2e5 !important;
+    background: transparent !important;
+  }
+
+  .cnblogs-markdown table tr {
+    background-color: var(--color-white);
+    border-top: 1px solid #c6cbd1 !important;
+  }
+
+  .cnblogs-markdown table tr:nth-child(2n) {
+    background-color: var(--background-color-base) !important;
+  }
+
+  .cnblogs-markdown table img {
+    background-color: initial !important;
+  }
+
+  .cnblogs-markdown img {
+    max-width: 100% !important;
+    box-sizing: initial !important;
+    background-color: var(--color-white) !important;
+  }
+
+  .cnblogs-markdown img[align=right] {
+    padding-left: 20px !important;
+  }
+
+  .cnblogs-markdown img[align=left] {
+    padding-right: 20px !important;
+  }
+
+  .cnblogs-markdown .emoji {
+    max-width: none !important;
+    vertical-align: text-top !important;
+    background-color: initial !important;
+  }
+
+  .cnblogs-markdown span.frame {
+    display: block !important;
+    overflow: hidden !important;
+  }
+
+  .cnblogs-markdown span.frame > span {
+    display: block !important;
+    float: left !important;
+    width: auto !important;
+    padding: 7px !important;
+    margin: 13px 0 0 !important;
+    overflow: hidden !important;
+    border: 1px solid #dfe2e5 !important;
+  }
+
+  .cnblogs-markdown span.frame span img {
+    display: block !important;
+    float: left !important;
+  }
+
+  .cnblogs-markdown span.frame span span {
+    display: block !important;
+    padding: 5px 0 0 !important;
+    clear: both !important;
+    color: #24292e !important;
+  }
+
+  .cnblogs-markdown span.align-center {
+    display: block !important;
+    overflow: hidden !important;
+    clear: both !important;
+  }
+
+  .cnblogs-markdown span.align-center > span {
+    display: block !important;
+    margin: 13px auto 0 !important;
+    overflow: hidden !important;
+    text-align: center !important;
+  }
+
+  .cnblogs-markdown span.align-center span img {
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+
+  .cnblogs-markdown span.align-right {
+    display: block !important;
+    overflow: hidden !important;
+    clear: both !important;
+  }
+
+  .cnblogs-markdown span.align-right > span {
+    display: block !important;
+    margin: 13px 0 0 !important;
+    overflow: hidden !important;
+    text-align: right !important;
+  }
+
+  .cnblogs-markdown span.align-right span img {
+    margin: 0 !important;
+    text-align: right !important;
+  }
+
+  .cnblogs-markdown span.float-left {
+    display: block !important;
+    float: left !important;
+    margin-right: 13px !important;
+    overflow: hidden !important;
+  }
+
+  .cnblogs-markdown span.float-left span {
+    margin: 13px 0 0 !important;
+  }
+
+  .cnblogs-markdown span.float-right {
+    display: block !important;
+    float: right !important;
+    margin-left: 13px !important;
+    overflow: hidden !important;
+  }
+
+  .cnblogs-markdown span.float-right > span {
+    display: block !important;
+    margin: 13px auto 0 !important;
+    overflow: hidden !important;
+    text-align: right !important;
+  }
+
+  .cnblogs-markdown code,
+  .cnblogs-markdown tt {
+    padding: 0.2em .4em !important;
+    margin: 0 4px !important;
+    /* font-size: 85% !important; */
+    display: inline;
+    border: none !important;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+    background-color: rgba(27, 31, 35, .05) !important;
+    border-radius: 3px !important;
+  }
+
+  .cnblogs-markdown code br,
+  .cnblogs-markdown tt br {
+    display: none !important;
+  }
+
+  .cnblogs-markdown del code {
+    text-decoration: inherit !important;
+  }
+
+
+  .cnblogs-markdown pre > code {
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 100% !important;
+    /*word-break: normal !important;
+    white-space: pre !important;*/
+    background: transparent !important;
+    border: 0 !important;
+  }
+
+  .cnblogs-markdown .highlight {
+    margin-bottom: 16px !important;
+  }
+
+  .cnblogs-markdown .highlight pre {
+    margin-bottom: 0 !important;
+    /*word-break: normal !important;*/
+  }
+
+  .cnblogs-markdown .highlight pre,
+  .cnblogs-markdown pre {
+    padding: 16px !important;
+    overflow-x: auto !important;
+    font-size: 85% !important;
+    width: 100%;
+    line-height: 1.45 !important;
+    background-color: #282c34;
+    border-radius: 3px !important;
+  }
+
+  .cnblogs-markdown pre code,
+  .cnblogs-markdown pre tt {
+    /*display: inline !important;*/
+    /*max-width: auto !important;*/
+    padding: 0 0 0 10px !important;
+    /* padding: 16px !important; */
+    /* line-height: inherit !important; */
+    white-space: pre !important;
+    word-break: keep-all;
+    /* text-overflow: clip; */
+    background-color: initial !important;
+    border: 0 !important;
+  }
+
+  .cnblogs-markdown .csv-data td,
+  .cnblogs-markdown .csv-data th {
+    padding: 5px !important;
+    overflow: hidden !important;
+    font-size: 12px !important;
+    line-height: 1 !important;
+    text-align: left !important;
+    white-space: nowrap !important;
+  }
+
+  .cnblogs-markdown .csv-data .blob-num {
+    padding: 10px 8px 9px !important;
+    text-align: right !important;
+    background: #fff !important;
+    border: 0 !important;
+  }
+
+  .cnblogs-markdown .csv-data tr {
+    border-top: 0 !important;
+  }
+
+  .cnblogs-markdown .csv-data th {
+    font-weight: 600 !important;
+    background: #f6f8fa !important;
+    border-top: 0 !important;
+  }
+
+}
+
+/************** github markdown 结束 ***************/

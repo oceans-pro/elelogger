@@ -1,0 +1,1 @@
+C:\Users\oceans\AppData\Roaming\JetBrains\IntelliJIdea2020.1\plugins
