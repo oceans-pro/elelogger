@@ -1,5 +1,6 @@
-require('./init-remove')
 require('./init-app')
+require('./init-remove')
 require('./init-blog')
 require('./init-tag-h')
 require('./init-highlight-code')
+require('./fix-problem')

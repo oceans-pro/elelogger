@@ -24,9 +24,12 @@
     "@babel/preset-env": "^7.11.0",
     "babel-loader": "^8.1.0",
     "cross-env": "^7.0.2",
+    "css-loader": "^4.2.1",
     "element-ui": "^2.13.2",
     "node-sass": "^4.14.1",
     "qiniu": "^7.3.2",
+    "sass-loader": "^9.0.3",
+    "style-loader": "^1.2.1",
     "stylus": "^0.54.8",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"

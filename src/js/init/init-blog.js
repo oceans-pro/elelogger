@@ -50,24 +50,28 @@ if ($('#topics').length > 0) {
         .attr('id', 'copy_target_' + i)
   }
 
-
-  var clipboard = new ClipboardJS('.clipboard-button')
+  /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+                                                   复制
+  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
+  const clipboard = new ClipboardJS('.clipboard-button')
   clipboard.on('success', function(e) {
-    e.trigger.innerHTML = '成功'
-    setTimeout(function() {
-      e.trigger.innerHTML = ''
-    }, 2 * 1000)
+    window.markdownVue.$message({
+      message: '复制成功！',
+      type: 'success'
+    })
     e.clearSelection()
   })
   clipboard.on('error', function(e) {
-    e.trigger.innerHTML = '失败'
-    setTimeout(function() {
-      e.trigger.innerHTML = ''
-    }, 2 * 1000)
+    window.markdownVue.$message({
+      message: '复制失败！',
+      type: 'danger'
+    })
     e.clearSelection()
   })
 
-  // 设置评论区头像
+  /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+                                                   评论区头像
+  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
   $(document).ajaxComplete(function(event, xhr, option) {
     //评论头像
     if (option.url.indexOf('GetComments') > -1) {
@@ -125,7 +129,7 @@ $('#sidebar-toggler').click(function() {
 })
 // -------------------------------------------------- 顶部目录 --------------------------------------------------
 $('#blog_nav_sitehome').wrap(`
-      <el-tooltip class="item" effect="dark" content="博客园主页" placement="bottom-start">
+      <el-tooltip class="item" effect="dark" content="返回博客园主页" placement="bottom-start">
       </el-tooltip>
     `)
 $('#blog_nav_myhome').wrap(`
@@ -155,7 +159,7 @@ new Vue({el: '#navList', name: 'NavRight', template: $('#navList').prop('outerHT
 $('#home').append(`
         <div class="float-btn"><ul>
         <li class="btn-top"><a href="#header"></a></li>
-        <li class="btn-top"><a href="javascript:handleFullScreen();handleWideMode();"></a></li>
+        <li class="btn-fullscreen"><a href="javascript:handleFullScreen();handleWideMode();"></a></li>
         <li class="btn-theme"><a  href="javascript:changeTheme()"></a></li>
         <li class="btn-theme-code"><a href="javascript:changeCodeTheme()"></a></li>
         <li class="btn-main"><a href="javascript:sidebarToggle()"></a></li>
@@ -166,9 +170,11 @@ let windowTop = 0
 $(window).scroll(function() {
   let scrolls = $(this).scrollTop()
   if (scrolls >= windowTop) {
-    //当scrolls>windowTop时，表示页面在向下滑动
-    //$('#header').addClass('header-hide');
+    // 当scrolls>windowTop时，表示页面在向下滑动
     $('.float-btn').addClass('float-btn-hide')
+    console.log('ddd')
+    $('.float-btn li:before, .float-btn li:after').addClass('oceans-sou')
+    $('li .btn-theme-code:before').hide()
     windowTop = scrolls
   } else {
     //$('#header').removeClass('header-hide');

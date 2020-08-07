@@ -3,6 +3,10 @@
     color: #657b83 !important;
 }
 
+.kind-of-lang {
+    color: #28394a; /* oceans */
+}
+
 .hljs-comment, .diff .hljs-header, .hljs-doctype, .hljs-pi, .lisp .hljs-string {
     color: #93a1a1 !important;
 }

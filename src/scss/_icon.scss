@@ -1,244 +1,266 @@
-@media screen and (min-width: 0px) {
-
-  @media screen and (min-width: 1200px) {
-    /* 长方形 */
-    .float-btn li:before {
-      content: "";
-      position: absolute;
-      right: calc(100% + 10px);
-      //display: block;
-      white-space: nowrap;
-      background: #303133;
-      border-radius: 4px;
-      height: 36px;
-      display: none;
-      color: white;
-      font-size: var(--text-h6);
-      align-items: center;
-      padding: 0 14px;
-      transformX: 0%;
-      transition: all 300ms;
-    }
-
-    /* 三角形 */
-    .float-btn li:after {
-      content: "";
-      position: absolute;
-      right: calc(100% + 5px);
-      width: 10px;
-      height: 10px;
-      z-index: -1;
-      color: white;
-      background: #303133;
-      transform: rotate(45deg);
-      display: none;
-      transformX: 0%;
-      transition: all 300ms;
-    }
-
-
-    @media screen and (min-width: 1200px) {
-      .btn-sidebar {
-        display: none !important;
-      }
-
-
-      .btn-main.btn-main-open a:before {
-        content: "\f0c9" !important;
-      }
-
-      .main-hide {
-        grid-template-columns: 100% !important;
-        transition: width 300ms;
-      }
-
-      .main-hide #sideBar {
-        display: none;
-      }
-
-      .float-btn li:hover:before,
-      .float-btn li:hover:after {
-        display: flex !important;
-        transition: all 300ms;
-        transformX: 100%;
-      }
-
-      .btn-top:before {
-        content: "返回顶部" !important;
-      }
-
-      .btn-content:before {
-        content: "切换到目录" !important;
-      }
-
-      .btn-content.btn-content-open:before {
-        content: "切换到默认" !important;
-      }
-
-      .btn-comment:before {
-        content: "发表评论" !important;
-      }
-
-      .btn-main:before {
-        content: "隐藏侧边" !important;
-      }
-
-      .btn-theme:before {
-        content: "切换主题" !important;
-      }
-
-      .btn-theme-code:before {
-        content: "切换高亮" !important;
-      }
-
-      .btn-main.btn-main-open:before {
-        content: "打开侧边" !important;
-      }
-    }
-
+/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+                                   悬浮按钮黑色样式
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
+@media screen and (min-width: 900px) {
+  /* 长方形 */
+  .float-btn li:before {
+    content: "";
+    position: absolute;
+    right: calc(100% + 10px);
+    white-space: nowrap;
+    background: #303133;
+    border-radius: 4px;
+    height: 36px;
+    display: none;
+    color: white;
+    font-size: var(--text-h6);
+    align-items: center;
+    padding: 0 14px;
+    transformX: 0%;
+    transition: all 300ms;
   }
 
-  .btn-top a:before {
-    content: "\f0d8"
+  /* 三角形 */
+  .float-btn li:after {
+    content: "";
+    position: absolute;
+    right: calc(100% + 5px);
+    width: 10px;
+    height: 10px;
+    z-index: -1;
+    color: white;
+    background: #303133;
+    transform: rotate(45deg);
+    display: none;
+    transformX: 0%;
+    transition: all 300ms;
+  }
+}
+
+/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+                                                 悬浮按钮图标
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
+// 1
+.btn-top a:before {
+  content: "\f0d8"
+}
+
+// 2
+.btn-fullscreen a:before {
+  content: "\f0b2";
+}
+
+
+// 3
+.btn-theme a:before {
+  content: "\f0eb"; /* fa-lightbulb-o */
+}
+
+:root[theme="dark"] .btn-theme a:before {
+  content: "\f186" !important;
+}
+
+// 4
+.btn-theme-code a:before {
+  content: "\f0e4";
+}
+
+
+// 5
+.btn-main a:before {
+  content: "\f0c9" !important;
+}
+
+/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+                                          悬浮按钮文字
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
+@media screen and (min-width: 900px) {
+  // 1
+  .btn-top:before {
+    content: "返回顶部" !important;
+  }
+  // 2
+  .btn-fullscreen:before {
+    content: "切换全屏" !important;
+  }
+  // 3
+  .btn-theme:before {
+    content: "切换黑夜" !important;
+  }
+  :root[theme="dark"] .btn-theme:before {
+    content: "切换白天" !important;
+  }
+  // 4
+  .btn-theme-code {
+    &:before {
+      content: "切换高亮" !important;
+    }
+  }
+  // 5
+  .btn-main:before {
+    content: "隐藏侧边" !important;
   }
 
-  .btn-content {
+  .btn-main.btn-main-open:before {
+    content: "打开侧边" !important;
+  }
+}
+
+
+/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+                                                 其他
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
+
+.btn-content:before {
+  content: "切换到目录" !important;
+}
+
+.btn-content.btn-content-open:before {
+  content: "切换到默认" !important;
+}
+
+
+.btn-comment:before {
+  content: "发表评论" !important;
+}
+
+.btn-content {
+  display: none;
+}
+
+.btn-content a:before {
+  content: "\f0ec";
+}
+
+.btn-content.btn-content-open a:before {
+  content: "\f0ec";
+}
+
+.btn-sidebar a:before {
+  content: "\f0c9"
+}
+
+.btn-sidebar.btn-sidebar-open a:before {
+  content: "\f00d" !important;
+}
+
+.btn-comment a:before {
+  content: "\f075";
+}
+
+/* 顶部图标 */
+#blog_nav_myhome:before {
+  content: "\f015";
+}
+
+/* fa-pencil */
+#blog_nav_newpost:before {
+  content: "\f040";
+  /* el-icon-circle-plus */
+  /*content: "\e7a0";*/
+}
+
+#blog_nav_contact:before {
+  content: "\f0e0"
+}
+
+#blog_nav_rss:before {
+  content: "\f09e";
+}
+
+#blog_nav_admin:before {
+  content: "\f013";
+}
+
+#sidebar-toggler:before {
+  content: "\f0c9";
+}
+
+
+//.btn-sidebar {
+//  display: none !important;
+//}
+
+
+#blog_nav_sitehome:before {
+  content: "\f08b";
+}
+
+
+.main-hide {
+  grid-template-columns: 100% !important;
+  transition: width 300ms;
+
+  #sideBar {
     display: none;
   }
-
-  .btn-content a:before {
-    content: "\f0ec";
-  }
-
-  .btn-content.btn-content-open a:before {
-    content: "\f0ec";
-  }
-
-  .btn-sidebar a:before {
-    content: "\f0c9"
-  }
-
-  .btn-sidebar.btn-sidebar-open a:before {
-    content: "\f00d" !important;
-  }
-
-  .btn-comment a:before {
-    content: "\f075";
-  }
-
-  .btn-main a:before {
-    content: "\f0c9"
-  }
-
-
-  html[theme="dark"] #theme:before,
-  html[theme="dark"] .btn-theme a:before {
-    content: "\f186" !important;
-  }
-
-
-
-  #blog_nav_sitehome:before {
-    content: "\f08b";
-  }
-
-  /* 顶部图标 */
-  #blog_nav_myhome:before {
-    content: "\f015";
-  }
-
-  /* fa-pencil */
-  #blog_nav_newpost:before {
-    content: "\f040";
-    /* el-icon-circle-plus */
-    /*content: "\e7a0";*/
-  }
-
-  #blog_nav_contact:before {
-    content: "\f0e0"
-  }
-
-  #blog_nav_rss:before {
-    content: "\f09e";
-  }
-
-  #blog_nav_admin:before {
-    content: "\f013";
-  }
-
-  #sidebar-toggler:before {
-    content: "\f0c9";
-  }
-
-  /* .fa-lightbulb-o */
-  .btn-theme a:before {
-    content: "\f0eb";
-  }
-
-  /*  */
-  .btn-theme-code a:before {
-    content: "\f0e4";
-  }
-
 }
+
+
+.float-btn li:hover:before,
+.float-btn li:hover:after {
+  display: flex;
+  transition: all 300ms;
+  transformX: 100%;
+}
+
 
 /********* 悬浮按钮 ********/
-@media screen and (min-width: 0px) {
-  .float-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 10px;
-    z-index: 20;
-    transition: 0.3s transform;
-  }
-
-  .float-btn-hide {
-    transform: translateX(200%);
-    transition: 0.3s transform;
-  }
-
-  .float-btn ul {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-gap: 10px;
-    padding: 0;
-    margin: 0;
-  }
-
-  .float-btn li {
-    background: var(--color-white);
-    color: var(--color-text-regular);
-    font-family: FontAwesome;
-    list-style-type: none;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    line-height: 40px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    border-radius: 100px;
-    box-shadow: var(--light-shadow);
-    position: relative;
-    overflow: visible;
-  }
-
-  .float-btn li a {
-    display: block;
-    width: 40px;
-    height: 40px;
-  }
-
-
-  .sidebar-fixed #sidebar_scroller {
-    margin: 0
-  }
-
-  .theme {
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
-    text-align: center;
-    font-size: var(--text-h4);
-  }
+.float-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  z-index: 20;
+  transition: 0.3s transform;
 }
+
+.float-btn-hide {
+  transform: translateX(200%);
+  transition: 0.3s transform;
+}
+
+.float-btn ul {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-gap: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+.float-btn li {
+  background: var(--color-white);
+  color: var(--color-text-regular);
+  font-family: FontAwesome;
+  list-style-type: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  line-height: 40px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  box-shadow: var(--light-shadow);
+  position: relative;
+  overflow: visible;
+}
+
+.float-btn li a {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+
+.sidebar-fixed #sidebar_scroller {
+  margin: 0
+}
+
+.theme {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: var(--text-h4);
+}
+

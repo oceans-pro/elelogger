@@ -1,4 +1,8 @@
 @charset "UTF-8";
+:root { // 复制到自定义 CSS
+  display: none;
+}
+
 @import "scss/variable";
 @import "scss/fix";
 @import "scss/markdown4";

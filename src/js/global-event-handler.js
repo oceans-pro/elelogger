@@ -7,6 +7,37 @@ window.changeCodeTheme = changeCodeTheme
 window.handleFullScreen = handleFullScreen
 window.handleWideMode = handleWideMode
 
+function createDownload(
+    {
+      el = '',
+      title = '',
+      version = 'v-1.0',
+      href = '#'
+    }) {
+  console.log('da')
+  return new Vue({
+        el: el,
+        template: `
+        <div class="source-download">
+          <div class="source-type zip">
+          </div>
+          <div class="source-info">
+            <p>{{ title }}</p>
+            <p>version:{{ version }}</p>
+          </div>
+          <div class="download-btn">
+            <a :href="href"></a>
+          </div>
+        </div>`,
+        data: {
+          title: title,
+          version: version,
+          href: href
+        }
+      }
+  )
+}
+
 /**
  * 切换主题
  */
@@ -25,7 +56,7 @@ function changeTheme() {
       path: '/',
       domain: 'cnblogs.com',
     })
-    document.documentElement.removeAttribute('theme', 'dark')
+    document.documentElement.removeAttribute('theme')
     $('.my-el-card').css('box-shadow', '0 2px 12px 0 rgba(0,0,0,.1)')
   }
 }
@@ -44,6 +75,7 @@ function changeCodeTheme() {
       message: '当前页面没有代码块！无法切换代码着色方案。',
       type: 'warning'
     })
+    return
   }
   const theme = window.markdownVue.codeTheme
   const nameList = ['vscode', 'atom', 'solarized', 'vscode']
@@ -60,7 +92,7 @@ function changeCodeTheme() {
     title: '提示',
     message: `当前代码高亮主题为 <b>${window.markdownVue.codeTheme}</b>`,
     dangerouslyUseHTMLString: true,
-    duration: 0,
+    duration: 1000,
     type: 'success'
   })
 }
@@ -86,7 +118,9 @@ function showContent() {
   $('#mycontent').addClass('active')
 }
 
-
+/**
+ * 切换侧边栏
+ */
 function sidebarToggle() {
   if ($.cookie('is-side-open') === 'open') {
     $.cookie('is-side-open', 'close', {
@@ -95,6 +129,7 @@ function sidebarToggle() {
       domain: 'cnblogs.com',
     })
     $('#main').addClass('main-widthout-sidebar')
+    $('.btn-main').removeClass('btn-main-open')
   } else {
     $.cookie('is-side-open', 'open', {
       expires: 30,
@@ -102,6 +137,7 @@ function sidebarToggle() {
       domain: 'cnblogs.com',
     })
     $('#main').removeClass('main-widthout-sidebar')
+    $('.btn-main').addClass('btn-main-open')
   }
 }
 
@@ -113,6 +149,7 @@ function handleFullScreen() {
   // 判断是否已经是全屏
   // 如果是全屏，退出
   if (window.fullscreen) {
+    $('code.hljs').removeClass('larger-code')
     if (document.exitFullscreen) {
       document.exitFullscreen()
     } else if (document.webkitCancelFullScreen) {
@@ -122,8 +159,8 @@ function handleFullScreen() {
     } else if (document.msExitFullscreen) {
       document.msExitFullscreen()
     }
-    console.log('已还原！')
   } else {    // 否则，进入全屏
+    $('code.hljs').addClass('larger-code')
     if (element.requestFullscreen) {
       element.requestFullscreen()
     } else if (element.webkitRequestFullScreen) {
@@ -134,7 +171,6 @@ function handleFullScreen() {
       // IE11
       element.msRequestFullscreen()
     }
-    console.log('已全屏！')
   }
   // 改变当前全屏状态
   window.fullscreen = !window.fullscreen
@@ -144,7 +180,6 @@ function handleFullScreen() {
  * 切换宽屏模式
  */
 function handleWideMode() {
-  console.log(window.wideMode)
   if (window.wideMode) {
     $('.forFlow').css('max-width', 800)
   } else {

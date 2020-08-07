@@ -1,4 +1,11 @@
 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+                                                   网站图标
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
+const linkObject = document.createElement('link')
+linkObject.rel = 'shortcut icon'
+linkObject.href = 'https://blog-static.cnblogs.com/files/oceans/favicon.ico'
+document.getElementsByTagName('head')[0].appendChild(linkObject)
+/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
                                                  IE
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
 const isIE = function() {
@@ -48,11 +55,4 @@ if ($.cookie('is-side-open') === 'open') {
 if ($.cookie('is-side-open') === 'close') {
   $('#main').addClass('main-widthout-sidebar')
 }
-/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
-                                                   网站图标
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
-const linkObject = document.createElement('link')
-linkObject.rel = 'shortcut icon'
-linkObject.href = 'https://blog-static.cnblogs.com/files/oceans/favicon.ico'
-document.getElementsByTagName('head')[0].appendChild(linkObject)
 

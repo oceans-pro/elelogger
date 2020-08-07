@@ -42,7 +42,7 @@
     line-height: 1.7;
   }
 
-  a {
+  a:not([class~=el-link]) {
     color: var(--color-primary);
   }
 
@@ -69,17 +69,31 @@
   }
 
   // -------------------------------------------------- 代码块 --------------------------------------------------
-
+  pre{
+    display: flex!important;
+  }
   code.hljs {
     border: none !important;
-    font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace;
+    width: 100%;
+    font-family: Consolas, source-code-pro, Menlo, Monaco, Courier New, monospace;
     font-size: 14px !important;
-    margin: 1rem;
+    //margin-top: 1.5rem;
+    //margin-bottom: 1.5rem;
+
+    &.larger-code {
+      font-size: 16px!important;;
+    }
+  }
+
+  code.language-es6 {
+    opacity: 0;
   }
 }
+
 .cnblogs-markdown pre {
   border-radius: 6px !important;
 }
+
 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
                                             暗色修复
                   对博客园的 https://www.cnblogs.com/css/blog-common.min.css 进行针对性覆盖
@@ -92,7 +106,7 @@
 
     code:not([class]) {
       color: var(--color-text-primary) !important;
-      background-color: var(--background-color-base) !important;
+      background-color: var(--color-black) !important;
     }
 
     th {

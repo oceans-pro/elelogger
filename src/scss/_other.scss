@@ -10,7 +10,7 @@
   border-right: 1px solid var(--border-color-extra-linght);
   overflow-y: auto;
   background: var(--color-white);
-  transition: 300ms;
+  transition: 0ms;
 }
 
 #mainContent {
@@ -19,19 +19,19 @@
   top: 0;
   right: 0;
   overflow-y: auto;
-  transition: 300ms;
+  transition: 0ms;
   background: var(--color-white);
 }
 
 .main-widthout-sidebar #sideBar {
   left: 0px;
-  transition: 300ms;
+  transition: 0ms;
   z-index: 9;
 }
 
 .main-widthout-sidebar #mainContent {
   left: 300px;
-  transition: 300ms;
+  transition: 0ms;
 }
 
 
@@ -73,7 +73,7 @@
 
 #blogTitle:hover h1 a {
   display: block;
-  transition: 300ms;
+  transition: 0ms;
 }
 
 #navList, .hd-menu ul {

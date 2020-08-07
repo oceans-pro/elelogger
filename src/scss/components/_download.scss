@@ -1,61 +1,61 @@
-.source-download {
-  border-radius: 6px;
-  width: 100%;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--background-color-base);
-  margin: 20px 0;
-}
-
-.source-type {
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  border-radius: 2px;
-  background: var(--color-primary)
-}
-
-.zip:before {
-  font-family: fontawesome;
-  content: "\f1c6"
-}
-
-.source-info {
-  flex-grow: 1;
-  display: flex;
-  padding: 0 20px;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.source-info p:nth-child(1) {
-  margin: 0 !important;
-  font-size: var(--text-h4);
-  font-weight: 400;
-  color: var(--color-text-primary);
-}
-
-.source-info p:nth-child(2) {
-  margin: 0 !important;
-  font-size: var(--text-h5);
-  color: var(--color-text-secondary);
-}
-
-.download-btn {
-  width: 30px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.download-btn a::before {
-  font-family: fontawesome;
-  content: "\f019";
-  color: var(--color-primary)
-}
+//.source-download {
+//  border-radius: 6px;
+//  width: 100%;
+//  padding: 20px;
+//  display: flex;
+//  align-items: center;
+//  justify-content: center;
+//  background: var(--background-color-base);
+//  margin: 20px 0;
+//}
+//
+//.source-type {
+//  width: 60px;
+//  height: 60px;
+//  display: flex;
+//  align-items: center;
+//  justify-content: center;
+//  color: #fff;
+//  border-radius: 2px;
+//  background: var(--color-primary)
+//}
+//
+//.zip:before {
+//  font-family: fontawesome;
+//  content: "\f1c6"
+//}
+//
+//.source-info {
+//  flex-grow: 1;
+//  display: flex;
+//  padding: 0 20px;
+//  flex-direction: column;
+//  justify-content: center;
+//}
+//
+//.source-info p:nth-child(1) {
+//  margin: 0 !important;
+//  font-size: var(--text-h4);
+//  font-weight: 400;
+//  color: var(--color-text-primary);
+//}
+//
+//.source-info p:nth-child(2) {
+//  margin: 0 !important;
+//  font-size: var(--text-h5);
+//  color: var(--color-text-secondary);
+//}
+//
+//.download-btn {
+//  width: 30px;
+//  height: 60px;
+//  display: flex;
+//  align-items: center;
+//  justify-content: center;
+//}
+//
+//.download-btn a::before {
+//  font-family: fontawesome;
+//  content: "\f019";
+//  color: var(--color-primary)
+//}

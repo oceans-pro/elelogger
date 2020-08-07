@@ -5,10 +5,8 @@
   .entrylist {
     /* background: var(--color-white); */
     border-radius: 0;
-    overflow: hidden;
+    //overflow: hidden;
     transition: all 300ms;
-    /*padding:0 10px;*/
-    /* border: 1px solid var(--border-color-light); */
   }
 
   .entrylistTitle .day:hover {
@@ -795,12 +793,22 @@
 /************** 弹窗结束 ***************/
 /*** 代码复制 开始**/
 @media screen and (min-width: 0px) {
+  .kind-of-lang {
+    position: absolute;
+    z-index: 2;
+    right: 16px;
+    top: 6px;
+    font-size: 12px !important;
+    color: hsla(0, 0%, 100%, .4); // 对于浅色代码高亮需要解决看不见的问题
+    padding: 2px 6px;
+    box-sizing: border-box;
+  }
   .clipboard-button {
     position: absolute;
     display: none;
     z-index: 2;
-    right: 16px;
-    top: 16px;
+    right: 12px;
+    top: 12px;
     border-radius: 4px;
     font-size: 12px !important;
     color: #333;
@@ -815,9 +823,15 @@
     content: "复制"
   }
 
-  .copyItem:hover .clipboard-button {
-    display: block;
-    z-index: 2;
+  .copyItem:hover {
+    .clipboard-button {
+      display: block;
+      z-index: 2;
+    }
+
+    .kind-of-lang {
+      display: none;
+    }
   }
 }
 

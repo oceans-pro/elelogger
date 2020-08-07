@@ -155,7 +155,7 @@
         overflow-y: auto;
         background: var(
                 --color-white);
-        transition: 300ms;
+        transition: 0ms;
     }
 
     #mainContent {
@@ -164,24 +164,24 @@
         top: 0;
         right: 0;
         overflow-y: auto;
-        transition: 300ms;
+        transition: 0ms;
         background: var(--color-white);
     }
 
     .main-widthout-sidebar #sideBar {
         left: 0px;
-        transition: 300ms;
+        transition: 0ms;
     }
 
     .main-widthout-sidebar #mainContent {
         left: 300px;
-        transition: 300ms;
+        transition: 0ms;
     }
 
     @media screen and (max-width: 767px) {
         .main-widthout-sidebar #mainContent {
             left: 0px;
-            transition: 300ms;
+            transition: 0ms;
         }
     }
     #lnkBlogLogo, #blogTitle h2, .blogStats {
@@ -222,7 +222,7 @@
 
     #blogTitle:hover h1 a {
         display: block;
-        transition: 300ms;
+        transition: 0ms;
     }
 
     #navList, .hd-menu ul {

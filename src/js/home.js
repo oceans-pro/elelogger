@@ -11,7 +11,7 @@ if (routePath === '/oceans/' ||
         <el-carousel height="200px">
           <el-carousel-item v-for="(item, index) in carouselList" :key="index">
               <a :href="item.href" style="width: 100%;">
-                <el-image :src="item.src" style="width: 100%;height:200px" fit="fill"></el-image>
+                <el-image :src="item.src" style="width: 100%;height:200px" fit="cover"></el-image>
               </a>
           </el-carousel-item>
         </el-carousel>
