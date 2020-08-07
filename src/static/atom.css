@@ -1,74 +1,89 @@
-/*** Atom OneDark 开始**/
-#home .hljs-comment,
-#home .hljs-quote {
-    color: #5c6370!important;
-    /* font-style: italic */
+/*
+Atom One Dark With support for ReasonML by Gidi Morris, based off work by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+*/
+.cnblogs-markdown .hljs, .cnblogs-markdown pre{
+    color: #abb2bf !important;
+    background: #282c34 !important;
 }
 
-#home .hljs-doctag,
-#home .hljs-formula,
-#home .hljs-keyword {
-    color: #c678dd!important;
+.hljs-keyword, .hljs-operator {
+    color: #F92672 !important;
 }
 
-#home .hljs-deletion,
-#home .hljs-name,
-#home .hljs-section,
-#home .hljs-selector-tag,
-#home .hljs-subst {
-    color: #e06c75!important;
+.hljs-pattern-match {
+    color: #F92672 !important;
 }
 
-#home .hljs-literal {
-    color: #56b6c2!important;
+.hljs-pattern-match .hljs-constructor {
+    color: #61aeee !important;
 }
 
-#home .hljs-addition,
-#home .hljs-attribute,
-#home .hljs-meta-string,
-#home .hljs-regexp,
-#home .hljs-string {
-    color: #98c379!important;
+.hljs-function {
+    color: #61aeee !important;
 }
 
-#home .hljs-built_in,
-#home .hljs-class .hljs-title {
-    color: #e6c07b!important;
+.hljs-function .hljs-params {
+    color: #A6E22E !important;
 }
 
-#home .hljs-attr,
-#home .hljs-number,
-#home .hljs-selector-attr,
-#home .hljs-selector-class,
-#home .hljs-selector-pseudo,
-#home .hljs-template-variable,
-#home .hljs-type,
-#home .hljs-variable {
-    color: #d19a66!important;
+.hljs-function .hljs-params .hljs-typing {
+    color: #FD971F !important;
 }
 
-#home .hljs-bullet,
-#home .hljs-link,
-#home .hljs-meta,
-#home .hljs-selector-id,
-#home .hljs-symbol,
-#home .hljs-title {
-    color: #61aeee!important;
+.hljs-module-access .hljs-module {
+    color: #7e57c2 !important;
 }
 
-#home .hljs-emphasis {
-    font-style: italic!important;
+.hljs-constructor {
+    color: #e2b93d !important;
 }
 
-#home .hljs-strong {
-    font-weight: 700!important;
+.hljs-constructor .hljs-string {
+    color: #9CCC65 !important;
 }
 
-#home .hljs-link {
-    text-decoration: underline!important;
+.hljs-comment, .hljs-quote {
+    color: #b18eb1 !important;
+    font-style: italic !important;
 }
 
-#home .hljs-tag {
-    color: #abb2bf!important;
+.hljs-doctag, .hljs-formula {
+    color: #c678dd !important;
 }
-/*******  Atom OneDark 结束 ********/
+
+.hljs-section, .hljs-name, .hljs-selector-tag, .hljs-deletion, .hljs-subst {
+    color: #e06c75 !important;
+}
+
+.hljs-literal {
+    color: #56b6c2 !important;
+}
+
+.hljs-string, .hljs-regexp, .hljs-addition, .hljs-attribute, .hljs-meta-string {
+    color: #98c379 !important;
+}
+
+.hljs-built_in, .hljs-class .hljs-title {
+    color: #e6c07b !important;
+}
+
+.hljs-attr, .hljs-variable, .hljs-template-variable, .hljs-type, .hljs-selector-class, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-number {
+    color: #d19a66 !important;
+}
+
+.hljs-symbol, .hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-title {
+    color: #61aeee !important;
+}
+
+.hljs-emphasis {
+    font-style: italic !important;
+}
+
+.hljs-strong {
+    font-weight: bold !important;
+}
+
+.hljs-link {
+    text-decoration: underline !important;
+}

@@ -1,13 +1,18 @@
 // 博文
 if ($('#topics').length > 0) {
-  //$('.btn-top').after('<li class="btn-comment"><a href="#commentform_title"></a></li>');
-  //$('#main').toggleClass('main-hide');
-  //$('.btn-main').addClass('btn-main-open');
-
   //高亮
-  $('pre code').each(function(i, block) {
-    hljs.highlightBlock(block)
-  })
+  // $('pre code')
+  //     .each(function(i, block) {
+  //       hljs.highlightBlock(block)
+  //     })
+  //     .each(function() {
+  //       const lines = $(this).text().split('\n').length - 1
+  //       const $numbering = $('<ul/>').addClass('pre-numbering')
+  //       $(this).addClass('has-numbering').parent().append($numbering)
+  //       for (let i = 1; i <= lines; i++) {
+  //         $numbering.append($('<li/>').attr('data-number', i))
+  //       }
+  //     })
 
   // 表格滚动
   $('table').each(function() {
@@ -37,24 +42,14 @@ if ($('#topics').length > 0) {
 
   // -------------------------------------------------- 代码复制 --------------------------------------------------
   for (let i = 0; i <= $('pre').length; i++) {
-    $('pre').eq(i).wrapAll('<div class="copyItem"></div>')
     $('.copyItem').css('position', 'relative')
     $('pre')
         .eq(i)
+        .wrapAll('<div class="copyItem"></div>')
         .before('<div class="clipboard-button" id="copy_btn_' + i + ' " data-clipboard-target="#copy_target_' + i + '"title="复制"></div>')
-    $('pre')
-        .eq(i)
         .attr('id', 'copy_target_' + i)
   }
 
-  $('pre code').each(function() {
-    const lines = $(this).text().split('\n').length - 1
-    const $numbering = $('<ul/>').addClass('pre-numbering')
-    $(this).addClass('has-numbering').parent().append($numbering)
-    for (let i = 1; i <= lines; i++) {
-      $numbering.append($('<li/>').attr('data-number', i))
-    }
-  })
 
   var clipboard = new ClipboardJS('.clipboard-button')
   clipboard.on('success', function(e) {
@@ -154,99 +149,22 @@ $('#blog_nav_admin').wrap(`
       </el-tooltip>
     `)
 new Vue({el: '#navList', name: 'NavRight', template: $('#navList').prop('outerHTML')})
-// -------------------------------------------------- 侧边目录 --------------------------------------------------
-if ($('#topics').length > 0) {
-  //先获取第一个h标签, 之后循环时作为上一个h标签
-  var $ph = $('#cnblogs_post_body :header:eq(0)')
-  if ($ph.length > 0) {
-    //设置层级为1
-    $ph.attr('offset', '1')
-    //添加导航目录的内容
-    $('#sideBar').prepend('<div id="sidebar_scroller" class="sidebar-block"><ul class="nav"></ul></div>')
-    $('#sideBar').prepend(
-        '<div class="side-choose"><a id="myside" href="javascript:showSide()">文件</a><a id="mycontent" href="javascript:showContent()">大纲</a></div>'
-    )
-    $('#sideBarMain').hide()
-    showContent()
-    //取当前边栏的宽度
-    //$('#sidebar_scroller').css('width', ($('#sideBarMain').width()) + 'px');
-    //让导航目录停留在页面顶端
-    //  $('#sidebar_scroller').stickUp();
-    //遍历文章里每个h标签
-    $('#cnblogs_post_body :header')
-        .filter(function() {
-          return this.tagName !== 'H1'
-        })
-        .each(function(i) {
-          // jquery的each方法
-          // https://www.runoob.com/jquery/traversing-each.html
-          // this = $(this)[0]
-          let $h = $(this)
-          // 设置h标签的id, 编号从0开始
-          $h.attr('id', 'scroller-' + i)
-          // 比上一个h标签层级小, 级数加1
-          if ($h[0].tagName > $ph[0].tagName) {
-            $h.attr('offset', parseInt($ph.attr('offset')) + 1)
-          } // 比上一个h标签层级大, 级数减1
-          else if ($h[0].tagName < $ph[0].tagName) {
-            let h = parseInt($h[0].tagName.substring(1))
-            let ph = parseInt($ph[0].tagName.substring(1))
 
-            let offset = parseInt($ph.attr('offset')) - (ph - h)
-            if (offset < 1) {
-              offset = 1
-            }
-            $h.attr('offset', offset)
-          } //和上一个h标签层级相等时, 级数不变
-          else {
-            $h.attr('offset', $ph.attr('offset'))
-          }
-          //添加h标签的目录内容
-          $('#sidebar_scroller ul').append(
-              '<li class="scroller-offset' + $h.attr('offset') + '"><a href="#scroller-' + i + '">' + $h.text() + '</a></li>'
-          )
-          //最后设置自己为上一个h标签
-          $ph = $h
-        })
-
-    //开启滚动监听, 监听所有在.nav类下的li
-    $('body').scrollspy()
-
-    //  侧边
-    /*
-    $(document).ajaxComplete(function(event, xhr, option) {
-      if (option.url.indexOf("TopLists") > -1) {
-        setTimeout(function() {
-          $('#sidebar_scroller').toggle();
-          toggleContent();
-          toggleMain();
-        }, 300)
-      }
-    })*/
-
-    /*当前目录激活监听*/
-    $(window).scroll(function() {
-      let now = $('#sidebar_scroller').find('.active')
-      var prevNum = now.prevAll().length + 1
-      var basicHeight = now.outerHeight()
-      $('#sideBar').scrollTop(prevNum * basicHeight)
-    })
-  }
-}
 
 // --------------------------------------------------  侧边悬浮按钮 --------------------------------------------------
 $('#home').append(`
         <div class="float-btn"><ul>
         <li class="btn-top"><a href="#header"></a></li>
+        <li class="btn-top"><a href="javascript:handleFullScreen();handleWideMode();"></a></li>
         <li class="btn-theme"><a  href="javascript:changeTheme()"></a></li>
         <li class="btn-theme-code"><a href="javascript:changeCodeTheme()"></a></li>
         <li class="btn-main"><a href="javascript:sidebarToggle()"></a></li>
         </ul></div>`
 )
 /*评论模块的滚动隐藏效果*/
-var windowTop = 0
+let windowTop = 0
 $(window).scroll(function() {
-  var scrolls = $(this).scrollTop()
+  let scrolls = $(this).scrollTop()
   if (scrolls >= windowTop) {
     //当scrolls>windowTop时，表示页面在向下滑动
     //$('#header').addClass('header-hide');

@@ -1,38 +1,4 @@
 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
-                                                 代码高亮（Atom）
+                                              通用代码高亮
  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
-pre {
-  display: grid;
-  grid-template-columns: auto 1fr;
-}
-
-pre code {
-  flex-grow: 1;
-}
-
-ul.pre-numbering {
-  min-width: 20px !important;
-  width: fit-content !important;
-  font-size: var(--text-h6) !important;
-  padding: 0 10px 0 0 !important;
-  border-right: 1px solid #c5c5c5;
-  background-color: #282c34;
-  color: #abb2bf;
-  text-align: right;
-  margin-bottom: 0px !important;
-  line-height: 1.5 !important;
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
-  order: -1
-}
-
-ul.pre-numbering li {
-  list-style-type: none !important;
-  padding: 0;
-  margin: 0 !important;
-  white-space: nowrap;
-}
-
-ul.pre-numbering li:before {
-  content: attr(data-number);
-}
 

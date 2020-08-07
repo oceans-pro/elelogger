@@ -1,0 +1,116 @@
+/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+                                                 HTML
+                                                Markdown
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
+#cnblogs_post_body {
+  // -------------------------------------------------- 标题 --------------------------------------------------
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    @media (max-width: 419px) {
+      font-size: 1.7rem;
+    }
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    padding-bottom: .3rem;
+    border-bottom: 1px solid #eaecef;
+  }
+
+  h2:hover .header-anchor,
+  h3:hover .header-anchor {
+    opacity: 1
+  }
+
+  a.header-anchor {
+    color: var(--color-primary);
+    font-size: .85em;
+    float: left;
+    margin-left: -.87em;
+    padding-right: .23em;
+    margin-top: .125em;
+    opacity: 0;
+  }
+
+  // -------------------------------------------------- 正文 --------------------------------------------------
+  ol, p, ul {
+    line-height: 1.7;
+  }
+
+  a {
+    color: var(--color-primary);
+  }
+
+  code:not([class]) {
+    color: #d63200;
+    padding: 3px 5px;
+    margin: 0 2px;
+    border-radius: 2px !important;
+    background-color: #f8f8f8;
+    white-space: nowrap;
+    border: none !important;
+  }
+
+  blockquote {
+    background-color: #f3f5f7;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+    border-color: #42b983;
+    padding: .1rem 1.5rem;
+    border-left-width: .5rem;
+    border-left-style: solid;
+    margin: 1rem 0;
+  }
+
+  // -------------------------------------------------- 代码块 --------------------------------------------------
+
+  code.hljs {
+    border: none !important;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace;
+    font-size: 14px !important;
+    margin: 1rem;
+  }
+}
+.cnblogs-markdown pre {
+  border-radius: 6px !important;
+}
+/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+                                            暗色修复
+                  对博客园的 https://www.cnblogs.com/css/blog-common.min.css 进行针对性覆盖
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
+:root[theme='dark'] {
+  #cnblogs_post_body {
+    blockquote {
+      background-color: var(--color-black) !important;
+    }
+
+    code:not([class]) {
+      color: var(--color-text-primary) !important;
+      background-color: var(--background-color-base) !important;
+    }
+
+    th {
+      background-color: var(--color-white);
+    }
+  }
+}
+
+code.hljs::before {
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #ccc;
+  text-align: right;
+  font-size: 0.9em;
+  padding: 5px 10px 0;
+  line-height: 15px;
+  height: 15px;
+  font-weight: 600;
+}

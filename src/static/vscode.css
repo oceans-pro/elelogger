@@ -3,7 +3,7 @@
  * Author: Nicolas LLOBERA <nllobera@gmail.com>
  */
 
-.cnblogs-markdown .hljs, .cnblogs-markdown pre ,ul.pre-numbering{
+.cnblogs-markdown .hljs, .cnblogs-markdown pre{
   background: #1E1E1E!important;
   color: #DCDCDC!important;
 }

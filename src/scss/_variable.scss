@@ -1,8 +1,10 @@
 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
                                               主题色
+                                    CSS 变量和 SCSS 变量的取舍
+               https://www.w3cplus.com/css/difference-between-types-of-css-variables.html
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
 :root {
-  --color-primary: #409eff;
+  --color-primary: #409EFF;
   --color-success: #67c23a;
   --color-success-0: #85ce61;
   --color-success-1: #e1f3d8;

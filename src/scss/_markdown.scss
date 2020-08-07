@@ -1,9 +1,11 @@
 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
-                                              标题前面的提示
+                                                 HTML
+                                                Markdown
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
 #cnblogs_post_body {
-  h2, h3, h4 {
-    font-weight: bold !important;
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.25;
   }
 
   h2:before {
@@ -15,96 +17,79 @@
     font-size: 1.5em;
   }
 
-  h3:before {
-    content: "✦  ";
-    color: #40b8ff;
-    position: relative;
-    top: 0;
-    left: -8px;
-    font-size: 1.0em;
+  h3 {
+    font-size: 1.35rem;
   }
 }
 
-/************** markdown 开始 ***************/
-@media screen and (min-width: 0) {
-  .cnblogs-markdown {
-    line-height: 1.8;
-  }
+.cnblogs-markdown {
+  line-height: 1.8;
 
-  .cnblogs-markdown a {
+  a {
     color: var(--color-primary);
   }
-
-  .fancybox-image {
-    max-width: 100% !important;
-  }
-
-  .img-caption {
-    text-align: center;
-    width: fit-content;
-    min-width: 20%;
-    max-width: 80%;
-    display: block;
-    margin: 0 auto;
-    padding: 10px;
-    border-bottom: 1px solid var(--border-color-extra-linght);
-    font-size: 13px;
-    color: #999;
-  }
-
-  #cnblogs_post_body p img {
-    width: auto;
-    display: flex;
-    margin: 0 auto;
-    align-items: center;
-    text-align: center;
-  }
-
-  .cnblogs-markdown pre code,
-  .cnblogs-markdown .hljs {
-    border: none !important;
-    color: #abb2bf;
-    font-size: var(--text-h6) !important;
-    padding: 0 0 0 10px !important;
-    /* padding-left: 10px; */
-    background: #282c34;
-    font-family: SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace !important;
-  }
-
-  #cnblogs_post_body ul {
-    margin-left: 0 !important;
-  }
-
-  .cnblogs-markdown li li li {
-    list-style-type: square !important;
-  }
-
-  .cnblogs-markdown blockquote {
-    margin: 0;
-    border-top: 0px;
-    border-bottom: 0px;
-    border-right: 0px;
-  }
-
-  .cnblogs-markdown table {
-    width: 100% !important;
-    display: table !important;
-    border: none !important;
-  }
-
-  #cnblogs_post_body th,
-  #cnblogs_post_body td,
-  .cnblogs-post-body th,
-  .cnblogs-post-body td {
-    border: 1px solid var(--DividColor) !important;
-    word-break: break-all;
-    white-space: nowrap;
-  }
 }
 
-/************** markdown 结束 ***************/
-/************** github markdown 开始 ***************/
+
+.fancybox-image {
+  max-width: 100% !important;
+}
+
+.img-caption {
+  text-align: center;
+  width: fit-content;
+  min-width: 20%;
+  max-width: 80%;
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+  border-bottom: 1px solid var(--border-color-extra-linght);
+  font-size: 13px;
+  color: #999;
+}
+
+#cnblogs_post_body p img {
+  width: auto;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+}
+
+
+#cnblogs_post_body ul {
+  margin-left: 0 !important;;
+}
+
+.cnblogs-markdown li li li {
+  list-style-type: square !important;
+}
+
+.cnblogs-markdown blockquote {
+  margin: 0;
+  border-top: 0px;
+  border-bottom: 0px;
+  border-right: 0px;
+}
+
+.cnblogs-markdown table {
+  width: 100% !important;
+  display: table !important;
+  border: none !important;
+}
+
+#cnblogs_post_body th,
+#cnblogs_post_body td,
+.cnblogs-post-body th,
+.cnblogs-post-body td {
+  border: 1px solid var(--DividColor) !important;
+  word-break: break-all;
+  white-space: nowrap;
+}
+
+/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+                                                 github markdown
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
 @media screen and (min-width: 0) {
   .cnblogs-markdown {
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji !important;
@@ -493,23 +478,12 @@
   }
 
 
-  .cnblogs-markdown pre > code {
-    padding: 0 !important;
-    margin: 0 !important;
-    font-size: 100% !important;
-    /*word-break: normal !important;
-    white-space: pre !important;*/
-    background: transparent !important;
-    border: 0 !important;
-  }
-
   .cnblogs-markdown .highlight {
     margin-bottom: 16px !important;
   }
 
   .cnblogs-markdown .highlight pre {
     margin-bottom: 0 !important;
-    /*word-break: normal !important;*/
   }
 
   .cnblogs-markdown .highlight pre,
@@ -519,23 +493,10 @@
     font-size: 85% !important;
     width: 100%;
     line-height: 1.45 !important;
-    background-color: #282c34;
+    //background-color: #282c34;
     border-radius: 3px !important;
   }
 
-  .cnblogs-markdown pre code,
-  .cnblogs-markdown pre tt {
-    /*display: inline !important;*/
-    /*max-width: auto !important;*/
-    padding: 0 0 0 10px !important;
-    /* padding: 16px !important; */
-    /* line-height: inherit !important; */
-    white-space: pre !important;
-    word-break: keep-all;
-    /* text-overflow: clip; */
-    background-color: initial !important;
-    border: 0 !important;
-  }
 
   .cnblogs-markdown .csv-data td,
   .cnblogs-markdown .csv-data th {
@@ -565,5 +526,3 @@
   }
 
 }
-
-/************** github markdown 结束 ***************/

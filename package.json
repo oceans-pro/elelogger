@@ -27,6 +27,7 @@
     "element-ui": "^2.13.2",
     "node-sass": "^4.14.1",
     "qiniu": "^7.3.2",
+    "stylus": "^0.54.8",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   }
