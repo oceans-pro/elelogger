@@ -1,11 +1,8 @@
 @charset "UTF-8";
-:root { // 复制到自定义 CSS
-  display: none;
-}
-
 @import "scss/variable";
 @import "scss/fix";
-@import "scss/markdown4";
+@import "scss/page-home";
+@import "scss/page-markdown4";
 @import "scss/replace";
 @import "scss/media";
 @import "scss/abondon";
@@ -14,6 +11,6 @@
 @import "scss/comment";
 @import "scss/parts";
 @import "scss/other";
-@import "scss/767";
 @import "scss/oceans-common";
 @import "scss/components/index";
+@import "scss/transition";

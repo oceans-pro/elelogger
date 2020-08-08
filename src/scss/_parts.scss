@@ -3,14 +3,11 @@
 
   .day,
   .entrylist {
-    /* background: var(--color-white); */
     border-radius: 0;
-    //overflow: hidden;
     transition: all 300ms;
   }
 
   .entrylistTitle .day:hover {
-    /*box-shadow: var(--light-shadow);*/
     transition: all 300ms;
   }
 
@@ -20,10 +17,6 @@
     margin: 0;
     font-size: var(--text-h3);
     position: relative;
-    /* text-align:center; */
-    /* background: var(--color-white); */
-    /* margin-bottom: 10px; */
-    /* border-left: 1px solid var(--border-color-light); */
   }
 
   .entrylistTitle:before {
@@ -40,33 +33,9 @@
 
   .entrylistDescription {
     padding: 10px 20px 20px;
-    /* border-bottom: 1px solid var(--border-color-base); */
     margin-bottom: 20px;
     background: var(--color-white);
   }
-
-  /*
-  .dayTitle:after,
-  .entrylistTitle:after {
-      content: "";
-      width: 40px;
-      height: 2px;
-      border-radius: 4px;
-      display: block;
-      background: var(--color-primary);
-      position: absolute;
-      bottom: -1px;
-      left: 20px;
-      z-index: 4;
-      transition: width 500ms;
-  }
-
-  .day:hover .dayTitle:after,
-  .entrylistTitle:hover:after {
-      width: 80px;
-      transition: width 500ms;
-  }
-*/
   .day .postTitle,
   .entrylistPosttitle {
     font-size: var(--text-h3);
@@ -93,10 +62,6 @@
     /* background: var(--color-white); */
     padding: 10px 20px 20px;
     color: var(--color-text-secondary);
-    /*border-radius:0 0 4px 4px;*/
-    /*border-top: 1px solid var(--DividColor); */
-    /* display: none; */
-    /* margin-top: 10px; */
   }
 
   .entrylist p:last-child {
@@ -130,9 +95,6 @@
     height: 100%;
     font-size: 0;
     background: transparent;
-    /* margin: 20px 0 10px; */
-    /* border-top: 1px solid var(--border-color-lighter); */
-    /* padding: 10px 0 0 0; */
   }
 
   .c_b_p_desc_readmore:after {
@@ -188,26 +150,6 @@
     border-radius: 0;
   }
 
-  /*
-  .PostListTitle:after {
-      content: "";
-      width: 40px;
-      height: 2px;
-      border-radius: 4px;
-      display: block;
-      background: var(--color-primary);
-      position: absolute;
-      bottom: -1px;
-      left: 20px;
-      z-index: 4;
-      transition: width 500ms;
-  }
-
-  .PostListTitle:hover:after {
-      width: 80px;
-      transition: width 500ms;
-  }
-*/
   #myposts,
   .PostList {
     margin: 0 !important;
@@ -267,36 +209,12 @@
     margin: 0;
     font-size: var(--text-h3);
     font-weight: 500;
-    /* text-indent:10px; */
     padding: 20px 20px;
     text-align: center;
-    /* text-align: left; */
     border-bottom: 1px solid var(--border-color-extra-linght);
     position: relative;
   }
 
-  /*
-  #taglist_title:after,
-  .galleryTitle:after {
-      content: "";
-      width: 40px;
-      height: 2px;
-      border-radius: 4px;
-      display: block;
-      background: var(--color-primary);
-      position: absolute;
-      bottom: -1px;
-      left: 20px;
-      z-index: 4;
-      transition: width 500ms;
-  }
-
-  #taglist_title:hover:after,
-  .galleryTitle:hover:after {
-      width: 80px;
-      transition: width 500ms;
-  }
-*/
   #taglist,
   #GalleryThumbNailViewer1_ThumbNails {
     padding: 20px;
@@ -305,7 +223,6 @@
 
   #MyTag1_dtTagList {
     width: 100%;
-    /* table-layout: fixed; */
   }
 
   #MyTag1_dtTagList td {
@@ -341,17 +258,14 @@
 
   .divPhoto {
     padding: 10px;
-    /* height: 100px; */
     overflow: hidden;
   }
 
   .divPhoto img {
-    /* height: 100px; */
     object-fit: cover;
   }
 
   #ViewPicture1_GalleryImage {
-    /* margin-left:20px; */
     max-width: calc(100% - 40px) !important;
   }
 
@@ -385,7 +299,6 @@
   }
 
   #nav_next_page:hover {
-    /*box-shadow: var(--light-shadow);*/
     transition: all 500ms;
   }
 
@@ -504,8 +417,6 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    /* grid-template-columns:100%; */
-    /* grid-gap:20px; */
     margin-top: 20px;
     justify-content: space-between;
     border-bottom: 1px solid var(--border-color-extra-linght);
@@ -519,11 +430,8 @@
     margin: 0;
     display: flex;
     align-items: center;
-    /* grid-template-columns: repeat(3, 1fr); */
-    /* grid-gap: 30px; */
     justify-content: center;
     font-family: FontAwesome;
-    /* flex: auto; */
     width: 100%;
     order: 1;
   }
@@ -584,16 +492,6 @@
     display: none;
   }
 
-  /*#green_channel_weibo:before {*/
-  /*    content: "\f18a";*/
-  /*    color: var(--color-danger);*/
-  /*}*/
-  /*#green_channel_weibo img {*/
-  /*    display: none;*/
-  /*}*/
-  /*#green_channel_weibo:after {*/
-  /*    content: "微博分享"*/
-  /*}*/
   #green_channel_wechat:before {
     content: "\f1d7";
     color: var(--color-success);
@@ -612,7 +510,6 @@
     padding: 0;
     width: fit-content;
     color: var(--color-text-primary) !important;
-    /* flex-grow: 1; */
   }
 
   .diggit {
@@ -627,7 +524,6 @@
     width: fit-content;
     height: fit-content;
     border-radius: 100px;
-    /* animation: star 1s ease-in-out infinite alternate; */
   }
 
   @keyframes star {

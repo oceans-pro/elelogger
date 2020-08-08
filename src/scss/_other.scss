@@ -1,40 +1,3 @@
-
-#sideBar {
-  width: 300px !important;
-  position: fixed;
-  z-index: 9;
-  top: 0;
-  left: -300px;
-  bottom: 0;
-  height: 100vh;
-  border-right: 1px solid var(--border-color-extra-linght);
-  overflow-y: auto;
-  background: var(--color-white);
-  transition: 0ms;
-}
-
-#mainContent {
-  position: absolute;
-  left: 0px;
-  top: 0;
-  right: 0;
-  overflow-y: auto;
-  transition: 0ms;
-  background: var(--color-white);
-}
-
-.main-widthout-sidebar #sideBar {
-  left: 0px;
-  transition: 0ms;
-  z-index: 9;
-}
-
-.main-widthout-sidebar #mainContent {
-  left: 300px;
-  transition: 0ms;
-}
-
-
 #lnkBlogLogo, #blogTitle h2, .blogStats {
   display: none;
 }
@@ -71,11 +34,6 @@
   display: none;
 }
 
-#blogTitle:hover h1 a {
-  display: block;
-  transition: 0ms;
-}
-
 #navList, .hd-menu ul {
   padding: 0;
   margin: 0;
@@ -85,7 +43,6 @@
 #navList li a, .hd-menu li a {
   color: var(--color-text-placeholder);
   text-decoration: none;
-  /* padding:0 15px; */
   font-size: 0;
   width: 40px;
   display: block;
@@ -105,12 +62,6 @@
 .forFlow {
   max-width: 800px;
   margin: 0 auto;
-}
-
-/*************************/
-/* oceans  */
-.dayTitle {
-  display: none;
 }
 
 .postTitle {

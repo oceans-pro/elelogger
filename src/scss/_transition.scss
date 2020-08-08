@@ -1,0 +1,42 @@
+#sideBar {
+  width: 300px !important;
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: -300px;
+  bottom: 0;
+  height: 100vh;
+  border-right: 1px solid var(--border-color-extra-linght);
+  overflow-y: auto;
+  background: var(--color-white);
+  transition: 300ms;
+}
+
+#mainContent {
+  position: absolute;
+  left: 0px;
+  top: 0;
+  right: 0;
+  overflow-y: auto;
+  transition: 300ms;
+  background: var(--color-white);
+}
+
+.main-widthout-sidebar #sideBar {
+  left: 0px;
+  transition: 300ms;
+  z-index: 9;
+}
+
+.main-widthout-sidebar #mainContent {
+  left: 300px;
+  transition: 300ms;
+}
+
+
+@media screen and (max-width: 767px) {
+  .main-widthout-sidebar #mainContent {
+    left: 0px;
+    transition: 300ms;
+  }
+}

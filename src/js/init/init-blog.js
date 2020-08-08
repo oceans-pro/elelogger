@@ -95,33 +95,13 @@ if ($('#topics').length > 0) {
       }, 300)
     }
   })
-
-  // 引入owo插件
-  // window.owoEmoji = function() {
-  //   $('.commentbox_footer').before(
-  //       '<div class="OwO" onclick="load_face(this)"><div class="OwO-logo"><i class="fa fa-smile-o" aria-hidden="true"></i></div></div>'
-  //   )
-  // }
-  // 表情按钮按下
-  // window.load_face = function(b) {
-  //   var c = new OwO({
-  //     logo: '<i class="fa fa-smile-o" aria-hidden="true"></i>',
-  //     container: document.getElementsByClassName('OwO')[0],
-  //     target: document.getElementById('tbCommentBody'),
-  //     api: 'https://cdn.jsdelivr.net/gh/gshang2018/home/gshang.owo.json',
-  //     position: 'up',
-  //     width: '100%',
-  //     maxHeight: '250px',
-  //   })
-  //   b.classList.add('OwO-open')
-  //   b.onclick = null
-  // }
 }
-//$('link[href^="/skins/"],link[href^="/css/blog-common"]').remove();
-$('#mainContent').prepend($('#header')) // 将顶部导航挪到右边那个不起眼的位置
-$('#sideBar').append($('#footer'))
-// -------------------------------------------------- 顶部 --------------------------------------------------
-$('#header').prepend(`
+/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+                                                 顶部目录
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
+const $header = $('#header')
+$('#mainContent').prepend($header) // 将顶部导航挪到右边那个不起眼的位置
+$header.prepend(`
       <div class="hd-menu"><ul>
         <li><a id="sidebar-toggler" href="javascript:sidebarToggle()"></a></li>
       </ul></div>`
@@ -129,7 +109,7 @@ $('#header').prepend(`
 $('#sidebar-toggler').click(function() {
   $('#main').toggleClass('main-widthout-sidebar')
 })
-// -------------------------------------------------- 顶部目录 --------------------------------------------------
+
 $('#blog_nav_sitehome').wrap(`
       <el-tooltip class="item" effect="dark" content="返回博客园主页" placement="bottom-start">
       </el-tooltip>
@@ -156,8 +136,9 @@ $('#blog_nav_admin').wrap(`
     `)
 new Vue({el: '#navList', name: 'NavRight', template: $('#navList').prop('outerHTML')})
 
-
-// --------------------------------------------------  侧边悬浮按钮 --------------------------------------------------
+/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+                                                 侧边悬浮按钮
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
 $('#home').append(`
         <div class="float-btn"><ul>
         <li class="btn-top"><a href="#header"></a></li>
@@ -180,7 +161,9 @@ $(window).scroll(function() {
     windowTop = scrolls
   }
 })
-// 平滑滚动控制
+/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+                                                 平滑滚动
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
 const myscroll = function() {
   $('a[href*=\\#],area[href*=\\#]').click(function() {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
