@@ -1,13 +1,13 @@
 require('./download.scss')
-window.createDownload = function createDownload(
+
+export function MyDownloadComponent(
     {
       el = '',
       title = '',
       version = 'v-1.0',
-      href = '#'
+      href = '#',
     }) {
-  console.log('da')
-  return new Vue({
+  this.$vue = new Vue({
         el: el,
         template: `
         <div class="source-download">

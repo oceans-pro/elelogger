@@ -6,7 +6,6 @@ $('pre code[class=language-txt]').addClass('hljs')
 
 $('code.hljs[class^=language-]').each(function() {
   const lang = $(this).attr('class').split(' ')[0].split('-')[1]
-  console.log(lang)
   $(this).parents('.copyItem').prepend(`
     <div class="kind-of-lang">${lang}</div>
   `)

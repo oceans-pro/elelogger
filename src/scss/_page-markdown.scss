@@ -48,6 +48,12 @@
     color: var(--color-primary);
   }
 
+  // -------------------------------------------------- 图片 --------------------------------------------------
+  img {
+    display: flex !important;
+    margin: 0 auto;
+  }
+
   mark {
     background-color: #c6e2ff;
   }
@@ -55,6 +61,7 @@
   // 单行代码块
   code:not([class]) {
     font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace !important;
+    font-size: inherit !important;
     color: #d63200;
     padding: 3px 5px;
     margin: 0 2px;
@@ -90,6 +97,16 @@
     color: #999;
   }
 
+  // -------------------------------------------------- 表格 --------------------------------------------------
+  #cnblogs_post_body th,
+  #cnblogs_post_body td,
+  .cnblogs-post-body th,
+  .cnblogs-post-body td {
+    border: 1px solid var(--DividColor) !important;
+    word-break: break-all;
+    white-space: nowrap;
+  }
+
   // -------------------------------------------------- 代码块 --------------------------------------------------
   pre {
     display: flex !important;
@@ -102,8 +119,6 @@
     font-size: 14px !important;
     padding: 1.5rem 1.8rem !important;
     border-radius: 6px !important;
-    //margin-top: 1.5rem;
-    //margin-bottom: 1.5rem;
 
     &.larger-code {
       font-size: 16px !important;;

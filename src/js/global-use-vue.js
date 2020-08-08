@@ -40,3 +40,7 @@ window.useVue = function({created, mounted} = {}) {
   })
   return markdownVue
 }
+
+window.invokeMyFunction = function(cb) {
+  cb()
+}

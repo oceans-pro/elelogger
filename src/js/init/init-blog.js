@@ -111,15 +111,15 @@ $('#sidebar-toggler').click(function() {
 })
 
 $('#blog_nav_sitehome').wrap(`
-      <el-tooltip class="item" effect="dark" content="返回博客园主页" placement="bottom-start">
+      <el-tooltip class="item" effect="dark" content="返回" placement="bottom-start">
       </el-tooltip>
     `)
 $('#blog_nav_myhome').wrap(`
-      <el-tooltip class="item" effect="dark" content="oceans主页" placement="bottom-start">
+      <el-tooltip class="item" effect="dark" content="主页" placement="bottom-start">
       </el-tooltip>
     `)
 $('#blog_nav_newpost').wrap(`
-      <el-tooltip class="item" effect="dark" content="撰写新博客" placement="bottom-start">
+      <el-tooltip class="item" effect="dark" content="撰写" placement="bottom-start">
       </el-tooltip>
     `)
 $('#blog_nav_contact').wrap(`
