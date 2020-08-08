@@ -8,7 +8,7 @@ require('./js/global-use-vue')
 require('./js/global-event-handler')
 require('./js/init')
 require('./js/home')
-require('./vue/download')
+require('./js/vue/download/download')
 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
                                        初始化代码颜色主题
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/

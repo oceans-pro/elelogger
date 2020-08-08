@@ -1,4 +1,4 @@
-require('./_download.scss')
+require('./download.scss')
 window.createDownload = function createDownload(
     {
       el = '',

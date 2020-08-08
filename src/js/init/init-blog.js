@@ -53,18 +53,20 @@ if ($('#topics').length > 0) {
   /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
                                                    复制
   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
+  const ClipboardJS = require('clipboard')
   const clipboard = new ClipboardJS('.clipboard-button')
   clipboard.on('success', function(e) {
-    window.markdownVue.$message({
-      message: '复制成功！',
+    window.markdownVue.$notify({
+      title: '成功',
+      message: '复制成功',
       type: 'success'
     })
     e.clearSelection()
   })
   clipboard.on('error', function(e) {
-    window.markdownVue.$message({
-      message: '复制失败！',
-      type: 'danger'
+    window.markdownVue.this.$notify.error({
+      title: '错误',
+      message: '复制失败，请尝试使用PC端'
     })
     e.clearSelection()
   })
@@ -76,7 +78,7 @@ if ($('#topics').length > 0) {
     //评论头像
     if (option.url.indexOf('GetComments') > -1) {
       setTimeout(function() {
-        owoEmoji()
+        // owoEmoji()
         $.each($('.feedbackItem'), function(index, ele) {
           var self = $(ele)
           var obj = self.find('.blog_comment_body')
@@ -95,25 +97,25 @@ if ($('#topics').length > 0) {
   })
 
   // 引入owo插件
-  window.owoEmoji = function() {
-    $('.commentbox_footer').before(
-        '<div class="OwO" onclick="load_face(this)"><div class="OwO-logo"><i class="fa fa-smile-o" aria-hidden="true"></i></div></div>'
-    )
-  }
+  // window.owoEmoji = function() {
+  //   $('.commentbox_footer').before(
+  //       '<div class="OwO" onclick="load_face(this)"><div class="OwO-logo"><i class="fa fa-smile-o" aria-hidden="true"></i></div></div>'
+  //   )
+  // }
   // 表情按钮按下
-  window.load_face = function(b) {
-    var c = new OwO({
-      logo: '<i class="fa fa-smile-o" aria-hidden="true"></i>',
-      container: document.getElementsByClassName('OwO')[0],
-      target: document.getElementById('tbCommentBody'),
-      api: 'https://cdn.jsdelivr.net/gh/gshang2018/home/gshang.owo.json',
-      position: 'up',
-      width: '100%',
-      maxHeight: '250px',
-    })
-    b.classList.add('OwO-open')
-    b.onclick = null
-  }
+  // window.load_face = function(b) {
+  //   var c = new OwO({
+  //     logo: '<i class="fa fa-smile-o" aria-hidden="true"></i>',
+  //     container: document.getElementsByClassName('OwO')[0],
+  //     target: document.getElementById('tbCommentBody'),
+  //     api: 'https://cdn.jsdelivr.net/gh/gshang2018/home/gshang.owo.json',
+  //     position: 'up',
+  //     width: '100%',
+  //     maxHeight: '250px',
+  //   })
+  //   b.classList.add('OwO-open')
+  //   b.onclick = null
+  // }
 }
 //$('link[href^="/skins/"],link[href^="/css/blog-common"]').remove();
 $('#mainContent').prepend($('#header')) // 将顶部导航挪到右边那个不起眼的位置
@@ -165,19 +167,15 @@ $('#home').append(`
         <li class="btn-main"><a href="javascript:sidebarToggle()"></a></li>
         </ul></div>`
 )
-/*评论模块的滚动隐藏效果*/
+/* 滚动隐藏效果 */
 let windowTop = 0
 $(window).scroll(function() {
   let scrolls = $(this).scrollTop()
   if (scrolls >= windowTop) {
     // 当scrolls>windowTop时，表示页面在向下滑动
     $('.float-btn').addClass('float-btn-hide')
-    console.log('ddd')
-    $('.float-btn li:before, .float-btn li:after').addClass('oceans-sou')
-    $('li .btn-theme-code:before').hide()
     windowTop = scrolls
   } else {
-    //$('#header').removeClass('header-hide');
     $('.float-btn').removeClass('float-btn-hide')
     windowTop = scrolls
   }
@@ -185,7 +183,8 @@ $(window).scroll(function() {
 // 平滑滚动控制
 const myscroll = function() {
   $('a[href*=\\#],area[href*=\\#]').click(function() {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+        && location.hostname == this.hostname) {
       var $target = $(this.hash)
       $target = ($target.length && $target) || $('[name=' + this.hash.slice(1) + ']')
       if ($target.length) {

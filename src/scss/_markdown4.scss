@@ -11,6 +11,8 @@
 
   h2 {
     font-size: 1.8rem;
+    margin-top: 1.8rem;
+    margin-bottom: 2.2rem;
     @media (max-width: 419px) {
       font-size: 1.7rem;
     }
@@ -46,7 +48,13 @@
     color: var(--color-primary);
   }
 
+  mark {
+    background-color: #c6e2ff;
+  }
+
+  // 单行代码块
   code:not([class]) {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace !important;
     color: #d63200;
     padding: 3px 5px;
     margin: 0 2px;
@@ -68,20 +76,37 @@
     margin: 1rem 0;
   }
 
-  // -------------------------------------------------- 代码块 --------------------------------------------------
-  pre{
-    display: flex!important;
+  // 图片标题
+  .img-caption {
+    text-align: center;
+    width: fit-content;
+    min-width: 20%;
+    max-width: 80%;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color-extra-linght);
+    font-size: 13px;
+    color: #999;
   }
+
+  // -------------------------------------------------- 代码块 --------------------------------------------------
+  pre {
+    display: flex !important;
+  }
+
   code.hljs {
     border: none !important;
     width: 100%;
-    font-family: Consolas, source-code-pro, Menlo, Monaco, Courier New, monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace !important;
     font-size: 14px !important;
+    padding: 1.5rem 1.8rem !important;
+    border-radius: 6px !important;
     //margin-top: 1.5rem;
     //margin-bottom: 1.5rem;
 
     &.larger-code {
-      font-size: 16px!important;;
+      font-size: 16px !important;;
     }
   }
 

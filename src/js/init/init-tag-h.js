@@ -77,7 +77,6 @@ if ($('#post_detail').length > 0) {
         if ($target.length) {
           let targetOffset = $target.offset().top
           let speed = 500
-          console.log(Math.abs(targetOffset - window.targetOffset))
           if (Math.abs(targetOffset - window.targetOffset) < 300) {
             speed = 100
           }

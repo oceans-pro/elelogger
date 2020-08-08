@@ -45,7 +45,7 @@ if (routePath === '/oceans/' ||
   if (size > 0) {
     for (let i = 0; i < size; i++) {
       $(`.postTitle:eq(${i}),.postCon:eq(${i}),.postDesc:eq(${i})`).wrapAll(`
-            <section class="mdui-ripple my-el-card" ": ;"></section>
+            <section class="my-el-card" ": ;"></section>
           `)
     }
   }

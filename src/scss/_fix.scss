@@ -28,8 +28,13 @@
 
 .hljs::-webkit-scrollbar-thumb {
   /*滚动条里面小方块*/
-  border-radius: 10px;
-  background-color: #02adf7;
+  //border-radius: 10px;
+  background-color: #c1c1c1;
+
+  &:hover {
+    background-color: #a8a8a8;
+  }
+
   //background-image: -webkit-linear-gradient(
   //                45deg, rgba(255, 255, 255, .2) 25%,
   //                transparent 25%,
@@ -43,6 +48,14 @@
 
 .hljs::-webkit-scrollbar-track {
   /*滚动条里面轨道*/
-  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
-  background: #1b5aa9;
+  background: #f1f1f1;
+  //-webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
 }
+
+//.hljs::-webkit-scrollbar-button:horizontal:start:increment { //横向 开始端 增量按钮
+//  display: block!important;
+//}
+//
+//.hljs::-webkit-scrollbar-button:horizontal:end:decrement { //横向 末尾端 减量按钮
+//  display: block!important;
+//}

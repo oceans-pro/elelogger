@@ -16,7 +16,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@babel/polyfill": "^7.10.4"
+    "@babel/polyfill": "^7.10.4",
+    "clipboard": "^2.0.6"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
