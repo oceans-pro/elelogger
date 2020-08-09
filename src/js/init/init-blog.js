@@ -70,97 +70,9 @@ if ($('#topics').length > 0) {
     })
     e.clearSelection()
   })
-
-  /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
-                                                   评论区头像
-  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
-  $(document).ajaxComplete(function(event, xhr, option) {
-    //评论头像
-    if (option.url.indexOf('GetComments') > -1) {
-      setTimeout(function() {
-        // owoEmoji()
-        $.each($('.feedbackItem'), function(index, ele) {
-          var self = $(ele)
-          var obj = self.find('.blog_comment_body')
-          var id = obj.attr('id').split('_')[2]
-          var blog = self.find('a[id^="a_comment_author"]')
-          var blogUrl = blog.attr('href')
-          var imgSrc = $('#comment_' + id + '_avatar').html() || 'http://pic.cnblogs.com/avatar/simple_avatar.gif'
-          self.prepend('<a href="' + blogUrl + '"><img src="' + imgSrc + '" style="float:left;" class="comment_avatar"></a')
-          $('.feedbackListSubtitle').addClass('feedbackListSubtitle_right')
-          $('.feedbackCon').addClass('feedbackCon_right')
-        })
-
-        //myscroll();
-      }, 300)
-    }
-  })
 }
-/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
-                                                 顶部目录
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
-const $header = $('#header')
-$('#mainContent').prepend($header) // 将顶部导航挪到右边那个不起眼的位置
-$header.prepend(`
-      <div class="hd-menu"><ul>
-        <li><a id="sidebar-toggler" href="javascript:sidebarToggle()"></a></li>
-      </ul></div>`
-)
-$('#sidebar-toggler').click(function() {
-  $('#main').toggleClass('main-widthout-sidebar')
-})
 
-$('#blog_nav_sitehome').wrap(`
-      <el-tooltip class="item" effect="dark" content="返回" placement="bottom-start">
-      </el-tooltip>
-    `)
-$('#blog_nav_myhome').wrap(`
-      <el-tooltip class="item" effect="dark" content="主页" placement="bottom-start">
-      </el-tooltip>
-    `)
-$('#blog_nav_newpost').wrap(`
-      <el-tooltip class="item" effect="dark" content="撰写" placement="bottom-start">
-      </el-tooltip>
-    `)
-$('#blog_nav_contact').wrap(`
-      <el-tooltip class="item" effect="dark" content="联系" placement="bottom-start">
-      </el-tooltip>
-    `)
-$('#blog_nav_rss').wrap(`
-      <el-tooltip class="item" effect="dark" content="订阅" placement="bottom-start">
-      </el-tooltip>
-    `)
-$('#blog_nav_admin').wrap(`
-      <el-tooltip class="item" effect="dark" content="设置" placement="bottom-start">
-      </el-tooltip>
-    `)
-new Vue({el: '#navList', name: 'NavRight', template: $('#navList').prop('outerHTML')})
 
-/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
-                                                 侧边悬浮按钮
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
-$('#home').append(`
-        <div class="float-btn"><ul>
-        <li class="btn-top"><a href="#header"></a></li>
-        <li class="btn-fullscreen"><a href="javascript:handleFullScreen();handleWideMode();"></a></li>
-        <li class="btn-theme"><a  href="javascript:changeTheme()"></a></li>
-        <li class="btn-theme-code"><a href="javascript:changeCodeTheme()"></a></li>
-        <li class="btn-main"><a href="javascript:sidebarToggle()"></a></li>
-        </ul></div>`
-)
-/* 滚动隐藏效果 */
-let windowTop = 0
-$(window).scroll(function() {
-  let scrolls = $(this).scrollTop()
-  if (scrolls >= windowTop) {
-    // 当scrolls>windowTop时，表示页面在向下滑动
-    $('.float-btn').addClass('float-btn-hide')
-    windowTop = scrolls
-  } else {
-    $('.float-btn').removeClass('float-btn-hide')
-    windowTop = scrolls
-  }
-})
 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
                                                  平滑滚动
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/

@@ -4,7 +4,7 @@ Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
 */
 .cnblogs-markdown .hljs, .cnblogs-markdown pre{
     color: #abb2bf !important;
-    background: #282c34 !important;
+    background: #21252b !important;
 }
 
 .hljs-keyword, .hljs-operator {

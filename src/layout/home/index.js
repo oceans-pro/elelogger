@@ -1,9 +1,10 @@
-/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
-                                             美化主页
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
+/**
+ * 主页，如: https://www.cnblogs.com/oceans/
+ */
 import homeConfig from '@/config/home'
 
 const routePath = window.location.pathname
+// 判断为主页
 if (routePath === '/oceans/' ||
     routePath === '/oceans' ||
     (routePath === '/oceans/default.html' && window.location.search === '?page=1')) {
@@ -35,10 +36,11 @@ if (routePath === '/oceans/' ||
           `)
     }
   }
-  $('.my-el-card').css('margin', '10px')
+  const $myElCart = $('.my-el-card')
+  $myElCart.css('margin', '10px')
   const theme = $('html').attr('theme')
   if (theme !== 'dark') { // 如果是 白天主题，才需要美化为卡片
-    $('.my-el-card').css('box-shadow', '0 2px 12px 0 rgba(0,0,0,.1)')
+    $myElCart.css('box-shadow', '0 2px 12px 0 rgba(0,0,0,.1)')
   }
   // -------------------------------------------------- 去除不需要的部分 --------------------------------------------------
   $('.postSeparator').remove()

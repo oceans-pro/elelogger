@@ -62,7 +62,7 @@
   code:not([class]) {
     font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace !important;
     font-size: inherit !important;
-    color: #d63200;
+    color: #d63200!important;
     padding: 3px 5px;
     margin: 0 2px;
     border-radius: 2px !important;
@@ -141,12 +141,12 @@
 :root[theme='dark'] {
   #cnblogs_post_body {
     blockquote {
-      background-color: var(--color-black) !important;
+      background-color: #1d1f23 !important;
     }
 
     code:not([class]) {
       color: var(--color-text-primary) !important;
-      background-color: var(--color-black) !important;
+      background-color: #1d1f23 !important;
     }
 
     th {
