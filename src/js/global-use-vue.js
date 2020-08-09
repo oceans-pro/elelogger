@@ -42,5 +42,8 @@ window.useVue = function({created, mounted} = {}) {
 }
 
 window.invokeMyFunction = function(cb) {
+  const start = new Date().getTime()
   cb()
+  const end = new Date().getTime()
+  console.log('debug: onload耗时'+(end - start)+'毫米秒')
 }
