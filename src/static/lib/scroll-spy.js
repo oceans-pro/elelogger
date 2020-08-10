@@ -78,11 +78,11 @@ jQuery(function($) {
             }
           }
 
-          if (scrollDir == 'down' && varscroll > contentTop[i] - 50 && varscroll < contentTop[i] + 50) {
+          if (scrollDir === 'down' && varscroll > contentTop[i] - 50 && varscroll < contentTop[i] + 50) {
             $('.' + itemClass).removeClass(itemHover)
             $('.' + itemClass + ':eq(' + i + ')').addClass(itemHover)
           }
-          if (scrollDir == 'up') {
+          if (scrollDir === 'up') {
             bottomView(i)
           }
         }

@@ -1,0 +1,43 @@
+#blogCalendar {
+  padding: 14px;
+  width: 100%;
+  text-align: center;
+  margin: 0 !important;
+
+  .CalTitle {
+    width: 100%;
+  }
+
+  .CalNextPrev a {
+    font-size: 0;
+  }
+
+  .CalNextPrev:nth-child(1) a:before {
+    content: "\e6de";
+    font-family: element-icons;
+    font-size: 14px;
+  }
+
+  .CalNextPrev:nth-child(3) a:before {
+    content: "\e6e0";
+    font-family: element-icons;
+    font-size: 14px;
+  }
+
+  .CalDayHeader {
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color-base);
+    margin-bottom: 10px;
+  }
+
+  .CalOtherMonthDay {
+    color: var(--border-color-lighter);
+  }
+
+  u {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
+
