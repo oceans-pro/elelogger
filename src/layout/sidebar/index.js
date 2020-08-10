@@ -25,16 +25,19 @@ $ul.append(`<li><a href="https://www.cnblogs.com/${userPath}/ajax/sidecolumn.asp
 $ul.append(`<li><a href="https://www.cnblogs.com/${userPath}/ajax/TopLists.aspx">随笔排行</a></li>`)
 $ul.append(`<li><a id="my-calendar" href="https://www.cnblogs.com/${userPath}/ajax/calendar.aspx?dateStr=">写作日历</a></li>`)
 $ul.append(`<li><a href="https://www.cnblogs.com/${userPath}/ajax/sidecolumn.aspx">最新随笔</a></li>`)
+$ul.children('li:contains(我的评论)').remove()
+$ul.children('li:contains(我的评论)').remove()
 // $ul.append(`<li><a href="https://www.cnblogs.com/${userPath}/ajax/sidecolumn.aspx">我的公告</a></li>`)
 
 /**
  * 首次点击
  */
+eleNotice.calendarNoticeNum = 0
 $('#my-calendar').click(function(e) {
   e.preventDefault()
   for (const item of ajaxStorage) {
     if (item.url.startsWith(`/${userPath}/ajax/calendar.aspx`)) {
-      eleNotice.$notify({message: item.xhr.responseText, title: '写作日志', dangerouslyUseHTMLString: true, duration: 0})
+      showCalendar(item.xhr.responseText)
       // loadBlogCalendar('2020/09/10'); return false;
       // myLoadBlogCalendar('2020/09/10'); return false;
       useMyFunction()
@@ -49,11 +52,27 @@ window.myLoadBlogCalendar = function(date) {
     type: 'get',
     dataType: 'text',
     success: function(html) {
-      console.log(html)
-      eleNotice.$notify({message: html, title: '写作日志', dangerouslyUseHTMLString: true, duration: 0})
+      // eleNotice.$notify({message: html, title: '写作日历', dangerouslyUseHTMLString: true, duration: 0})
+      showCalendar(html)
       useMyFunction()
     }
   })
+}
+
+function showCalendar(htmlStr) {
+  if (eleNotice.calendarNoticeNum === 2) {
+    return eleNotice.$message.error('最多显示两个日历哦~')
+  }
+  eleNotice.$notify({
+    message: htmlStr,
+    title: '写作日历',
+    dangerouslyUseHTMLString: true,
+    duration: 0,
+    onClose: function() {
+      eleNotice.calendarNoticeNum--
+    }
+  })
+  eleNotice.calendarNoticeNum++
 }
 
 function useMyFunction() {
