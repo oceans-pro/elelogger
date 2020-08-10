@@ -39,10 +39,9 @@ img {
   max-width: 100% !important;
 }
 
-@media screen and (min-width: 0px){
-  :before, :after {
-    font-family: fontawesome, element-icons;
-  }
+
+:before, :after {
+  font-family: fontawesome, element-icons;
 }
 
 

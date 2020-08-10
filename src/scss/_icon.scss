@@ -1,113 +1,4 @@
 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
-                                   悬浮按钮黑色样式
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
-@media screen and (min-width: 900px) {
-  /* 长方形 */
-  .float-btn li:before {
-    content: "";
-    position: absolute;
-    right: calc(100% + 10px);
-    white-space: nowrap;
-    background: #303133;
-    border-radius: 4px;
-    height: 36px;
-    display: none;
-    color: white;
-    font-size: var(--text-h6);
-    align-items: center;
-    padding: 0 14px;
-    transformX: 0%;
-    transition: all 300ms;
-  }
-
-  /* 三角形 */
-  .float-btn li:after {
-    content: "";
-    position: absolute;
-    right: calc(100% + 5px);
-    width: 10px;
-    height: 10px;
-    z-index: -1;
-    color: white;
-    background: #303133;
-    transform: rotate(45deg);
-    display: none;
-    transformX: 0%;
-    transition: all 300ms;
-  }
-}
-
-/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
-                                                 悬浮按钮图标
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
-// 1
-.btn-top a:before {
-  content: "\f0d8"
-}
-
-// 2
-.btn-fullscreen a:before {
-  content: "\f0b2";
-}
-
-
-// 3
-.btn-theme a:before {
-  content: "\f0eb"; /* fa-lightbulb-o */
-}
-
-:root[theme="dark"] .btn-theme a:before {
-  content: "\f186" !important;
-}
-
-// 4
-.btn-theme-code a:before {
-  content: "\f0e4";
-}
-
-
-// 5
-.btn-main a:before {
-  content: "\f0c9" !important;
-}
-
-/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
-                                          悬浮按钮文字
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
-@media screen and (min-width: 900px) {
-  // 1
-  .btn-top:before {
-    content: "返回顶部" !important;
-  }
-  // 2
-  .btn-fullscreen:before {
-    content: "切换全屏" !important;
-  }
-  // 3
-  .btn-theme:before {
-    content: "切换黑夜" !important;
-  }
-  :root[theme="dark"] .btn-theme:before {
-    content: "切换白天" !important;
-  }
-  // 4
-  .btn-theme-code {
-    &:before {
-      content: "切换高亮" !important;
-    }
-  }
-  // 5
-  .btn-main:before {
-    content: "隐藏侧边" !important;
-  }
-
-  .btn-main.btn-main-open:before {
-    content: "打开侧边" !important;
-  }
-}
-
-
-/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
                                                  其他
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
 
@@ -177,11 +68,6 @@
 }
 
 
-//.btn-sidebar {
-//  display: none !important;
-//}
-
-
 #blog_nav_sitehome:before {
   content: "\f08b";
 }
@@ -197,59 +83,6 @@
 }
 
 
-.float-btn li:hover:before,
-.float-btn li:hover:after {
-  display: flex;
-  transition: all 300ms;
-  transformX: 100%;
-}
-
-
-/********* 悬浮按钮 ********/
-.float-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 10px;
-  z-index: 20;
-  transition: 0.3s transform;
-}
-
-.float-btn-hide {
-  transform: translateX(200%);
-  transition: 0.3s transform;
-}
-
-.float-btn ul {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-gap: 10px;
-  padding: 0;
-  margin: 0;
-}
-
-.float-btn li {
-  background: var(--color-white);
-  color: var(--color-text-regular);
-  font-family: FontAwesome;
-  list-style-type: none;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  line-height: 40px;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  border-radius: 100px;
-  box-shadow: var(--light-shadow);
-  position: relative;
-  overflow: visible;
-}
-
-.float-btn li a {
-  display: block;
-  width: 40px;
-  height: 40px;
-}
 
 
 .sidebar-fixed #sidebar_scroller {

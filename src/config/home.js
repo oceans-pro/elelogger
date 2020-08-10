@@ -1,5 +1,10 @@
 export default {
   carouselList: [
+    { // ele
+      href: 'https://www.cnblogs.com/oceans/p/ele.html',
+      src: 'https://img2020.cnblogs.com/blog/2097935/202008/2097935-20200810143623560-1369039146.png',
+      title: 'eleBlog',
+    },
     { // 站长统计
       href: 'https://web.umeng.com/main.php?c=site&a=frame&siteid=1279140987#!/1596382939554/site/overview/1/1279140987/2020-08-02/2020-08-02',
       src: 'https://img2020.cnblogs.com/blog/2097935/202008/2097935-20200809012520481-718386858.jpg',
@@ -11,7 +16,12 @@ export default {
       title: '潍坊百年建材',
     },
   ],
-  carouselListForPc: [
+  carouselListForMobile: [
+    { // ele
+      href: 'https://www.cnblogs.com/oceans/p/ele.html',
+      src: 'https://img2020.cnblogs.com/blog/2097935/202008/2097935-20200810143635620-840262051.png',
+      title: 'eleBlog',
+    },
     { // 站长统计
       href: 'https://web.umeng.com/main.php?c=site&a=frame&siteid=1279140987#!/1596382939554/site/overview/1/1279140987/2020-08-02/2020-08-02',
       src: 'https://img2020.cnblogs.com/blog/2097935/202008/2097935-20200809012520481-718386858.jpg',

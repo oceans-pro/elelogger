@@ -1,3 +1,4 @@
+require('./_home.scss')
 /**
  * 主页，如: https://www.cnblogs.com/oceans/
  */
@@ -11,10 +12,10 @@ if (routePath === '/oceans/' ||
   // -------------------------------------------------- 轮播图 --------------------------------------------------
   $('.forFlow').prepend(`
       <div id="carousel-vue" style="margin: 10px;">
-        <el-carousel height="200px">
+        <el-carousel height="250px">
           <el-carousel-item v-for="(item, index) in carouselList" :key="index">
               <a :href="item.href" style="width: 100%;" target="_blank">
-                <el-image :src="item.src" style="width: 100%;height:200px" fit="cover"></el-image>
+                <el-image :src="item.src" style="width: 100%;height:250px" fit="cover"></el-image>
               </a>
           </el-carousel-item>
         </el-carousel>

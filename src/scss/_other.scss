@@ -118,25 +118,3 @@
 }
 
 
-.feedbackListSubtitle a[id^="a_comment_author"] {
-  order: 2;
-  overflow: hidden;
-  /* width: 100%; */
-  /* margin-right: 120px; */
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  color: var(--color-text-regular);
-  /* padding-right: 200px!important; */
-}
-
-.louzhu {
-  order: 3;
-}
-
-.louzhu:before {
-  content: "\f058";
-  margin-left: 4px;
-  color: #ff7f10;
-  font-family: fontawesome;
-  font-size: var(--text-h5) !important;
-}

@@ -1,10 +1,12 @@
+require('./_comment.scss')
+require('./_comment_avatar.scss')
+require('./_comment_textarea.scss')
 /**
  * 每一个.feedbackItem都有头像的信息，但是博客园默认的皮肤都不显示而已...
  */
-$(document).ready(function() {
+setTimeout(function() {
   window.ajaxStorage.forEach(item => {
         if (item.option.url.indexOf('GetComments') > -1) {
-          console.log('debug: ' + 'GetComments存在')
           $.each($('.feedbackItem'), function(index, ele) {
             const $ele = $(ele)
             const obj = $ele.find('.blog_comment_body')
@@ -21,5 +23,5 @@ $(document).ready(function() {
         }
       }
   )
-})
+}, 1000)
 

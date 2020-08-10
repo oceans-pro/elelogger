@@ -1,3 +1,9 @@
+@media screen and (max-width: 900px) {
+  #btnZzk {
+    display: none;
+  }
+}
+
 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
                                                  侧边栏
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
@@ -315,6 +321,7 @@
   border: none;
   background: inherit;
   outline: none;
+  color: var(--color-text-primary);
   background: var(--background-color-base);
   border-radius: 4px;
 }

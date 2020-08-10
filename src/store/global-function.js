@@ -21,6 +21,7 @@ function isMobile() {
   return mobile_flag
 }
 
+
 function clearForHelloPage() {
   $(`h1.postTitle,
   div.postTitle,

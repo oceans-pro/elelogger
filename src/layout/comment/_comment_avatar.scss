@@ -1,0 +1,21 @@
+/*** 评论头像开始**/
+@media screen and (min-width: 0px) {
+
+  .feedbackListSubtitle_right,
+  .feedbackCon_right {
+    margin-left: 60px;
+  }
+
+  .comment_avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    border: 1px solid var(--DividColor);
+  }
+
+  .comment_avatar img {
+    box-shadow: 0 0 1px 0px rgba(51, 51, 51, .1) !important;
+  }
+}
+
+/*** 评论头像 结束**/

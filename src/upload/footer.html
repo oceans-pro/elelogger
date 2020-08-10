@@ -7,11 +7,18 @@
   window.ajaxStorage = []
   $(document).ajaxComplete(function(event, xhr, option) {
     var item = {}
+    item.url = option.url
     item.event = event
     item.xhr = xhr
     item.option = option
     item.time = new Date()
-    window.ajaxStorage.push(item)
+    if (window.isBundleJSCome) { // 后来的请求可以被监听到，需要在bundle.js调用ajaxListener
+      item.later = true
+      $(document).trigger('ajax-later', item)
+    } else {
+      item.later = false
+    }
+    window.ajaxStorage.push(item) // 简单备份下
   })
 </script>
 <!--********************************************* HTML ***********************************************-->
