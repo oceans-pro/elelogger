@@ -27,16 +27,42 @@ $ul.append(`<li><a id="my-calendar" href="https://www.cnblogs.com/${userPath}/aj
 $ul.append(`<li><a href="https://www.cnblogs.com/${userPath}/ajax/sidecolumn.aspx">最新随笔</a></li>`)
 // $ul.append(`<li><a href="https://www.cnblogs.com/${userPath}/ajax/sidecolumn.aspx">我的公告</a></li>`)
 
+/**
+ * 首次点击
+ */
 $('#my-calendar').click(function(e) {
   e.preventDefault()
-  window.ajaxStorage.forEach(item => {
+  for (const item of ajaxStorage) {
     if (item.url.startsWith(`/${userPath}/ajax/calendar.aspx`)) {
-      const $table = $(item.xhr.responseText)
-      eleNotice.$alert(item.xhr.responseText, '写作日志', {dangerouslyUseHTMLString: true})
+      eleNotice.$notify({message: item.xhr.responseText, title: '写作日志', dangerouslyUseHTMLString: true, duration: 0})
+      // loadBlogCalendar('2020/09/10'); return false;
+      // myLoadBlogCalendar('2020/09/10'); return false;
+      useMyFunction()
+      return
+    }
+  }
+})
+window.myLoadBlogCalendar = function(date) {
+  $.ajax({
+    url: getAjaxBaseUrl() + 'calendar.aspx',
+    data: {dateStr: date},
+    type: 'get',
+    dataType: 'text',
+    success: function(html) {
+      console.log(html)
+      eleNotice.$notify({message: html, title: '写作日志', dangerouslyUseHTMLString: true, duration: 0})
+      useMyFunction()
     }
   })
-})
+}
 
+function useMyFunction() {
+  const $arrows = $('.CalNextPrev a')
+  $arrows.each(function() {
+    const arrowText = $(this).attr('onclick').toString().replace('load', 'myLoad')
+    $(this).attr('onclick', arrowText)
+  })
+}
 
 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
                                                  其他
