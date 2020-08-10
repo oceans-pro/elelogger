@@ -32,16 +32,19 @@ if (routePath === '/oceans/' ||
   const size = $('.postTitle').size()
   if (size > 0) {
     for (let i = 0; i < size; i++) {
-      $(`.postTitle:eq(${i}),.postCon:eq(${i}),.postDesc:eq(${i})`).wrapAll(`
-            <section class="my-el-card" ": ;"></section>
-          `)
+      $('.postTitle:eq(${i}),' +
+          '.postCon:eq(${i}),' +
+          '.postDesc:eq(${i})')
+          .wrapAll(`<section></section>`)
     }
   }
+
   const $myElCart = $('.my-el-card')
   $myElCart.css('margin', '10px')
-  const theme = $('html').attr('theme')
+  console.log('debug: cookie比较费时', theme)
   if (theme !== 'dark') { // 如果是 白天主题，才需要美化为卡片
-    $myElCart.css('box-shadow', '0 2px 12px 0 rgba(0,0,0,.1)')
+    $myElCart.addClass('my-el-card')
+    // $myElCart.css('box-shadow', '0 2px 12px 0 rgba(0,0,0,.1)')
   }
   // -------------------------------------------------- 去除不需要的部分 --------------------------------------------------
   $('.postSeparator').remove()

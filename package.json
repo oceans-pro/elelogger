@@ -9,9 +9,10 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
+    "clear": "node build/delete.js",
     "upload": "node build/upload-static.js",
-    "build-and-upload": "npm run build && npm run upload",
-    "build-and-uglify-and-upload": "cross-env NODE_ENV=production webpack && npm run upload"
+    "clear-build-upload": "npm run clear && npm run build && npm run upload",
+    "clear-build-uglify-upload": "npm run clear && cross-env NODE_ENV=production webpack && npm run upload"
   },
   "author": "",
   "license": "ISC",

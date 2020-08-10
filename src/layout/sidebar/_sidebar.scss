@@ -1,3 +1,12 @@
+#sideBar{
+  #footer{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+  }
+}
+
+
 @media screen and (max-width: 900px) {
   #btnZzk {
     display: none;
@@ -83,23 +92,6 @@
 .sidebar-block[id^="sidebar_link"] ul {
   display: flex;
   flex-wrap: wrap;
-}
-
-/* oceans */
-#sidebar_toptags li {
-  margin: 4px;
-  background-color: #ecf5ff;
-  color: #409eff;
-  border: 1px solid #d9ecff;
-  padding: 0 6px;
-  border-radius: 4px;
-}
-
-#sidebar_toptags li:hover {
-  border: 1px solid #409eff;
-  background-color: #409eff;
-  color: #ffffff;
-  cursor: pointer;
 }
 
 
@@ -259,44 +251,3 @@
   transition: all 300ms;
 }
 
-.div_my_zzk {
-  display: flex;
-  height: 40px;
-  margin: 0;
-  align-items: center;
-}
-
-.input_my_zzk {
-  flex-grow: 1;
-  height: 30px;
-  padding: 2px 16px !important;
-  border: none;
-  background: inherit;
-  outline: none;
-  color: var(--color-text-primary);
-  background: var(--background-color-base);
-  border-radius: 4px;
-}
-
-.div_my_zzk input, .input_my_zzk input {
-  width: 0;
-}
-
-.btn_my_zzk {
-  border: 0 !important;
-  outline: none !important;
-  border-radius: 6px;
-  color: #fff;
-  background-color: #409eff;
-  margin-left: 10px;
-  height: 30px !important;
-  width: auto !important;
-  padding: 0 8px !important;
-  /* oceans */
-  position: relative;
-}
-
-.btn_my_zzk:hover {
-  background-color: #66b1ff;
-  cursor: pointer;
-}

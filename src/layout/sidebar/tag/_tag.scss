@@ -1,0 +1,15 @@
+:root[theme=dark] {
+  #sidebar_toptags li {
+    background-color: var(--background-color-base);
+    color: var(--color-text-primary);
+    border: none;
+
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+#sidebar_toptags li{
+  margin-bottom: 5px;
+}

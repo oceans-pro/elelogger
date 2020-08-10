@@ -2,3 +2,19 @@
 .dayTitle {
   display: none;
 }
+
+.my-el-card {
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1)
+}
+
+:root[theme=dark] {
+  // 标题
+  .postTitle {
+    color: white;
+  }
+
+  // 摘要
+  .c_b_p_desc{
+    color: var(--color-text-secondary);
+  }
+}
