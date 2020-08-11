@@ -1,8 +1,25 @@
-:root[theme=dark] {
-  .btn_my_zzk {
-    background-color: var(--color-text-primary);
+.btn_my_zzk {
+  border: 0 !important;
+  outline: none !important;
+  border-radius: 6px !important;
+  margin-left: 10px !important;
+  height: 30px !important;
+  width: auto !important;
+  padding: 0 8px !important;
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
   }
 }
+
+:root[theme=dark] {
+  .btn_my_zzk {
+    color: black !important;
+    background-color: var(--color-text-primary) !important;
+  }
+}
+
 
 .div_my_zzk {
   display: flex;
@@ -25,25 +42,4 @@
 
 .div_my_zzk input, .input_my_zzk input {
   width: 0;
-}
-
-
-
-.btn_my_zzk {
-  border: 0 !important;
-  outline: none !important;
-  border-radius: 6px;
-  //color: #fff;
-  //background-color: #409eff;
-  margin-left: 10px;
-  height: 30px !important;
-  width: auto !important;
-  padding: 0 8px !important;
-  /* oceans */
-  position: relative;
-}
-
-.btn_my_zzk:hover {
-  //background-color: #66b1ff;
-  cursor: pointer;
 }

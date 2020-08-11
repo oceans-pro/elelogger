@@ -39,9 +39,8 @@ if (routePath === '/oceans/' ||
     }
   }
   const $myElCart = $('.my-el-card')
-  if (theme !== 'dark') { // 如果是 白天主题，才需要美化为卡片
-    $myElCart.addClass('my-el-card-shadow')
-  }
+  $myElCart.addClass('my-el-card-shadow')
+
   // -------------------------------------------------- 去除不需要的部分 --------------------------------------------------
   $('.postSeparator').remove()
   $('.postDesc').contents().filter(function() {

@@ -68,6 +68,8 @@ if ($('#post_detail').length > 0) {
           `)
         })
 
+    // todo 这里可以进一步优化，根据距离计算速度
+    window.targetOffset = 0
     $('a[href^="#scroller"]').click(function() {
       // 判断是否为锚点，增强了鲁棒性
       if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '')
