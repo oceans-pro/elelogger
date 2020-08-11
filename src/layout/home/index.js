@@ -1,8 +1,8 @@
 require('./_home.scss')
 /**
  * 主页，如: https://www.cnblogs.com/oceans/
+ * 主页也要力求精简，比较现在不是QQ空间流行的那个年代了...
  */
-import homeConfig from '@/config/home'
 
 const routePath = window.location.pathname
 // 判断为主页
