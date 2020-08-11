@@ -62,7 +62,7 @@
   code:not([class]) {
     font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace !important;
     font-size: inherit !important;
-    color: #d63200!important;
+    color: #d63200 !important;
     padding: 3px 5px;
     margin: 0 2px;
     border-radius: 2px !important;
@@ -140,6 +140,7 @@
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
 :root[theme='dark'] {
   #cnblogs_post_body {
+
     blockquote {
       background-color: #1d1f23 !important;
     }
@@ -151,6 +152,10 @@
 
     th {
       background-color: var(--color-white);
+    }
+
+    .mermaid {
+      background-color: #81d081;
     }
   }
 }

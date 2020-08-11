@@ -3,7 +3,15 @@
   display: none;
 }
 
+.hover-link:hover {
+  color: var(--color-primary);
+}
+
 .my-el-card {
+  margin: 10px;
+}
+
+.my-el-card-shadow {
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1)
 }
 
@@ -14,7 +22,7 @@
   }
 
   // 摘要
-  .c_b_p_desc{
+  .c_b_p_desc {
     color: var(--color-text-secondary);
   }
 }

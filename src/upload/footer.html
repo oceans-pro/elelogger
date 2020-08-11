@@ -8,16 +8,16 @@
   $(document).ajaxComplete(function(event, xhr, option) {
     var item = {}
     item.url = option.url
+    if (window.isBundleJSCome) { // 后来的请求可以被监听到，需要在bundle.js调用ajaxListener
+      item.later = true
+      $(document).trigger('ajax-later', item) // 传递item的引用
+    } else {
+      item.later = false
+    }
     item.event = event
     item.xhr = xhr
     item.option = option
     item.time = new Date()
-    if (window.isBundleJSCome) { // 后来的请求可以被监听到，需要在bundle.js调用ajaxListener
-      item.later = true
-      $(document).trigger('ajax-later', item)
-    } else {
-      item.later = false
-    }
     window.ajaxStorage.push(item) // 简单备份下
   })
 </script>
@@ -33,8 +33,10 @@
 <link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.css">
 <script>
   // 防止七牛云缓存，增加时间戳
-  var href = 'https://oceans.100jiancai.cn/main.css?time=' + new Date().getTime()
-  $('head').append('<link rel="stylesheet" href="' + href + '">')
+  var href1 = 'https://oceans.100jiancai.cn/style.css?time=' + new Date().getTime()
+  $('head').append('<link rel="stylesheet" href="' + href1 + '">')
+  var href2 = 'https://oceans.100jiancai.cn/main.css?time=' + new Date().getTime()
+  $('head').append('<link rel="stylesheet" href="' + href2 + '">')
 </script>
 <!--********************************************* JavaScript ***********************************************-->
 

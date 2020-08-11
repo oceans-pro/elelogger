@@ -1,6 +1,7 @@
 /**
  * 侧边栏 - 文件
  * 控制侧边栏，不要出现滚动条
+ * 侧边栏很多元素都是通过XHR动态获取的，十分头疼
  */
 require('./_sidebar.scss')
 require('./_hide.scss')
@@ -23,8 +24,8 @@ $sidebar.scrollAlone() // 防止以小带大
 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
                                                  其他
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
-$sidebar
-    .append($('#footer')
-        .html(`Copyright-2020 <a href="https://home.cnblogs.com/u/oceans/">oceans-pro</a>`))
+$sidebarMain = $('#sideBarMain')
+$sidebarMain.append($('#footer')
+    .html(`Copyright-2020 <a href="https://home.cnblogs.com/u/oceans/">oceans-pro</a>`))
 
 $('#sidebar_search h3').text('站内搜索')
