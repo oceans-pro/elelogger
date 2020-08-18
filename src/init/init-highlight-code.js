@@ -1,7 +1,8 @@
 // 高亮
-$('pre code').each(function(i, block) {
-  hljs.highlightBlock(block)
-})
+// $('pre code').each(function(i, block) {
+//   hljs.highlightBlock(block)
+// })
+// 不要重复
 $('pre code[class=language-txt]').addClass('hljs')
 
 $('code.hljs[class^=language-]').each(function() {

@@ -17,12 +17,12 @@
   justify-content: center;
   color: #fff;
   border-radius: 2px;
-  background: var(--color-primary)
+  background: var(--color-primary);
 }
 
 .zip:before {
   font-family: fontawesome;
-  content: "\f1c6"
+  content: "\f1c6";
 }
 
 .source-info {
@@ -57,5 +57,5 @@
 .download-btn a::before {
   font-family: fontawesome;
   content: "\f019";
-  color: var(--color-primary)
+  color: var(--color-primary);
 }

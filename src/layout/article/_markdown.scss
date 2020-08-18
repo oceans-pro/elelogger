@@ -117,7 +117,7 @@
     width: 100%;
     font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace !important;
     font-size: 14px !important;
-    padding: 1.5rem 1.8rem !important;
+    padding: 1rem 1rem !important;
     border-radius: 6px !important;
 
     &.larger-code {
@@ -140,6 +140,10 @@
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
 :root[theme='dark'] {
   #cnblogs_post_body {
+
+    strong {
+      color: #eeeeee;
+    }
 
     blockquote {
       background-color: #1d1f23 !important;

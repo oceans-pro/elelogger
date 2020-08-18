@@ -1,11 +1,9 @@
-#sideBar{
-  #footer{
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-  }
+@charset "UTF-8";
+#sideBar #footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
 }
-
 
 @media screen and (max-width: 1300px) {
   #btnZzk {
@@ -16,11 +14,7 @@
 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
                                                  侧边栏
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
-
-
-
 @media screen and (max-width: 1200px) {
-
   #sideBarMain,
   #leftcontentcontainer,
   #blog-sidecolumn,
@@ -32,15 +26,12 @@
     width: 100%;
     font-family: FontAwesome;
   }
-
   #sidebar_scroller {
-    margin: 0 !important
+    margin: 0 !important;
   }
-
 }
 
 @media screen and (min-width: 1200px) {
-
   #sideBarMain,
   #leftcontentcontainer,
   #blog-sidecolumn,
@@ -52,7 +43,6 @@
     /* width: 100%; */
     font-family: FontAwesome;
   }
-
 }
 
 #sidebar_shortcut ul {
@@ -93,7 +83,6 @@
   display: flex;
   flex-wrap: wrap;
 }
-
 
 #sidebar_imagecategory li,
 .sidebar-block[id^="sidebar_link"] li {
@@ -174,7 +163,6 @@
   margin-right: 10px;
 }
 
-
 .recent_comment_author {
   border-bottom: 1px dashed var(--border-color-base);
   padding-bottom: 10px;
@@ -195,7 +183,6 @@
   padding: 14px 20px 0;
   /* border-bottom: 1px solid var(--border-color-extra-linght); */
   position: relative;
-
 }
 
 .catListTitle:before {
@@ -203,10 +190,8 @@
   border-left: solid 4px var(--color-primary);
   margin-right: 10px;
   width: fit-content;
-
 }
 
-// 侧边栏同一的样式
 .sidebar-block ul,
 #profile_block,
 #blog-news,
@@ -250,4 +235,3 @@
   background: var(--color-info-0);
   transition: all 300ms;
 }
-

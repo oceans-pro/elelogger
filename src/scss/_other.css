@@ -37,7 +37,7 @@
 #navList, .hd-menu ul {
   padding: 0;
   margin: 0;
-  list-style-type: none
+  list-style-type: none;
 }
 
 #navList li a, .hd-menu li a {
@@ -103,8 +103,6 @@
 
 .side-choose .active {
   color: var(--color-text-primary) !important;
-  // 不要长的？
-  //border-bottom: 2px solid var(--color-primary);
 }
 
 .side-choose .active:after {
@@ -117,5 +115,3 @@
   bottom: 0;
   margin: 0 auto;
 }
-
-

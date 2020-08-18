@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /************** 博客正文基本样式 开始 ***************/
 @media screen and (min-width: 0px) {
   .post {
@@ -6,11 +7,9 @@
     width: 100%;
     border: 0 solid var(--border-color-light);
   }
-
   .postBody {
     order: 1;
     /* background: var(--color-white); */
-    // padding: 20px 20px !important;
     border-radius: 0;
     box-sizing: border-box;
     display: grid;
@@ -18,7 +17,6 @@
     width: 100%;
     overflow: hidden;
   }
-
   .post .postTitle {
     margin: 0;
     border-radius: 0;
@@ -30,7 +28,6 @@
     /* background: var(--color-white); */
     /* border-bottom: 1px solid var(--border-color-extra-linght); */
   }
-
   .post .postTitle:after {
     content: "";
     width: 40px;
@@ -45,12 +42,10 @@
     transition: width 500ms;
     display: none;
   }
-
   .post .postTitle:hover:after {
     width: 80px;
     transition: width 500ms;
   }
-
   .post .postDesc {
     padding: 10px 20px 30px;
     font-size: 0;
@@ -62,56 +57,45 @@
     text-align: center;
     /* border-bottom: 1px solid var(--border-color-extra-linght); */
   }
-
   .post .postDesc span,
   .post .postDesc a {
     font-size: var(--text-h6);
     margin-right: 20px;
   }
-
   .post .postDesc span:before,
   .post .postDesc a:before {
     margin-right: 4px;
   }
-
   #post-date:before {
     content: "\e71f";
     font-family: element-icons;
   }
-
   #post_view_count:before {
     content: "\e769";
     font-family: element-icons;
   }
-
   #post_comment_count:before {
     content: "\e72e";
     font-family: element-icons;
   }
-
   #post_comment_count {
     /* flex-grow: 1; */
   }
-
   .post .postDesc a[href^="https://www.cnblogs.com/"]:before {
     content: "\e6e3";
     font-family: element-icons;
   }
-
   .post .postDesc a[target="_blank"]:before {
     content: "\e786";
     font-family: element-icons;
   }
-
   .post .postDesc a[rel="nofollow"]:before {
     content: "\e764";
     font-family: element-icons;
   }
-
   .post .postDesc a[href="javascript:void(0)"] {
     margin-right: 0;
   }
-
   .post .postDesc a[href="javascript:void(0)"]:before {
     content: "\e765";
     font-family: element-icons;
