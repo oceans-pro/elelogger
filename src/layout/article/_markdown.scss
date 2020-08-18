@@ -116,9 +116,10 @@
     border: none !important;
     width: 100%;
     font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace !important;
-    font-size: 14px !important;
+    font-size: 14px!important;
     padding: 1rem 1rem !important;
     border-radius: 6px !important;
+    transition: all;
 
     &.larger-code {
       font-size: 16px !important;;

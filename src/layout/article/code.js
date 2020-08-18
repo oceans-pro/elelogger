@@ -1,1 +1,0 @@
-$('code.javascript .hljs-comment')

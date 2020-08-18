@@ -2,6 +2,7 @@ const fs = require('fs')
 const path = require('path')
 
 deleteFile(path.join(__dirname, '../dist/bundle.js'))
+deleteFile(path.join(__dirname, '../dist/index.html'))
 
 function deleteFile(filePath) {
   if (fs.existsSync(filePath)) {

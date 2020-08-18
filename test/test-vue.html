@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <style>
+    .show {
+      display: inline-block;
+      background-color: green;
+      margin: 1px;
+      width: 20px;
+      height: 20px;
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+
+</div>
+<script>
+  /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+                                        创建Vue实例并不费时
+  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
+  const container = document.getElementById('app')
+  // pure
+  const start1 = new Date().getTime()
+  for (let i = 0; i < 1000; i++) {
+    const htmlDivElement = document.createElement('div')
+    htmlDivElement.innerHTML = '{{ msg }}'
+    container.appendChild(htmlDivElement)
+    htmlDivElement.id = 'div' + i
+    htmlDivElement.setAttribute('class', 'show')
+  }
+  const end1 = new Date().getTime()
+  console.log(end1 - start1)
+
+  // vue
+  const start2 = new Date().getTime()
+  for (let i = 0; i < 1000; i++) {
+    new Vue({
+      el: '#div' + i,
+      data: {
+        msg: '1'
+      },
+      created() {
+        this.msg = '2'
+      }
+    })
+  }
+  const end2 = new Date().getTime()
+  console.log(end2 - start2)
+</script>
+</body>
+</html>

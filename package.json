@@ -35,6 +35,7 @@
     "sass-loader": "^9.0.3",
     "style-loader": "^1.2.1",
     "stylus": "^0.54.8",
+    "vue": "^2.6.11",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   }
