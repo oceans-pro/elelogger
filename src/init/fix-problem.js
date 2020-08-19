@@ -6,7 +6,6 @@ $('.catListTag ul li a').each(function() {
 })
 $('.catListTag ul li').each(function(e) {
   $(this).click(function() {
-    console.log('li')
     $(this).children('a').trigger('click')
   })
 })

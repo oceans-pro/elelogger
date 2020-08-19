@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+  <script src='https://common.cnblogs.com/highlight/9.12.0/highlight.min.js'></script>
+  <link rel="stylesheet" href="./css/vscode.css">
+</head>
+<body>
+
+<pre style="background-color: black;">
+<code class="markdown">
+```es6
+new MyDownloadComponent({
+  el: '#download',
+  href: 'https://blog-static.cnblogs.com/files/oceans/vscode.css',
+  title: 'vscode',
+  version: '1.0',
+})
+```
+</code>
+</pre>
+
+<script>
+  const $md = $('.markdown')
+  const html = $md.html()
+  const js = html
+    .replace(/(```es6)|(```)/g, function(str) {
+      return ''
+    })
+    .trim()
+  const jsHTML = hljs.highlight('javascript', js)
+  console.log(jsHTML.value)
+  const result = '```es6\r\n' + jsHTML.value + '\r\n```'
+  $md.html(result)
+</script>
+</body>
+</html>

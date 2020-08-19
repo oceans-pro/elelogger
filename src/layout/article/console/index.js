@@ -8,7 +8,7 @@ function addConsoleAfterJavascriptDemo() {
   // that 为 html element
   // index 为当前为第几个代码块，这里代码提示有问题
   $demos.each(function(index, that) {
-      console.log(that)
+      // console.log(that) // jq对象
       let js = 'console.log(`js`)'
       const firstLines = $(this).children('.hljs-comment')
       // -- 判断是否有魔法函数//log

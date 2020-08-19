@@ -7,7 +7,6 @@ $('pre code[class=language-txt]').addClass('hljs')
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
 // -------------------------------------------------- ui --------------------------------------------------
 for (let i = 0; i <= $('pre').length; i++) {
-  console.log(i)
   $('pre')
     .eq(i)
     .wrapAll('<div class="copyItem"></div>')
@@ -40,7 +39,6 @@ clipboard.on('error', function(e) {
                                        显示为何种语言
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
 $('code.hljs[class^=language-]').each(function() {
-  console.log($(this))
   const lang = $(this).attr('class').split(' ')[0].split('-')[1]
   $(this).parents('.copyItem').prepend(`
     <div class="kind-of-lang">${lang}</div>

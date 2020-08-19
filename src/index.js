@@ -2,7 +2,7 @@ require('./style.scss')
 
 $('#home, #page_end_html').show()
 $('#loading').hide()
-console.log('init-loading')
+console.log('isBundleJsCome = true')
 window.isBundleJSCome = true
 $.ajaxSetup({
   global: true,
@@ -46,9 +46,6 @@ if ($.cookie('theme') === 'dark') {
  * 在Markdown中运行脚本，为了有高亮和提示效果，这里用了es6
  */
 $('code.language-es6').each(function() {
-  const start = new Date().getTime()
   window.eval($(this).text())
-  const end = new Date().getTime()
-  console.log('debug: eval耗时' + (end - start) + '毫秒')
   $(this).parent().remove()
 })
