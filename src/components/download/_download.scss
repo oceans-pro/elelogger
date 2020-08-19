@@ -1,61 +1,70 @@
-.source-download {
+.download-component {
   border-radius: 6px;
   margin: 20px auto;
-  width: 50%;
   padding: 20px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
   background: var(--background-color-base);
+
+  .left {
+    display: flex;
+
+
+    .zip {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+      color: #fff;
+      border-radius: 2px;
+      background: var(--color-primary);
+
+      &:before {
+        font-family: fontawesome;
+        content: "\f1c6"
+      }
+    }
+
+    .source-info {
+      display: flex;
+      height: 60px;
+      flex-direction: column;
+      justify-content: space-between;
+
+      #msg-1 {
+        margin: 0;
+        font-size: var(--text-h4);
+        font-weight: 400;
+        color: var(--color-text-primary);
+      }
+
+      #msg-2 {
+        margin: 0;
+        font-size: var(--text-h5);
+        color: var(--color-text-secondary);
+      }
+    }
+  }
+
+  .download-btn {
+    // 增大接触面积
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+
+    &::before {
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+      font-family: fontawesome;
+      content: "\f019";
+      color: var(--color-primary)
+    }
+  }
 }
 
-.source-type {
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  border-radius: 2px;
-  background: var(--color-primary)
-}
-
-.zip:before {
-  font-family: fontawesome;
-  content: "\f1c6"
-}
-
-.source-info {
-  flex-grow: 1;
-  display: flex;
-  padding: 0 20px;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.source-info p:nth-child(1) {
-  margin: 0 !important;
-  font-size: var(--text-h4);
-  font-weight: 400;
-  color: var(--color-text-primary);
-}
-
-.source-info p:nth-child(2) {
-  margin: 0 !important;
-  font-size: var(--text-h5);
-  color: var(--color-text-secondary);
-}
-
-.download-btn {
-  width: 30px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.download-btn a::before {
-  font-family: fontawesome;
-  content: "\f019";
-  color: var(--color-primary)
-}

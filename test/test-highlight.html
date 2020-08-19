@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+  <link rel="stylesheet" href="https://blog-static.cnblogs.com/files/oceans/vscode.css">
+</head>
+<body>
+<pre>
+   &lt;a href=""&gt;link&lt;/a&gt;
+   <a>test-pre-tag</a>
+</pre>
+
+<style class="css-in-markdown">
+  body{
+    background-color: #eee8d5;
+  }
+  .flex {
+    display: flex;
+  }
+
+  .animate-color-once,
+  .animate-color-forever,
+  .animate-color-forever-good {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    background: blue;
+  }
+
+  .animate-color-once {
+    animation: an-color 3s linear;
+  }
+
+  .animate-color-forever {
+    animation: an-color 3s linear infinite;
+  }
+
+  .animate-color-forever-good {
+    animation: an-color-good 3s linear infinite;
+  }
+
+  @keyframes an-color {
+    from {
+      background: blue;
+    }
+    to {
+      background: green;
+    }
+  }
+
+
+  @keyframes an-color-good {
+    0% {
+      background: blue;
+    }
+    50% {
+      background: green;
+    }
+    100% {
+      background: blue; /* 归位 */
+    }
+  }
+</style>
+<section class="html-in-markdown">
+  <div class="flex">
+    <div class="animate-color-once"></div>
+    <div class="animate-color-forever"></div>
+    <div class="animate-color-forever-good"></div>
+  </div>
+</section>
+<script>
+  const code = document.createElement('code')
+  code.setAttribute('class', 'html')
+  const pre = document.createElement('pre')
+  const body = document.getElementsByTagName('body')[0]
+  pre.appendChild(code)
+  body.appendChild(pre)
+
+  const code2 = document.createElement('code')
+  code.setAttribute('class', 'css')
+  const pre2 = document.createElement('pre')
+  pre.appendChild(code2)
+  body.appendChild(pre2)
+
+  // 注入
+  let cssCode = document.getElementsByClassName('html-in-markdown')[0].innerHTML
+  let htmlCode = document.getElementsByClassName('css-in-markdown')[0].innerHTML
+  htmlCode = htmlCode.replace(/</g,'&lt;')
+  htmlCode = htmlCode.replace(/>/g,'&gt;')
+  cssCode = cssCode.replace(/</g,'&lt;')
+  cssCode = cssCode.replace(/>/g,'&gt;')
+  code.innerHTML = htmlCode
+  code2.innerHTML = cssCode
+
+  // 高亮
+  hljs.highlightBlock(code)
+  hljs.highlightBlock(code2)
+</script>
+</body>
+</html>

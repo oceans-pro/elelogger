@@ -1,10 +1,14 @@
 .console {
-  border: 1px solid #f0f0f0;
+  border: 0.5px solid #f0f0f0;
   border-radius: 6px;
   padding: 10px;
   font-family: sans-serif;
-  font-size: var(--text-h5);
+  font-size: var(--text-h6);
 
+  .head{
+    margin-bottom:  10px;
+    font-weight: bold;
+  }
   pre {
     font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, sans-serif;
   }
@@ -36,7 +40,7 @@
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
 :root[theme=dark] {
   .console {
-    border: 0.3px var(--color-white);
+    border: 0.5px var(--color-white);
     background-color: #242424;
     .hr{
       border-top: 1px solid #3a3a3a;

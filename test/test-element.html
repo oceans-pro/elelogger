@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/theme-chalk/index.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/index.js"></script>
+</head>
+<body>
+<div id="progress-container"></div>
+<script>
+  new Vue({
+    name: 'progress',
+    el: '#progress-container',
+    template: `
+      <section>
+        <el-row style="margin-bottom: 10px;">
+          <el-col :span="12">
+            <el-button
+                    style="width: 100%;"
+                    icon="el-icon-sunny"
+                    type="primary"
+                    @click="handleClick(1)">
+              奥里给！
+            </el-button>
+          </el-col>
+          <el-col :span="12">
+            <el-button
+                    style="width: 100%;"
+                    icon="el-icon-light-rain"
+                    type="danger"
+                    @click="handleClick(0)">
+              不奥里给！
+            </el-button>
+          </el-col>
+        </el-row>
+        <el-row>
+          <el-col v-for="(item, index) in arr" :key="index" :span="6" style="text-align: center">
+            <el-progress
+                    type="dashboard"
+                    :percentage="item.num"
+                    :status="item.status"
+                    :color="item.color"
+            >
+            </el-progress>
+          </el-col>
+        </el-row>
+      </section>`,
+    data: {
+      arr: [],
+      arr0: [
+        {num: 5, status: 'exception', color: '#f56c6c'},
+        {num: 25, status: 'warning', color: '#e6a23c'},
+        {num: 50, status: null, color: ''},
+        {num: 75, status: null, color: '#13ce66'},
+      ],
+      arr1: [
+        {num: 25, status: 'exception', color: '#e6a23c'},
+        {num: 50, status: null, color: '#20a0ff'},
+        {num: 75, status: null, color: '#13ce66'},
+        {num: 100, status: 'success', color: 'purple'},
+      ]
+    },
+    created() {
+      this.arr = this.arr0
+    },
+    methods: {
+      handleClick(flag) {
+        if (flag) {
+          this.arr = this.arr1
+        } else {
+          this.arr = this.arr0
+        }
+      }
+    }
+  })
+</script>
+</body>
+</html>

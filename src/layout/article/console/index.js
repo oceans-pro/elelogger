@@ -85,8 +85,7 @@ function addListener() {
 function getHtmlStrByValue(value) {
   let result = ''
   if (typeof value === 'object') {
-    result += `<pre><div class="obj">${JSON.stringify(value, null, 4)}</div></pre>`
-    result += `<pre><div class="obj">${JSON.stringify(value, null, 4)}</div></pre>`
+    result += `<pre><div class="obj">${JSON.stringify(value, null, 2)}</div></pre>`
     result += `<div class="hr"></div>`
   }
   if (typeof value === 'number') {

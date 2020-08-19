@@ -1,31 +1,32 @@
 require('./_download.scss')
 
 export function MyDownloadComponent(
-    {
-      el = '',
-      title = '',
-      version = 'v-1.0',
-      href = '#',
-    }) {
+  {
+    el = '',
+    title = '',
+    version = 'v-1.0',
+    href = '#',
+  }) {
   this.$vue = new Vue({
-        el: el,
-        template: `
-        <div class="source-download">
-          <div class="source-type zip">
+      el: el,
+      template: `
+        <div class="download-component">
+          <div class="left">
+            <div class="source-type zip">
+            </div>
+            <div class="source-info">
+              <div id="msg-1">{{ title }}</div>
+              <div id="msg-2">version:{{ version }}</div>
+            </div>
           </div>
-          <div class="source-info">
-            <p>{{ title }}</p>
-            <p>version:{{ version }}</p>
-          </div>
-          <div class="download-btn">
-            <a :href="href"></a>
-          </div>
-        </div>`,
-        data: {
-          title: title,
-          version: version,
-          href: href
-        }
+          <a class="download-btn" :href="href"></a>
+        </div>
+      `,
+      data: {
+        title: title,
+        version: version,
+        href: href
       }
+    }
   )
 }
