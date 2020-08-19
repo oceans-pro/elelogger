@@ -98,3 +98,11 @@ function getHtmlStrByValue(value) {
   }
   return result
 }
+
+/**
+ *
+ * @param {Object}obj
+ */
+function parseObj(obj) {
+
+}
