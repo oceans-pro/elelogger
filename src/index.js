@@ -41,11 +41,3 @@ if ($.cookie('theme') == null) {
 if ($.cookie('theme') === 'dark') {
   document.documentElement.setAttribute('theme', 'dark')
 }
-
-/**
- * 在Markdown中运行脚本，为了有高亮和提示效果，这里用了es6
- */
-$('code.language-es6').each(function() {
-  window.eval($(this).text())
-  $(this).parent().remove()
-})

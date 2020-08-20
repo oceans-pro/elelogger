@@ -42,7 +42,6 @@ function highlightMd() {
         let result = temp.replace(htmlReg, function(htmlStr) {
           return window.hljs.highlight('html', htmlStr).value
         })
-        console.log(result)
         result = '```es6\r\n' + result + '\r\n```'
         $md.html(result)
       }

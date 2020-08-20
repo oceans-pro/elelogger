@@ -23,8 +23,31 @@ new MyDownloadComponent({
 ```
 </code>
 </pre>
-
+<!--********************************************* 测试二 ***********************************************-->
+<pre style="background-color: black;">
+<code class="markdown">
+```es6
+new MyDownloadComponent({
+  el: '#download',
+  href: 'https://blog-static.cnblogs.com/files/oceans/vscode.css',
+  title: 'vscode',
+  version: '1.0',
+})
+```
+</code>
+</pre>
+<pre style="background-color: black;">
+<code class="json">
+{
+  "username":"zhang san",
+  "age": 18
+}
+</code>
+</pre>
 <script>
+  /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+                                                   测试一
+  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
   const $md = $('.markdown')
   const html = $md.html()
   const js = html
@@ -36,6 +59,12 @@ new MyDownloadComponent({
   console.log(jsHTML.value)
   const result = '```es6\r\n' + jsHTML.value + '\r\n```'
   $md.html(result)
+  /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+                                                   测试二
+  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
+  const json =  window.hljs.highlight('json', $('.json').html()).value
+  $('.json').html(json)
+
 </script>
 </body>
 </html>

@@ -76,6 +76,12 @@
   background: var(--border-color-extra-linght);
 }
 
+:root[theme=dark] {
+  .nav li:before {
+    border: none;
+  }
+}
+
 .nav {
   position: relative;
   padding: 14px 14px 14px 20px !important;
