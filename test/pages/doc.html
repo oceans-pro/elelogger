@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/theme-chalk/index.css">
+  <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/index.js"></script>
+</head>
+<body>
+<style>
+  :root {
+    --background-local: #f1f1f1;
+    /*--background-local: #ffffff;*/
+  }
+
+  .my-card {
+    border: 1px solid var(--background-local);
+  }
+
+  .my-card:hover {
+    border: 1px solid #ebeef5;
+    /*border: 1px solid red;*/
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+    overflow: hidden;
+    transition: .3s;
+  }
+
+
+  :root, #mainContent {
+    background-color: var(--background-local);
+  }
+
+  .main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .doc-item {
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 4px;
+    width: 250px;
+    height: 70px;
+    cursor: pointer;
+  }
+
+  .doc-item:hover .name {
+    color: #409EFF;
+  }
+
+  .doc-item .right {
+    width: 180px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .doc-item .right .desc {
+    color: #666666;
+    font-size: 12px;
+  }
+
+  .doc-item .right .name {
+    font-size: 16px;
+  }
+
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+</style>
+
+<section id="app">
+  <div class="main">
+
+    <div class="doc-item my-card" v-for="item in list" :key="item.name">
+      <el-image class="logo left" :src="item.img" :alt="item.img"></el-image>
+      <div class="right">
+        <a :href="item.href" style="display: none">{{ item.href }}</a>
+        <div class="name">{{ item.name }}</div>
+        <div class="desc">{{ item.desc }}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      list: [
+        {
+          img: 'https://cn.vuejs.org/images/logo.png',
+          name: 'Vue',
+          desc: '渐进式JavaScript框架',
+          href: 'https://cn.vuejs.org/'
+        },
+        {
+          img: 'https://www.runoob.com/wp-content/uploads/2016/02/react.png',
+          name: 'React',
+          desc: '用于构建用户界面的 JavaScript 库',
+          href: 'https://reactjs.org/'
+        },
+        {
+          img: 'https://gitee.com/oceans-pro/cnblog_image_bed/raw/master/null/ng.png',
+          name: 'Angular',
+          desc: '一套框架，多种平台。移动端 & 桌面端',
+          href: 'https://angular.cn/'
+        },
+        {
+          img: 'https://www.jquery123.com/assets/images/jquery-logo-md.png',
+          name: 'jQuery',
+          desc: '高效、精简并且功能丰富的 JavaScript 工具库',
+          href: 'https://www.jquery123.com/'
+        },
+        {
+          img: 'https://www.lodashjs.com/assets/img/lodash.png',
+          name: 'Lodash',
+          desc: '一个一致性、模块化、高性能的 JavaScript 实用工具库。',
+          href: 'https://www.lodashjs.com/'
+        },
+        {
+          img: 'https://www.webpackjs.com/32dc115fbfd1340f919f0234725c6fb4.png',
+          name: 'Webpack',
+          desc: '一个现代 JavaScript 应用程序的静态模块打包器',
+          href: 'https://www.webpackjs.com/concepts/'
+        },
+        {
+          img: 'https://www.gruntjs.net/media/grunt-logo.png',
+          name: 'Grunt',
+          desc: 'JavaScript 世界的构建工具',
+          href: 'https://www.gruntjs.net/'
+        },
+        {
+          img: 'https://www.babeljs.cn/img/babel.png',
+          name: 'Babel',
+          desc: 'JavaScript 编译器，可用下一代的 JavaScript 语法编程。',
+          href: 'https://www.babeljs.cn/'
+        },
+        {
+          img: 'https://gitee.com/oceans-pro/cnblog_image_bed/raw/master/null/bootstrap-stack.png',
+          name: 'BootStrap',
+          desc: '简洁、直观、强悍的前端开发框架，让web开发更迅速、简单。',
+          href: 'https://www.bootcss.com/',
+        },
+        {
+          img: 'https://gitee.com/oceans-pro/cnblog_image_bed/raw/master/null/ele.png',
+          name: 'ElementUI',
+          desc: '一套为开发者、设计师和产品经理准备的基于 Vue 2.0 的桌面端组件库',
+          href: 'https://element.eleme.cn/#/zh-CN/component/installation'
+        },
+        {
+          img: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
+          name: 'AntD',
+          desc: 'antd 是基于 Ant Design 设计体系的 React UI 组件库，主要用于研发企业级中后台产品。',
+          href: 'https://ant.design/'
+        },
+        {
+          img: 'https://devui.design/assets/img/newHome/d-background.png',
+          name: 'DevUI',
+          desc: '华为的一款基于Angular的企业中后台产品前端的通用解决方案',
+          href: 'https://devui.design/components/get-start'
+        },
+        {
+          img: 'https://typescript.bootcss.com/images/typescript-icon.svg',
+          name: 'TypeScript',
+          desc: 'TypeScript具有类型系统，且是JavaScript的超集。',
+          href: 'https://typescript.bootcss.com/'
+        },
+        {
+          img: 'https://www.reduxjs.cn/img/redux.svg',
+          name: 'Redux',
+          desc: '一个JavaScript 状态容器，提供可预测化的状态管理。',
+          href: 'https://www.reduxjs.cn/'
+        }, {
+          img: 'https://www.sasscss.com/assets/img/logos/sass-77bd637b.png',
+          name: 'sass',
+          desc: 'Sass 是世界上最成熟、稳定、强大的专业级 CSS 扩展语言。',
+          href: 'https://www.sasscss.com/documentation'
+        },
+        {
+          img: 'https://stylus.bootcss.com/img/stylus-logo.png',
+          name: 'Stylus',
+          desc: '富于表现力、动态的、健壮的 CSS',
+          href: 'https://stylus.bootcss.com/'
+        },
+        {
+          img: 'https://gitee.com/oceans-pro/cnblog_image_bed/raw/master/null/eslint.svg',
+          name: 'ESLint',
+          desc: '可组装的JavaScript和JSX检查工具',
+          href: 'https://cn.eslint.org/'
+        },
+        {
+          img: 'https://www.postcss.com.cn/postcss.1b20c651.png',
+          name: 'PostCSS',
+          desc: '一个用 JavaScript 工具和插件转换 CSS 代码的工具',
+          href: 'https://www.postcss.com.cn/'
+        },
+        {
+          img: 'https://gitee.com/oceans-pro/cnblog_image_bed/raw/master/null/jest.png',
+          name: 'Jest',
+          desc: 'Jest 是一个令人愉快的 JavaScript 测试框架，专注于 简洁明快。',
+          href: 'https://jestjs.bootcss.com/'
+        },
+        {
+          img: 'https://static.numpy.org.cn/site/logo.png',
+          name: 'Numpy',
+          desc: 'Python 语言的一个扩展程序库，支持大量的维度数组与矩阵运算，提供大量的数学函数库。',
+          href: 'https://www.numpy.org.cn/',
+        },
+        {
+          img: 'https://static.pypandas.cn/site/logo.png',
+          name: 'Pandas',
+          desc: 'Pandas是一个强大的分析结构化数据的工具集',
+          href: 'https://www.pypandas.cn/',
+        },
+        {
+          img: 'https://www.matplotlib.org.cn/logo.svg',
+          name: 'Matplotlib',
+          desc: '一个 Python 的 2D绘图库，它以各种硬拷贝格式和跨平台的交互式环境生成出版质量级别的图形',
+          href: 'https://www.matplotlib.org.cn/logo.svg'
+        },
+        {
+          img: 'https://gitee.com/oceans-pro/cnblog_image_bed/raw/master/null/tf.png',
+          name: 'TensorFlow',
+          desc: '机器学习框架',
+          href: 'https://www.w3cschool.cn/tensorflow_python/'
+        },
+        {
+          img: 'https://gitee.com/oceans-pro/cnblog_image_bed/raw/master/null/pytorch.png',
+          name: 'PyTorch',
+          desc: 'PyTorch 是一个针对深度学习, 并且使用 GPU 和 CPU 来优化的 tensor library (张量库)',
+          href: 'https://pytorch.apachecn.org/docs/1.0/'
+        },
+        {
+          img: 'https://gitee.com/oceans-pro/cnblog_image_bed/raw/master/null/keras.png',
+          name: 'Keras',
+          desc: '一个用 Python 编写的高级神经网络 API，能够以最小的时延把你的想法转换为实验结果',
+          href: 'https://keras.io/zh/'
+        },
+        {
+          img: 'https://gitee.com/oceans-pro/cnblog_image_bed/raw/master/null/r.png',
+          name: 'R语言',
+          desc: 'R 语言是为数学研究工作者设计的一种数学编程语言，主要用于统计分析、绘图、数据挖掘。',
+          href: 'https://mirrors.tuna.tsinghua.edu.cn/CRAN/'
+        },
+        {
+          img: 'https://gitee.com/oceans-pro/cnblog_image_bed/raw/master/null/git.png',
+          name: 'Git',
+          desc: '一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目',
+          href: 'https://git-scm.com/book/zh/v2'
+        }, {
+          img: 'https://gitee.com/oceans-pro/cnblog_image_bed/raw/master/null/echarts.png\n',
+          name: 'echarts',
+          desc: '一个使用 JavaScript 实现的开源可视化库,涵盖各行业图表,满足各种需求',
+          href: 'https://echarts.apache.org/examples/zh/index.html'
+        }, {
+          img: 'https://gitee.com/oceans-pro/cnblog_image_bed/raw/master/null/d3.png',
+          name: 'D3',
+          desc: '基于数据来操作文档的 JavaScript 库。用 HTML, SVG 以及 Canvas 来展示数据。',
+          href: 'https://observablehq.com/@d3/gallery'
+        },
+        {
+          img: 'https://gitee.com/oceans-pro/cnblog_image_bed/raw/master/null/spring.png',
+          name: 'Spring全家桶',
+          desc: '一个开源的 Java/Java EE 全功能栈（full-stack）的应用程序框架',
+          href: 'https://spring.io/projects/spring-boot/'
+        },
+        {
+          img: 'https://gitee.com/oceans-pro/cnblog_image_bed/raw/master/null/node.jpg',
+          name: 'Node',
+          desc: 'Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行时',
+          href: 'https://www.nodeapp.cn/',
+        },
+        {
+          img: 'https://gitee.com/oceans-pro/cnblog_image_bed/raw/master/null/express.png',
+          name: 'Express',
+          desc: '基于 Node.js 平台，快速、开放、极简的 Web 开发框架',
+          href: 'https://www.expressjs.com.cn/'
+        },
+        {
+          img: 'https://gitee.com/oceans-pro/cnblog_image_bed/raw/master/null/nest.svg',
+          name: 'nest',
+          desc: 'A progressive Node.js framework for building server-side applications.',
+          href: 'https://docs.nestjs.com/'
+        },
+        {
+          img: 'https://gitee.com/oceans-pro/cnblog_image_bed/raw/master/null/mysql.png',
+          name: 'MySQL',
+          desc: 'MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS',
+          href: 'https://www.mysqlzh.com/doc/24.html'
+        },
+        {
+          img: 'https://gitee.com/oceans-pro/cnblog_image_bed/raw/master/null/redis-white.png',
+          name: 'Redis',
+          desc: '一个内存存储的数据结构服务器，可用作数据库，高速缓存和消息队列代理。',
+          href: 'https://www.redis.net.cn/'
+        },
+        {
+          img: 'https://gitee.com/oceans-pro/cnblog_image_bed/raw/master/null/mongo.png',
+          name: 'mongo',
+          desc: '一个介于关系数据库和非关系数据库之间的产品，是关系数据库中像关系数据库的。',
+          href: 'https://www.runoob.com/mongodb/mongodb-tutorial.html'
+        },
+        {
+          img: 'https://gitee.com/oceans-pro/cnblog_image_bed/raw/master/null/docker.png',
+          name: 'Docker',
+          desc: '一个开源的应用容器引擎',
+          href: 'https://www.runoob.com/docker/docker-tutorial.html'
+        },
+      ]
+    },
+  })
+  $('.doc-item').click(function() {
+    window.open($(this).find('a').attr('href'))
+  })
+  let list = [
+    {
+      name: 'Moment.js',
+      desc: '解析、校验、操作、显示日期和时间的 JavaScript 工具库。',
+      href: 'https://momentjs.bootcss.com/'
+    },
+    {
+      name: 'W3School英文版',
+      href: 'https://www.quanzhanketang.com/default.html'
+    }
+  ]
+</script>
+</body>
+</html>

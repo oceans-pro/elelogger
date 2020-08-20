@@ -150,7 +150,7 @@ function getHtmlStrByValue(value) {
     result += `<div class="hr"></div>`
     return result
   }
-  if (typeof value === 'number') {
+  if (typeof value === 'number' || typeof value === 'boolean') {
     result += `<div class="num">${value}</div>`
     result += `<div class="hr"></div>`
     return result

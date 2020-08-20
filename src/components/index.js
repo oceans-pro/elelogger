@@ -3,6 +3,8 @@
  * 为此将其组件单独放到这里。
  * 也就是说，这些组件是会被Markdown中用到的
  */
-import {MyDownloadComponent} from './download/download'
+import MyDownloadComponent from './download/download'
+import MyIntroductionCardComponent from '@/components/introduction-card'
 
 window.MyDownloadComponent = MyDownloadComponent
+window.MyIntroductionCardComponent = MyIntroductionCardComponent

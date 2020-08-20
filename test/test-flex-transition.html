@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    function fn() {
+      var es = document.getElementsByClassName('item')
+      for (let i = 0; i < es.length; i++) {
+        es[i].setAttribute('class', 'item2')
+      }
+    }
+  </script>
+</head>
+<body>
+<style>
+  .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    transition: all 1s;
+  }
+
+  .item {
+    background-color: red;
+    padding: 100px;
+    margin: 10px;
+    transition: all 1s;
+  }
+
+  .item2 {
+    background-color: red;
+    padding: 50px;
+    margin: 10px;
+    transition: all 1s;
+  }
+</style>
+<button onclick="fn()">1231233</button>
+<div class="container">
+  <div class="item">1</div>
+  <div class="item">1</div>
+  <div class="item">1</div>
+  <div class="item">1</div>
+  <div class="item">1</div>
+  <div class="item">1</div>
+  <div class="item">1</div>
+  <div class="item">1</div>
+  <div class="item">1</div>
+  <div class="item">1</div>
+  <div class="item">1</div>
+  <div class="item">1</div>
+  <div class="item">1</div>
+  <div class="item">1</div>
+  <div class="item">1</div>
+  <div class="item">1</div>
+</div>
+</body>
+</html>

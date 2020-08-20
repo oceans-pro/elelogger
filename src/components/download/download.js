@@ -1,6 +1,6 @@
 require('./_download.scss')
 
-export function MyDownloadComponent(
+export default function MyDownloadComponent(
   {
     el = '',
     title = '',
