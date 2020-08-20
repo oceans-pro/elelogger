@@ -29,7 +29,6 @@
 }
 
 .input_my_zzk {
-  flex-grow: 1;
   height: 30px;
   padding: 2px 16px !important;
   border: none;
@@ -41,5 +40,11 @@
 }
 
 .div_my_zzk input, .input_my_zzk input {
-  width: 0;
+  width: 40%;
+}
+
+@media screen and (max-width: 767px){
+  #sidebar_search_box input[type=text] {
+     width: 70%;
+  }
 }

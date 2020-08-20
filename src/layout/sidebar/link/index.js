@@ -1,9 +1,11 @@
 require('./cnblog-score')
-require('./latest')
 require('./rank')
 
-import listenCalendarLinkClick from '@/layout/sidebar/link/calendar'
+import addEventForCalendar from '@/layout/sidebar/link/calendar'
+import addEventForLatest from '@/layout/sidebar/link/latest'
+import addEventForRanks from '@/layout/sidebar/link/rank'
 import addUseful from '@/layout/sidebar/link/useful'
+import addEventForScore from '@/layout/sidebar/link/cnblog-score'
 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
                                               常用连接
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
@@ -11,7 +13,10 @@ import addUseful from '@/layout/sidebar/link/useful'
 // $('abc').append('1234567')并不会报错
 modifyLinks()
 addUseful()
-listenCalendarLinkClick()
+addEventForCalendar()
+addEventForLatest()
+addEventForRanks()
+addEventForScore()
 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
                                            监听后来的Ajax
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
@@ -19,7 +24,10 @@ $(document).on('ajax-later', function(e, item) {
   if (item.url === `/${userPath}/ajax/sidecolumn.aspx`) {
     modifyLinks()
     addUseful()
-    listenCalendarLinkClick()
+    addEventForCalendar()
+    addEventForLatest()
+    addEventForRanks()
+    addEventForScore()
   }
 })
 

@@ -3,7 +3,7 @@
  */
 require('./_calendar.scss')
 
-export default function listenCalendarLinkClick() {
+export default function addEventForCalendar() {
   eleNotice.calendarNoticeNum = 0
   $('#my-calendar').click(function(e) {
     e.preventDefault()

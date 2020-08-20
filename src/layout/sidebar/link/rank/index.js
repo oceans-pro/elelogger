@@ -1,19 +1,18 @@
-$('#my-latest').click(function(e) {
-  if (window.isMobile){
-    return
-  }
-  e.preventDefault()
-  for (const item of window.ajaxStorage) {
-    if (item.url === `/${userPath}/ajax/sidecolumn.aspx`) {
-      const html = $.parseHTML(`<div>${item.xhr.responseText}</div>`)
-      const $html = $(html)
-      let $latest = $html.find('#sidebar_recentposts ul')
-      let htmlStr = $latest[0].innerHTML
-      htmlStr = `<div id="sidebar_recentposts">${htmlStr}</div>`
-      showNotice(htmlStr)
+eleNotice.latestFlag = false
+
+export default function addEventForRanks() {
+  $('#my-rank').click(function(e) {
+    /**
+     * 有时间可以考虑变为单行文本 ...
+     */
+    e.preventDefault()
+    for (const item of window.ajaxStorage) {
+      if (item.url === `/${userPath}/ajax/TopLists.aspx`) {
+        showNotice(item.xhr.responseText)
+      }
     }
-  }
-})
+  })
+}
 
 function showNotice(htmlStr) {
   if (eleNotice.scoreNoticeCount === 1) {
@@ -22,7 +21,7 @@ function showNotice(htmlStr) {
   }
   eleNotice.$notify({
     message: htmlStr,
-    title: '最新随笔',
+    title: '相关排行',
     dangerouslyUseHTMLString: true,
     duration: 0,
     onClose: function() {
