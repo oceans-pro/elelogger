@@ -54,10 +54,12 @@ function addConsoleAfterJavascriptDemo() {
           name: 'js-log-' + index,
           el: '#log-' + index, // 原ID会消失，需要重新加上ID
           template: `
-            <div :id="'log-'+index" class="console">
-              <div class="head">输出结果：</div>
-              <div class="console-content" v-html="content"></div>
-            </div>
+            <section>
+              <div class="head"><i class="el-icon-sort"></i></div>
+              <div :id="'log-'+index" class="console">
+                <div class="console-content" v-html="content"></div>
+              </div>
+            </section>
           `,
           data: {
             index: index,

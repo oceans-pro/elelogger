@@ -69,3 +69,22 @@
 //.hljs::-webkit-scrollbar-button:horizontal:end:decrement { //横向 末尾端 减量按钮
 //  display: block!important;
 //}
+/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+                                            暗色修复
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
+:root[theme=dark] {
+  body::-webkit-scrollbar {
+    width: 10px;
+    height: 12px;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: #454545;
+
+
+    &:hover {
+      background-color: #a8a8a8;
+    }
+
+  }
+}

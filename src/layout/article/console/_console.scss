@@ -1,75 +1,79 @@
-.console {
-  border: 0.5px solid #f0f0f0;
-  border-radius: 6px;
-  padding: 10px;
-  font-family: sans-serif;
-  font-size: var(--text-h6);
-  overflow-x: auto;
-
-  .loading {
-    font-size: 1.5em;
-  }
-
+section {
   .head {
-    margin-bottom: 15px;
     font-weight: bold;
-    font-size: 1.2em;
-
+    font-size: 1.5em;
+    text-align: center;
   }
 
-  pre {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, sans-serif;
-  }
+  .console {
+    border: 0.5px solid #f0f0f0;
+    border-radius: 6px;
+    padding: 10px;
+    font-family: sans-serif;
+    font-size: var(--text-h6);
+    overflow-x: auto;
 
-  .hr {
-    height: 5px;
-    width: 100%;
-    border-top: 0.8px solid #f0f0f0;
-  }
-  .hr:last-child{
-    display: none;
-  }
-
-  .str {
-    color: #c51916;
-  }
-  .null{
-    color: #ab0d90;
-  }
-  .num {
-    color: #0d22aa;
-  }
-
-  .obj {
-    width: 100%;
-
-    .hljs-attr {
-      color: var(--color-text-primary) !important;
+    .loading {
+      font-size: 1.5em;
     }
 
-    .hljs-string {
-      color: #c51916 !important;
 
-      word-break: normal;
-      width: auto;
-      white-space: pre-wrap;
-      word-wrap: break-word;
-      overflow: hidden;
+    pre {
+      font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, sans-serif;
     }
 
-    .hljs-number {
-      color: #0d22aa !important;
+    .hr {
+      height: 5px;
+      width: 100%;
+      border-top: 0.8px solid #f0f0f0;
     }
-  }
 
-  &.border-highlight {
-    border: 0.5px solid var(--color-text-primary);
+    .hr:last-child {
+      display: none;
+    }
+
+    .str {
+      color: #c51916;
+    }
+
+    .null {
+      color: #ab0d90;
+    }
+
+    .num {
+      color: #0d22aa;
+    }
+
+    .obj {
+      width: 100%;
+
+      .hljs-attr {
+        color: var(--color-text-primary) !important;
+      }
+
+      .hljs-string {
+        color: #c51916 !important;
+
+        word-break: normal;
+        width: auto;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        overflow: hidden;
+      }
+
+      .hljs-number {
+        color: #0d22aa !important;
+      }
+    }
+
+    &.border-highlight {
+      border: 0.5px solid var(--color-text-primary);
+    }
   }
 }
-
 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
-                                             暗色
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
+                                               暗色
+  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
 :root[theme=dark] {
   .console {
     border: 0.5px var(--color-white);
@@ -97,7 +101,7 @@
       }
 
       .hljs-number {
-        color: #9df0b0!important;
+        color: #9df0b0 !important;
       }
     }
 
