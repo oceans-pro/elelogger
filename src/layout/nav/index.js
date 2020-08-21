@@ -6,7 +6,7 @@ const $header = $('#header')
 $('#mainContent').prepend($header) // 将顶部导航挪到右边那个不起眼的位置
 $header.prepend(`
       <div class="hd-menu"><ul>
-        <li><a id="sidebar-toggler" href="javascript:sidebarToggle()"></a></li>
+        <li><a id="sidebar-toggler" href="javascript:initOrToggleSidebar()"></a></li>
       </ul></div>`
 )
 $('#sidebar-toggler').click(function() {

@@ -1,34 +1,4 @@
-.btn_my_zzk {
-  border: 0 !important;
-  outline: none !important;
-  border-radius: 6px !important;
-  margin-left: 10px !important;
-  height: 30px !important;
-  width: auto !important;
-  padding: 0 8px !important;
-  position: relative;
-
-  &:hover {
-    cursor: pointer;
-  }
-}
-
-:root[theme=dark] {
-  .btn_my_zzk {
-    color: black !important;
-    background-color: var(--color-text-primary) !important;
-  }
-}
-
-
-.div_my_zzk {
-  display: flex;
-  height: 40px;
-  margin: 0;
-  align-items: center;
-}
-
-.input_my_zzk {
+#q{
   height: 30px;
   padding: 2px 16px !important;
   border: none;
@@ -40,11 +10,12 @@
 }
 
 .div_my_zzk input, .input_my_zzk input {
-  width: 40%;
+  width: 55%;
 }
 
-@media screen and (max-width: 767px){
+// 覆盖博客园的覆盖样式
+@media only screen and (max-width: 767px){
   #sidebar_search_box input[type=text] {
-     width: 70%;
+    width: 55%!important;
   }
 }

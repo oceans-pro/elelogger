@@ -3,6 +3,12 @@
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
 window.jQuery.fn.extend({
   /**
+   * outerHTML
+   */
+  HTML: function() {
+    return $(this).prop('outerHTML')
+  },
+  /**
    * 交换任意两个jQuery对象的位置
    * @param another
    */
@@ -29,8 +35,8 @@ window.jQuery.fn.extend({
       $(this).on(eventType, function(event) {
         // 一些数据
         const scrollTop = this.scrollTop,
-            scrollHeight = this.scrollHeight,
-            height = this.clientHeight
+          scrollHeight = this.scrollHeight,
+          height = this.clientHeight
 
         const delta = (event.originalEvent.wheelDelta) ? event.originalEvent.wheelDelta : -(event.originalEvent.detail || 0)
 

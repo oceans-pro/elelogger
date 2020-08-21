@@ -1,0 +1,39 @@
+#taglist_main {
+  small {
+    // 自带的太丑了
+    display: none;
+  }
+
+  .taglist_title_wrap {
+    position: relative;
+  }
+
+  #btn {
+    position: absolute;
+    right: 30px;
+  }
+
+  h3 {
+    width: 5em;
+    text-align: center;
+    margin: 10px auto;
+    display: inline-block;
+  }
+
+  h3:hover {
+    color: var(--color-primary);
+    cursor: pointer;
+  }
+
+  #up-tag-area {
+    margin-bottom: 50px;
+  }
+
+  #down-tag-area {
+  }
+  .item{
+    margin-bottom: 10px;
+  }
+
+}
+

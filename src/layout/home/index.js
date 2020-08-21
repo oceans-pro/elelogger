@@ -33,7 +33,6 @@ if (routePath === '/oceans/' ||
   const size = $('.postTitle').size()
   if (size > 0) {
     for (let i = 0; i < size; i++) {
-      console.log(1231)
       $(`.postTitle:eq(${i}),.postCon:eq(${i}),.postDesc:eq(${i})`)
           .wrapAll(`<section class="my-el-card"></section>`)
     }

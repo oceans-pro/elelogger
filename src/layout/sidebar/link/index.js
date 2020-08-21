@@ -39,7 +39,7 @@ function modifyLinks() {
   $ul.find('li:contains(我的随笔)').remove()  // 我的随笔其实就是主页...没有必要存在啊
   $ul.find('li:contains(我的参与)').remove()
   // --改字
-  $ul.find('li:contains(我的标签) a').text('随笔标签')
+  $ul.find('li:contains(我的标签) a').text('随笔分类')
   $ul.find('li:contains(最新评论) a').text('随笔评论')
 
   $ul.append(`<li><a id="my-calendar" href="https://www.cnblogs.com/${userPath}/ajax/calendar.aspx?dateStr=">写作日历</a></li>`)

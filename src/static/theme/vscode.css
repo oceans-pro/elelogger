@@ -39,10 +39,14 @@
   color: #9A5334!important;
 }
 
+.hljs-params{
+  color:#9cdcfe!important;
+}
+
+
 .hljs-subst,
 .hljs-function,
 .hljs-title,
-.hljs-params,
 .hljs-formula {
   color: #DCDCDC!important;
 }

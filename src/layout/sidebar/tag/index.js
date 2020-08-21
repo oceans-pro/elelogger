@@ -9,10 +9,16 @@ $(document).on('ajax-later', function(e, item) {
 })
 
 function modifyTag() {
-  $('#sidebar_toptags li').addClass(
-      'el-button ' +
-      'el-button--info ' +
-      'is-plain round ' +
-      'el-button--mini ' +
-      'is-round')
+  let $li = $('#sidebar_toptags li')
+  $li.children('a').each(function() {
+    if (/^\$/.test($(this).text())){
+      $(this).parent().remove()
+    }
+  })
+  $li.addClass(
+    'el-button ' +
+    'el-button--info ' +
+    'is-plain round ' +
+    'el-button--mini ' +
+    'is-round')
 }
