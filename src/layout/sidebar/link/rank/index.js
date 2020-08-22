@@ -1,4 +1,4 @@
-eleNotice.latestFlag = false
+ele.latestFlag = false
 
 export default function addEventForRanks() {
   $('#my-rank').click(function(e) {
@@ -15,19 +15,19 @@ export default function addEventForRanks() {
 }
 
 function showNotice(htmlStr) {
-  if (eleNotice.scoreNoticeCount === 1) {
-    eleNotice.$notify.closeAll()
+  if (ele.scoreNoticeCount === 1) {
+    ele.$notify.closeAll()
     // return
   }
-  eleNotice.$notify({
+  ele.$notify({
     message: htmlStr,
     title: '相关排行',
     dangerouslyUseHTMLString: true,
     duration: 0,
     onClose: function() {
-      eleNotice.scoreNoticeCount--
+      ele.scoreNoticeCount--
     }
   })
-  eleNotice.scoreNoticeCount++
+  ele.scoreNoticeCount++
   $('.el-notification').css('width', 'auto')
 }

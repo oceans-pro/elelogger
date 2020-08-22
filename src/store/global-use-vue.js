@@ -1,49 +1,43 @@
-// -- 考虑到我们不是任何时候都需要Vue，因此需要先让Markdown主动触发Vue创建
-window.useVue = function({created, mounted} = {}) {
-  window.markdownVue = new Vue({
-    el: '#markdown-vue',
-    name: 'MarkdownVue',
-    data: {
-      isMobile: false,
-      markdownData: {},
-      window: window,
-      codeTheme: window.codeTheme
-    },
-    created() {
-      if (created) {
-        created()
-      }
-    },
-    mounted() {
-      this.isMobile = window.isMobile()
-      if (mounted) {
-        mounted()
-      }
-    },
-    methods: {
-      $,  // jquery
-      markdownAjax(url, method = 'get', data) { // 获取后端数据
-        $.ajax({
-          url: url,
-          method: method,
-          data: data,
-          success: function(data) {
-            console.log('debug: ', data)
-            this.markdownData = data
-          },
-        })
-      },
-      markdownCallback(cb) {
-        cb()
-      }
+/**
+ * 借助body的onload调用JS
+ * @param cb
+ */
+window.fn = window.fn || {}
+window.fn.invokeMyFunction = function(cb) {
+  cb()
+}
+window.fn.isMobile = window.isMobile
+window.isMobile = isMobile
+window.clearForHelloPage = clearForHelloPage
+
+function isMobile() {
+  const userAgentInfo = navigator.userAgent
+  const mobileAgents = ['Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod']
+  let mobile_flag = false
+  // 根据userAgent判断是否是手机
+  for (let v = 0; v < mobileAgents.length; v++) {
+    if (userAgentInfo.indexOf(mobileAgents[v]) > 0) {
+      mobile_flag = true
+      break
     }
-  })
-  return markdownVue
+  }
+  const screen_width = window.screen.width
+  const screen_height = window.screen.height
+  // 根据屏幕分辨率判断是否是手机
+  if (screen_width < 500 && screen_height < 800) {
+    mobile_flag = true
+  }
+  return mobile_flag
 }
 
-window.invokeMyFunction = function(cb) {
-  const start = new Date().getTime()
-  cb()
-  const end = new Date().getTime()
-  console.log('debug: onload耗时'+(end - start)+'毫米秒')
+
+function clearForHelloPage() {
+  $(`h1.postTitle,
+  div.postTitle,
+  div.postDesc,
+  div#blog_post_info_block,
+  div#comment_form_container,
+  div#comment_form.commentform,
+  #Header1_HeaderTitle`).hide()
 }
+

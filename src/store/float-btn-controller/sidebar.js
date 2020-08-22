@@ -1,11 +1,11 @@
 /**
  * 侧边栏
- * @param{number} type 若type为0代表初始化
+ * @param{boolean} isInit
  */
-export default function initOrToggleSidebar(type) {
+export default function initOrToggleSidebar(isInit) {
   const flag = $.cookie('is-side-open')
   // -- init
-  if (type === 0) {
+  if (isInit) {
     if (flag === 'open') {
       makeOpen()
       return

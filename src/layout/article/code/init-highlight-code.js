@@ -20,7 +20,7 @@ for (let i = 0; i <= $('pre').length; i++) {
 const ClipboardJS = require('clipboard')
 const clipboard = new ClipboardJS('.clipboard-button')
 clipboard.on('success', function(e) {
-  window.eleNotice.$notify({
+  window.ele.$notify({
     title: '成功',
     message: '复制成功',
     type: 'success',
@@ -29,7 +29,7 @@ clipboard.on('success', function(e) {
   e.clearSelection()
 })
 clipboard.on('error', function(e) {
-  window.eleNotice.this.$notify.error({
+  window.ele.this.$notify.error({
     title: '错误',
     message: '复制失败，请尝试使用PC端'
   })

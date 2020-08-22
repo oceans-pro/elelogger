@@ -1,8 +1,7 @@
 window.userPath = null
 window.isAuthenticated = null
 window.isBlogOwner = null
-window.eleNotice = null
-window.theme = ''
+window.ele = null
 window.userPath = window.location.pathname.split('/')[1]
 window.ajaxStorage.forEach(item => {
   if (item.url === '/oceans/ajax/blogSubscription') {
@@ -11,24 +10,12 @@ window.ajaxStorage.forEach(item => {
   }
 })
 
-// -------------------------------------------------- eleNotice --------------------------------------------------
-if ($('#vue-notice').length === 0) {
-  $('body').append('<div id="vue-notice"></div>')
+// -------------------------------------------------- ele --------------------------------------------------
+if ($('#ele').length === 0) {
+  $('body').append('<div id="ele"></div>')
 }
-window.eleNotice = new Vue({
-  el: '#vue-notice',
+
+window.ele= new Vue({
+  el: '#ele',
 })
 
-// -------------------------------------------------- 初始化主题 --------------------------------------------------
-if ($.cookie('theme') == null) {
-  window.theme = 'light'
-  $.cookie('theme', 'light', { // 默认为light主题
-    expires: 30,
-    path: '/',
-    domain: 'cnblogs.com',
-  })
-}
-if ($.cookie('theme') === 'dark') {
-  window.theme = 'dark'
-  document.documentElement.setAttribute('theme', 'dark')
-}

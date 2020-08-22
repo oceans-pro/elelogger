@@ -3,23 +3,25 @@
  * 注意：尽量不要在该函数中加入过多代码逻辑，而是采用
  * 1. :root[theme=dark]
  * 2. 基于document的事件监听
- * @param {number} type 0 代表初始化主题
+ * 3. 除非监听太晚了，你实在捕捉不到事件...
+ * @param {boolean} isInit
  */
-export default function initOrToggleTheme(type) {
+export default function initOrToggleTheme(isInit) {
   const theme = $.cookie('theme')
 
   // -- init
-  if (type === 0) {
+  if (isInit) {
     if (theme === 'light') {
       makeLight()
+      return
     }
     if (theme === 'dark') {
       makeDark()
+      return
     }
     makeLight() // cookie中没有
     return
   }
-
   // -- change
   if ($.cookie('theme') === 'light') {
     saveCookie('dark')
@@ -37,12 +39,15 @@ export default function initOrToggleTheme(type) {
   function makeLight() {
     document.documentElement.removeAttribute('theme')
     $(document).trigger('themeChange', 'light')
+    saveEventName()
     $('.my-el-card').css('box-shadow', '0 2px 12px 0 rgba(0,0,0,.1)')
   }
+
 
   function makeDark() {
     document.documentElement.setAttribute('theme', 'dark')
     $(document).trigger('themeChange', 'dark')
+    saveEventName()
     $('.my-el-card').css('box-shadow', '')
   }
 
@@ -52,5 +57,11 @@ export default function initOrToggleTheme(type) {
       path: '/',
       domain: 'cnblogs.com',
     })
+  }
+
+  function saveEventName() {
+    window.fn = window.fn || {}
+    window.fn.e = window.fn.e || []
+    window.fn.e.push('themeChange')
   }
 }

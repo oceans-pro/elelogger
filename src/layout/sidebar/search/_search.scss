@@ -1,4 +1,5 @@
-#q{
+#q {
+  width: 65%;
   height: 30px;
   padding: 2px 16px !important;
   border: none;
@@ -9,13 +10,22 @@
   border-radius: 4px;
 }
 
-.div_my_zzk input, .input_my_zzk input {
-  width: 55%;
+.search-icon {
+  margin-left: 10px;
+  i {
+    font-size: 20px;
+  }
+
+  &:hover {
+    color: var(--color-primary);
+    cursor: pointer;
+  }
 }
 
+
 // 覆盖博客园的覆盖样式
-@media only screen and (max-width: 767px){
+@media only screen and (max-width: 767px) {
   #sidebar_search_box input[type=text] {
-    width: 55%!important;
+    width: 65% !important;
   }
 }

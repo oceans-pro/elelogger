@@ -7,7 +7,7 @@ $('#home').append(`
         <li class="btn-top"><a href="#header"></a></li>
         <li class="btn-fullscreen"><a href="javascript:toggleFullScreen();toggleWideMode();"></a></li>
         <li class="btn-theme"><a  href="javascript:initOrToggleTheme()"></a></li>
-        <li class="btn-theme-code"><a href="javascript:changeCodeTheme()"></a></li>
+        <li class="btn-theme-code"><a href="javascript:initOrToggleCodeColor()"></a></li>
         <li class="btn-main"><a href="javascript:initOrToggleSidebar()"></a></li>
         </ul></div>`
 )

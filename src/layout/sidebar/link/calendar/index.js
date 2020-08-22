@@ -4,7 +4,7 @@
 require('./_calendar.scss')
 
 export default function addEventForCalendar() {
-  eleNotice.calendarNoticeNum = 0
+  ele.calendarNoticeNum = 0
   $('#my-calendar').click(function(e) {
     e.preventDefault()
     for (const item of ajaxStorage) {
@@ -27,7 +27,7 @@ window.myLoadBlogCalendar = function(date) {
     type: 'get',
     dataType: 'text',
     success: function(html) {
-      // eleNotice.$notify({message: html, title: '写作日历', dangerouslyUseHTMLString: true, duration: 0})
+      // ele.$notify({message: html, title: '写作日历', dangerouslyUseHTMLString: true, duration: 0})
       showCalendar(html)
       useMyFunction()
     }
@@ -35,19 +35,19 @@ window.myLoadBlogCalendar = function(date) {
 }
 
 function showCalendar(htmlStr) {
-  if (eleNotice.calendarNoticeNum === 2) {
-    return eleNotice.$message.error('最多显示两个日历哦~')
+  if (ele.calendarNoticeNum === 2) {
+    return ele.$message.error('最多显示两个日历哦~')
   }
-  eleNotice.$notify({
+  ele.$notify({
     message: htmlStr,
     title: '写作日历',
     dangerouslyUseHTMLString: true,
     duration: 0,
     onClose: function() {
-      eleNotice.calendarNoticeNum--
+      ele.calendarNoticeNum--
     }
   })
-  eleNotice.calendarNoticeNum++
+  ele.calendarNoticeNum++
 }
 
 function useMyFunction() {

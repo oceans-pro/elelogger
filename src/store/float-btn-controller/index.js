@@ -1,6 +1,6 @@
 import initOrToggleTheme from '@/store/float-btn-controller/theme'
 import initOrToggleSidebar, {showSide, showContent} from '@/store/float-btn-controller/sidebar'
-import changeCodeTheme from '@/store/float-btn-controller/color'
+import initOrToggleCodeColor from '@/store/float-btn-controller/color'
 import {toggleFullScreen, toggleWideMode} from '@/store/float-btn-controller/fullscreen-and-widemode'
 
 /**
@@ -9,7 +9,7 @@ import {toggleFullScreen, toggleWideMode} from '@/store/float-btn-controller/ful
  * 只能暂时采取这种方式
  */
 window.initOrToggleTheme = initOrToggleTheme
-window.changeCodeTheme = changeCodeTheme
+window.initOrToggleCodeColor = initOrToggleCodeColor
 window.initOrToggleSidebar = initOrToggleSidebar
 window.showSide = showSide
 window.showContent = showContent

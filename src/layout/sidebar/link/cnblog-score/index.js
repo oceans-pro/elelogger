@@ -1,5 +1,5 @@
 require('./_score.scss')
-eleNotice.scoreNoticeCount = 0
+ele.scoreNoticeCount = 0
 export default function addEventForScore() {
   $('#my-score').click(function(e) {
     e.preventDefault()
@@ -18,18 +18,18 @@ export default function addEventForScore() {
 }
 
 function showScore(htmlStr) {
-  if (eleNotice.scoreNoticeCount === 1) {
-    eleNotice.$notify.closeAll()
+  if (ele.scoreNoticeCount === 1) {
+    ele.$notify.closeAll()
     // return
   }
-  eleNotice.$notify({
+  ele.$notify({
     message: htmlStr,
     title: '积分与排名',
     dangerouslyUseHTMLString: true,
     duration: 0,
     onClose: function() {
-      eleNotice.scoreNoticeCount--
+      ele.scoreNoticeCount--
     }
   })
-  eleNotice.scoreNoticeCount++
+  ele.scoreNoticeCount++
 }
