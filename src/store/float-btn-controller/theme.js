@@ -60,8 +60,8 @@ export default function initOrToggleTheme(isInit) {
   }
 
   function saveEventName() {
-    window.fn = window.fn || {}
-    window.fn.e = window.fn.e || []
-    window.fn.e.push('themeChange')
+    window.g = window.g || {}
+    window.g.events = window.g.events || []
+    window.g.events.push('themeChange')
   }
 }

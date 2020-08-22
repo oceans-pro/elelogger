@@ -16,12 +16,12 @@ export default function initOrToggleSidebar(isInit) {
     }
     // 首次打开
     // 移动端和PC端的策略不同，移动端首次不打开侧边
-    if (isMobile()) {
+    if (fn.isMobile()) {
       makeClose()
       saveCookie('close')
       return
     }
-    if (!isMobile()) {
+    if (!fn.isMobile()) {
       makeOpen()
       saveCookie('open')
       return

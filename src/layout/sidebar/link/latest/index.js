@@ -1,7 +1,7 @@
 export default function addEventForLatest() {
   $('#my-latest').click(function(e) {
     e.preventDefault()
-    for (const item of window.ajaxStorage) {
+    for (const item of g.ajaxStorage) {
       if (item.url === `/${userPath}/ajax/sidecolumn.aspx`) {
         const html = $.parseHTML(`<div>${item.xhr.responseText}</div>`)
         const $html = $(html)

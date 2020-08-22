@@ -1,24 +1,30 @@
 <script>
-  // 要最先运行的JS。我们要让其最先加载，所以不要使用 $(document).ready()
+  // 要最先运行的JS。我们要让其最先加载，所以不要使用 $(document).ready()，更不要使用window.onload
   // -- 图标
   $('#favicon').replaceWith('<link rel="shortcut icon" href="https://blog-static.cnblogs.com/files/oceans/favicon.ico">')
   // -- ajax监听
-  window.ajaxStorage = []
-  $(document).ajaxComplete(function(event, xhr, option) {
-    var item = {}
-    item.url = option.url
-    if (window.isBundleJSCome) { // 后来的请求可以被监听到，需要在bundle.js调用ajaxListener
-      item.later = true
-      $(document).trigger('ajax-later', item) // 传递item的引用
-    } else {
-      item.later = false
-    }
-    item.event = event
-    item.xhr = xhr
-    item.option = option
-    item.time = new Date()
-    window.ajaxStorage.push(item) // 简单备份下
-  })
+  init()
+
+  function init() {
+    window.g = {}
+    window.fn = {}
+    g.ajaxStorage = []
+    $(document).ajaxComplete(function(event, xhr, option) {
+      var item = {}
+      item.url = option.url
+      if (g.isBundleJSCome) { // 后来的请求
+        item.later = true
+        $(document).trigger('ajaxLater', item)
+      } else {
+        item.later = false
+      }
+      item.event = event
+      item.xhr = xhr
+      item.option = option
+      item.time = new Date()
+      g.ajaxStorage.push(item)
+    })
+  }
 </script>
 <!--********************************************* HTML ***********************************************-->
 <section class="oceans-sou">
@@ -63,5 +69,4 @@
 2. 这样做的好处是：方便开发：利用node脚本一键部署，不必每次改完代码都要在博客园页脚处复制一次。
 3. 这样做的坏处是：CSS加载时间延后，如果你网速很慢，初始加载页面效果不佳
 4. 解决方法也很简单，当你确定不再有开发（自定义）需求时，将 main.css的内容直接复制到页面定制 CSS 代码 处即可（https://i.cnblogs.com/settings）
-5. 特别是:root{ display:none }
 ***********************************************-->

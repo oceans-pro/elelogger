@@ -2,7 +2,7 @@ require('./_tag.scss')
 
 
 modifyTag()
-$(document).on('ajax-later', function(e, item) {
+$(document).on('ajaxLater', function(e, item) {
   if (item.url === `/${userPath}/ajax/sidecolumn.aspx`) {
     modifyTag()
   }
@@ -22,3 +22,16 @@ function modifyTag() {
     'el-button--mini ' +
     'is-round')
 }
+
+$('.catListTag ul li a').each(function() {
+  $(this).click(function(e) {
+    e.stopPropagation()
+    window.location.href = $(this).attr('href')
+  })
+})
+$('.catListTag ul li').each(function(e) {
+  $(this).click(function() {
+    $(this).children('a').trigger('click')
+  })
+})
+

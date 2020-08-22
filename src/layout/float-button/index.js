@@ -15,11 +15,13 @@ $('#home').append(`
 let windowTop = 0
 $(window).scroll(function() {
   let scrolls = $(this).scrollTop()
-  if (scrolls >= windowTop) {
-    // 当scrolls>windowTop时，表示页面在向下滑动
+  if (scrolls - windowTop > 10) {
+    // 原来是: 当scrolls > windowTop时，表示页面在向下滑动
+    // fix: 当切换主题时，会有一点点变化，也会触发隐藏
     $('.float-btn').addClass('float-btn-hide')
     windowTop = scrolls
-  } else {
+  }
+  if (scrolls - windowTop < 0) {
     $('.float-btn').removeClass('float-btn-hide')
     windowTop = scrolls
   }

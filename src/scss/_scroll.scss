@@ -1,3 +1,6 @@
+/*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+                                                 侧边栏
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
 #sideBar::-webkit-scrollbar {
   //width: 5px;
   //height: 12px;
@@ -57,33 +60,46 @@
 }
 
 .hljs::-webkit-scrollbar-track {
-  /*滚动条里面轨道*/
   background: #f1f1f1;
-  //-webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-//.hljs::-webkit-scrollbar-button:horizontal:start:increment { //横向 开始端 增量按钮
-//  display: block!important;
-//}
-//
-//.hljs::-webkit-scrollbar-button:horizontal:end:decrement { //横向 末尾端 减量按钮
-//  display: block!important;
-//}
 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
-                                            暗色修复
+                                            body
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
+body::-webkit-scrollbar {
+  width: 16px;
+  height: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+
+
+  &:hover {
+    background-color: var(--color-primary);
+  }
+}
+
 :root[theme=dark] {
   body::-webkit-scrollbar {
-    width: 10px;
+    width: 16px;
     height: 12px;
   }
+
+  body::-webkit-scrollbar-track {
+    background: #282c34;
+  }
+
 
   body::-webkit-scrollbar-thumb {
     background-color: #454545;
 
-
     &:hover {
-      background-color: #a8a8a8;
+      background-color: var(--color-primary);
     }
 
   }

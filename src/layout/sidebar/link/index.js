@@ -20,7 +20,7 @@ addEventForScore()
 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
                                            监听后来的Ajax
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
-$(document).on('ajax-later', function(e, item) {
+$(document).on('ajaxLater', function(e, item) {
   if (item.url === `/${userPath}/ajax/sidecolumn.aspx`) {
     modifyLinks()
     addUseful()

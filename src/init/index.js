@@ -1,7 +1,10 @@
-import './init-listener'
-
 require('./init-app')
-require('./init-remove')
-require('./init-blog')
-require('./init-tag-h')
-require('./fix-problem')
+import {getAuthInfo} from '@/init/function/auth'
+
+window.userPath = null
+window.g.isAuthenticated = null
+window.g.isBlogOwner = null
+window.userPath = window.location.pathname.split('/')[1]
+
+window.g.isAuthenticated = getAuthInfo().isAuthenticated
+window.g.isBlogOwner = getAuthInfo().isBlogOwner

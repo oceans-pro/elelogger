@@ -1,2 +1,3 @@
-import listenRoute from '@/pages/router'
-listenRoute()
+import whichPage from '@/pages/router'
+const page = whichPage()
+require(`./${page}`)

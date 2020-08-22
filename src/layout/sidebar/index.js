@@ -6,6 +6,7 @@
 require('./_sidebar.scss')
 require('./_hide.scss')
 
+require('./main')
 require('./search') // 站内搜索
 require('./link') // 随笔档案 + 实用连接
 require('./tag') // 我的标签

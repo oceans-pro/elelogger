@@ -1,12 +1,10 @@
-ele.latestFlag = false
-
 export default function addEventForRanks() {
   $('#my-rank').click(function(e) {
     /**
      * 有时间可以考虑变为单行文本 ...
      */
     e.preventDefault()
-    for (const item of window.ajaxStorage) {
+    for (const item of g.ajaxStorage) {
       if (item.url === `/${userPath}/ajax/TopLists.aspx`) {
         showNotice(item.xhr.responseText)
       }
