@@ -14,8 +14,8 @@ if ($('#post_detail').length > 0) {
         `)
       .prepend(`
           <div class="side-choose">
-            <a id="myside" href="javascript:showSide()">文件</a>
-            <a id="mycontent" href="javascript:showContent()">大纲</a>
+            <a id="sidebar_files" href="javascript:showSide()">文件</a>
+            <a id="sidebar_outline" href="javascript:showContent()">大纲</a>
           </div>
         `)
     $('#sideBarMain').hide()

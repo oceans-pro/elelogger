@@ -1,4 +1,4 @@
-import './_tag.scss'
+require('./_tag.scss')
 import VueInstanceUseElButton from '@/pages/tag/button'
 import VueInstanceWithSortableList from '@/pages/tag/items'
 

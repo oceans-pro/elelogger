@@ -4,26 +4,30 @@
     display: none;
   }
 
-  .taglist_title_wrap {
+  #taglist_title_wrap {
     position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+    #btn {
+      position: absolute;
+      right: 30px;
+    }
+
+    #taglist_title, h3 {
+      width: 5em;
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    h3:hover {
+      color: var(--color-primary);
+      cursor: pointer;
+    }
   }
 
-  #btn {
-    position: absolute;
-    right: 30px;
-  }
-
-  h3 {
-    width: 5em;
-    text-align: center;
-    margin: 10px auto;
-    display: inline-block;
-  }
-
-  h3:hover {
-    color: var(--color-primary);
-    cursor: pointer;
-  }
 
   #up-tag-area {
     margin-bottom: 50px;
@@ -31,7 +35,8 @@
 
   #down-tag-area {
   }
-  .item{
+
+  .item {
     margin-bottom: 10px;
   }
 
