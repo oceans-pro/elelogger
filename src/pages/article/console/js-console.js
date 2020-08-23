@@ -3,6 +3,8 @@
  * code.language-es6用于 静默执行
  * code.language-js 也可执行，但是非静默的
  */
+import {deHighlight} from '@/pages/article/console/util'
+
 export default function addConsoleAfterJavascriptDemo() {
   const $demos = $('code.language-js, code.language-es6')
   // that 为 dom对象
@@ -43,14 +45,11 @@ export default function addConsoleAfterJavascriptDemo() {
                                                展示代码+执行+输出
       +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
       $(this).parents('.copyItem').append(`
-          <div id="log-${index}"></div>` // 设置logger的位置
+          <div id="js-${index}"></div>` // 设置logger的位置
       )
       const codeWithTags = that.innerHTML
       // 删掉多余的外层hljs标签 注意使用非贪婪匹配
-      const reg = /(<span class="hljs-.+?">)|(<\/span>)/g
-      js = codeWithTags.replace(reg, '')
-      // 反转义
-      js = js.replace('&gt;', '>')
+      js = deHighlight(codeWithTags)
       /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
                                                  同步代码
       +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
@@ -65,15 +64,15 @@ export default function addConsoleAfterJavascriptDemo() {
         return
       }
 
-      if (flag === 'async' || flag === 'sync') {
+      if (flag === 'async') {
         const logger = new Logger(index, true)
         window.g = window.g || {}
         window.g.loggers = window.g.loggers || []
         window.g.loggers[index] = logger
-        js = js.replace('// log-async', `
+        js = js.replace(/\/\/ log-async/gm, `
             console.log = value => {
             clearInterval(g.loggers[${index}].timer)
-            g.loggers[${index}].content = ''
+            g.loggers[${index}].tip = ''
             g.loggers[${index}].content += getHtmlStrByValue(value)
           }
         `)
@@ -92,17 +91,19 @@ export default function addConsoleAfterJavascriptDemo() {
   function Logger(index, isAsync) {
     return new Vue({
       name: 'logger',
-      el: '#log-' + index, // 原ID会消失，需要重新加上ID
+      el: '#js-' + index, // 原ID会消失，需要重新加上ID
       template: `
         <section>
           <div class="head"><i class="el-icon-sort"></i></div>
           <div :id="'log-'+index" class="console">
+            <div class="console-content" v-html="tip"></div>
             <div class="console-content" v-html="content"></div>
           </div>
         </section>`,
       data: {
         index: index,
-        content: ''
+        content: '',
+        tip: ''
       },
       created() {
         this.hasData = false
@@ -183,13 +184,13 @@ export default function addConsoleAfterJavascriptDemo() {
    * 定期改变vue实例中数据的函数
    */
   function timer(vue) {
-    const arr = ['loading', 'loading.', 'loading..', 'loading...']
+    const arr = ['waiting', 'waiting.', 'waiting..', 'waiting...', 'waiting....', 'waiting.....', 'waiting......']
     let index = 0
-    vue.content = `<div class="loading">${arr[0]}</div>`
+    vue.tip = `<div class="loading">${arr[0]}</div>`
     return setInterval(function() {
       if (index === arr.length - 1) index = 0
       index++
-      vue.content = `<div class="loading">${arr[index]}</div>`
+      vue.tip = `<div class="loading">${arr[index]}</div>`
     }, 500)
   }
 
