@@ -20,6 +20,7 @@ section {
 
     pre {
       font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, sans-serif;
+      background-color: var(--color-white) !important;
     }
 
     .hr {
@@ -33,15 +34,15 @@ section {
     }
 
     .str {
-      color: #c51916;
+      color: #c51916 !important;
     }
 
     .null {
-      color: #ab0d90;
+      color: #ab0d90 !important;
     }
 
     .num {
-      color: #0d22aa;
+      color: #0d22aa !important;
     }
 
     .obj {
@@ -71,6 +72,7 @@ section {
     }
   }
 }
+
 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
                                                暗色
   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/

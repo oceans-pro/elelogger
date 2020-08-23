@@ -86,11 +86,10 @@
 .side-choose {
   display: flex;
   justify-content: space-between;
-  /* padding:10px; */
   background: var(--color-white);
 }
 
-#myside, #mycontent {
+#sidebar_files, #sidebar_outline {
   flex-grow: 1;
   text-align: center;
   line-height: 50px;
@@ -101,17 +100,15 @@
   justify-content: center;
 }
 
-.side-choose .active {
-  color: var(--color-text-primary) !important;
-}
 
-.side-choose .active:after {
-  content: "";
-  width: 30px;
-  height: 2px;
-  border-radius: 0px;
-  position: absolute;
-  background: var(--color-primary);
-  bottom: 0;
-  margin: 0 auto;
-}
+
+/*.side-choose .active:after {*/
+/*  content: "";*/
+/*  width: 30px;*/
+/*  height: 2px;*/
+/*  border-radius: 0px;*/
+/*  position: absolute;*/
+/*  background: var(--color-primary);*/
+/*  bottom: 0;*/
+/*  margin: 0 auto;*/
+/*}*/

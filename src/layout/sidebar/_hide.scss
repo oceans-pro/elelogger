@@ -2,6 +2,7 @@
                                            侧边栏不要放太多东西
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
 #sideBar {
+  overflow: hidden !important;
   // 谷歌搜索
   #widget_my_google {
     display: none !important;

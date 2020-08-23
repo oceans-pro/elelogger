@@ -2,58 +2,60 @@
  * 侧边栏
  * @param{boolean} isInit
  */
+
 export default function initOrToggleSidebar(isInit) {
-  const flag = $.cookie('is-side-open')
+  const flag = $.cookie('sidebar-status')
   // -- init
   if (isInit) {
-    if (flag === 'open') {
-      makeOpen()
+    if (flag === 'hide') {
+      hideSidebar()
       return
     }
-    if (flag === 'close') {
-      makeClose()
+    if (flag === 'show') {
+      if (fn.isMobile()) {
+        hideSidebar()
+        saveCookie('hide')
+        return
+      }
+      showSidebar()
       return
     }
     // 首次打开
-    // 移动端和PC端的策略不同，移动端首次不打开侧边
-    if (fn.isMobile()) {
-      makeClose()
-      saveCookie('close')
-      return
-    }
     if (!fn.isMobile()) {
-      makeOpen()
-      saveCookie('open')
+      showSidebar()
+      saveCookie('show')
       return
     }
     return
   }
   // -- toggle
-  if (flag === 'open') {
-    saveCookie('close')
-    makeClose()
+  if (flag === 'hide') {
+    saveCookie('show')
+    showSidebar()
     return
   }
-  if (flag === 'close') {
-    saveCookie('open')
-    makeOpen()
+  if (flag === 'show') {
+    saveCookie('hide')
+    hideSidebar()
     return
   }
-  saveCookie('open')
-  makeOpen()
+  saveCookie('hide')
+  hideSidebar()
 
-  function makeOpen() {
+  function hideSidebar() {
+    console.log('hide')
     $('#main').removeClass('main-widthout-sidebar')
     $('.btn-main').addClass('btn-main-open')
   }
 
-  function makeClose() {
+  function showSidebar() {
+    console.log('show')
     $('#main').addClass('main-widthout-sidebar')
     $('.btn-main').removeClass('btn-main-open')
   }
 
   function saveCookie(flag) {
-    $.cookie('is-side-open', flag, {
+    $.cookie('sidebar-status', flag, {
       expires: 30,
       path: '/',
       domain: 'cnblogs.com',
@@ -67,8 +69,8 @@ export default function initOrToggleSidebar(isInit) {
 export function showSide() {
   $('#sideBarMain').show()
   $('#sidebar_scroller').hide()
-  $('#myside').addClass('active')
-  $('#mycontent').removeClass('active')
+  $('#sidebar_files').addClass('active')
+  $('#sidebar_outline').removeClass('active')
 }
 
 /**
@@ -77,6 +79,6 @@ export function showSide() {
 export function showContent() {
   $('#sideBarMain').hide()
   $('#sidebar_scroller').show()
-  $('#myside').removeClass('active')
-  $('#mycontent').addClass('active')
+  $('#sidebar_files').removeClass('active')
+  $('#sidebar_outline').addClass('active')
 }

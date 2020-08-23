@@ -1,8 +1,5 @@
 <script>
-  // 要最先运行的JS。我们要让其最先加载，所以不要使用 $(document).ready()，更不要使用window.onload
-  // -- 图标
   $('#favicon').replaceWith('<link rel="shortcut icon" href="https://blog-static.cnblogs.com/files/oceans/favicon.ico">')
-  // -- ajax监听
   init()
 
   function init() {
@@ -28,30 +25,24 @@
 </script>
 <!--********************************************* HTML ***********************************************-->
 <section class="oceans-sou">
-  <!--  友情链接 -->
   <a href="https://100jiancai.cn">潍坊百年建材</a>
 </section>
 <!--********************************************* CSS ***********************************************-->
 <link rel="stylesheet" href="https://blog-static.cnblogs.com/files/oceans/vscode.css" title="code-theme">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/theme-chalk/index.css">
-<link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.css">
 <script>
   // 防止七牛云缓存，增加时间戳
   var href = 'https://oceans.100jiancai.cn/main.css?time=' + new Date().getTime()
   $('head').append('<link rel="stylesheet" href="' + href + '">')
 </script>
-<!--********************************************* JavaScript ***********************************************-->
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<!--<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>-->
-<!-- UI框架 -->
+<!--********************************************* JS ***********************************************-->
+<link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.css">
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/index.js"></script>
-<!-- cookie -->
 <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js"></script>
-<!-- 组件美化 -->
 <script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.js"></script>
 <script src="https://blog-static.cnblogs.com/files/oceans/scroll-spy.js"></script>
-<!-- 站长统计，请切换为你自己的 -->
 <div style="display: none;">
   <script type="text/javascript" src="https://s9.cnzz.com/z_stat.php?id=1279140987&web_id=1279140987"></script>
 </div>
@@ -63,10 +54,4 @@
     $('head').append('<script type="text/javascript" src="' + src + '"><\/script>')
   })()
 </script>
-<!--*********************************************
-说明：
-1. 目前main.css和bundle.js均为动态导入的，放在七牛云/Gitee/Coding中。
-2. 这样做的好处是：方便开发：利用node脚本一键部署，不必每次改完代码都要在博客园页脚处复制一次。
-3. 这样做的坏处是：CSS加载时间延后，如果你网速很慢，初始加载页面效果不佳
-4. 解决方法也很简单，当你确定不再有开发（自定义）需求时，将 main.css的内容直接复制到页面定制 CSS 代码 处即可（https://i.cnblogs.com/settings）
-***********************************************-->
+
