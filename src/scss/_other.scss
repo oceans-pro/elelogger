@@ -83,10 +83,14 @@
   color: var(--color-text-secondary);
 }
 
+
 .side-choose {
   display: flex;
+  width: 300px;
   justify-content: space-around;
   background: var(--color-white);
+  position: fixed;
+  z-index: 100;
 
   .active {
     color: var(--color-text-primary) !important;
@@ -104,4 +108,3 @@
     justify-content: center;
   }
 }
-

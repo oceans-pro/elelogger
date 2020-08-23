@@ -6,9 +6,13 @@ if ($('#post_detail').length > 0) {
     // 设置层级为1
     $ph.attr('offset', '1')
     // 添加导航目录的内容
+    $('#leftcontentcontainer').prepend(`
+      <div title="placeholder-for-side-choose" style="height: 55px;"></div>
+    `)
     $('#sideBar')
       .prepend(`
           <div id="sidebar_scroller" class="sidebar-block">
+            <div title="placeholder-for-side-choose" style="height: 60px;"></div>
             <ul class="nav"></ul>
           </div>
         `)
