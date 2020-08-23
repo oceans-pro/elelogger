@@ -10,6 +10,5 @@ export function deHighlight(codeWithTags) {
   // result = result.replace(/&lt;/mg, '<')
   result = $.parseHTML(`<div>${result}</div>`)[0]
   result = $(result).text()
-  console.log(result)
   return result
 }

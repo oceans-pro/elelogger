@@ -1,4 +1,4 @@
-require('./style.scss')
+require('./scss')
 window.g.isBundleJSCome = true
 console.log('bundle.js开始执行')
 let start = new Date().getTime()
