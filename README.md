@@ -11,6 +11,7 @@ npm install -g tree-node-cli
 treee -L 3 -I "node_modules|.idea|.vscode|blogs|.git" -a --dirs-first > out.txt
 ```
 
+
 ```sh
 cnblog
 ├── build # 构建用的脚本
