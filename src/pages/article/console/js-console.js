@@ -3,7 +3,7 @@
  * code.language-es6用于 静默执行
  * code.language-js 也可执行，但是非静默的
  */
-import {deHighlight} from '@/pages/article/console/util'
+import {deHighlight, evalSafely} from '@/pages/article/console/util'
 
 export default function addConsoleAfterJavascriptDemo() {
   const $demos = $('code.language-js, code.language-es6')
@@ -14,7 +14,7 @@ export default function addConsoleAfterJavascriptDemo() {
                                                静默执行
       +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
       if ($(this).attr('class').indexOf('es6') > 0) {
-        window.eval($(this).text())
+        evalSafely($(this).text())
         $(this).parent().remove()
       }
       /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
@@ -56,10 +56,19 @@ export default function addConsoleAfterJavascriptDemo() {
       if (flag === 'sync') {
         const logger = new Logger(index, false)
         console.log = value => {
-          logger.content += getHtmlStrByValue(value)
+          logger.content += fn.getHtmlStrByValue(value)
         }
-        eval(js)
+        js = `
+          try {
+            ${js}
+          } catch (e) {
+            console.log('错_错-错[' + e.name + ': ' + e.message + ']')
+            fn.error(e.stack)
+          }`
+        evalSafely(js)
+
         console.log = window.fn.log
+        console.error = window.fn.error
         listenLoggerClick()
         return
       }
@@ -73,10 +82,10 @@ export default function addConsoleAfterJavascriptDemo() {
             console.log = value => {
             clearInterval(g.loggers[${index}].timer)
             g.loggers[${index}].tip = ''
-            g.loggers[${index}].content += getHtmlStrByValue(value)
+            g.loggers[${index}].content += fn.getHtmlStrByValue(value)
           }
         `)
-        eval(js)
+        evalSafely(js)
         listenLoggerClick()
       }
     }
@@ -126,57 +135,6 @@ export default function addConsoleAfterJavascriptDemo() {
     $(document).click(function(event) {
       $('.console').removeClass('border-highlight')
     })
-  }
-
-
-  /**
-   * @param value 要输入的值
-   * @return {string} 转换的HTML字符串 | 或不转换
-   */
-  function getHtmlStrByValue(value) {
-    let result = ''
-    if (value === undefined) {
-      result += `<div class="null">undefined</div>`
-      result += `<div class="hr"></div>`
-      return result
-    }
-    if (value === null) {
-      result += `<div class="null">null</div>`
-      result += `<div class="hr"></div>`
-      return result
-    }
-
-    if (typeof value === 'object') {
-      if (value.toString().indexOf('vue-devtools') > 0) {
-        window.fn.log(value)
-        return
-      }
-      const pureJson = JSON.stringify(value, null, 2)
-      const colorfulJson = highLightJson(pureJson)
-      console.log(colorfulJson)
-      result += `<pre><div class="obj">${colorfulJson}</div></pre>`
-      result += `<div class="hr"></div>`
-      return result
-    }
-    if (typeof value === 'number' || typeof value === 'boolean') {
-      result += `<div class="num">${value}</div>`
-      result += `<div class="hr"></div>`
-      return result
-    }
-    if (typeof value === 'string') {
-      result += `<div class="str">${value}</div>`
-      result += `<div class="hr"></div>`
-      return result
-    }
-  }
-
-  /**
-   *
-   * @param {string} str
-   * @returns {string}
-   */
-  function highLightJson(str) {
-    return window.hljs.highlight('json', str).value
   }
 
 
