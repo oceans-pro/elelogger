@@ -43,13 +43,11 @@ export default function initOrToggleSidebar(isInit) {
   hideSidebar()
 
   function hideSidebar() {
-    console.log('hide')
     $('#main').removeClass('main-widthout-sidebar')
     $('.btn-main').addClass('btn-main-open')
   }
 
   function showSidebar() {
-    console.log('show')
     $('#main').addClass('main-widthout-sidebar')
     $('.btn-main').removeClass('btn-main-open')
   }

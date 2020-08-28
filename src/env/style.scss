@@ -1,0 +1,76 @@
+
+#app {
+  [contenteditable]:focus {
+    outline: none;
+  }
+
+  pre,
+  .el-textarea__inner {
+    padding: 0;
+    margin: 0;
+  }
+
+  font-size: 16px;
+  height: 666px;
+
+  .el-row {
+    height: 100%;
+
+    #left-container {
+      height: 100%;
+      position: relative;
+
+      pre#markdown {
+        box-sizing: border-box;
+        height: 100%;
+        margin: 0;
+        padding: 15px;
+        overflow: scroll;
+
+
+        code {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      pre#input {
+        box-sizing: border-box;
+        position: absolute;
+        padding: 15px;
+        left: 0;
+        top: 0;
+        color: transparent;
+        background-color: transparent;
+        z-index: 99;
+        width: 100%;
+        height: 100%;
+        caret-color: #409eff;
+        overflow: scroll;
+
+        code {
+          color: transparent;
+          background-color: transparent;
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    #right-container {
+      height: 100%;
+
+      .el-card {
+        border: none;
+        height: 100%;
+      }
+    }
+
+    textarea, .el-textarea {
+      height: 100%;
+    }
+  }
+}
+
+

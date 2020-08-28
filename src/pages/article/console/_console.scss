@@ -20,7 +20,7 @@ section {
 
     pre {
       font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, sans-serif;
-      background-color: var(--color-white) !important;
+      background-color: var(--color-white) !important; // 夸克浏览器的bug
     }
 
     .hr {
@@ -79,7 +79,10 @@ section {
 :root[theme=dark] {
   .console {
     border: 0.5px var(--color-white);
-    background-color: #242424;
+    background-color: #242424 !important; // 夸克浏览器的bug
+    pre {
+      background-color: #242424 !important; // 夸克浏览器的bug
+    }
 
     .hr {
       border-top: 1px solid #3a3a3a;

@@ -9,5 +9,5 @@ window.fn.error = console.error
 window.fn.warn = console.warn()
 window.fn.getHtmlStrByValue = getHtmlStrByValue
 
-addConsoleAfterJavascriptDemo()
 addPreviewAfterHtmlDemo()
+addConsoleAfterJavascriptDemo()

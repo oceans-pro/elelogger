@@ -11,8 +11,8 @@
 
   h2 {
     font-size: 1.8rem;
-    margin-top: 1.8rem;
-    margin-bottom: 2.2rem;
+    margin-top: 2.2rem;
+    margin-bottom: 0.4rem;
     @media (max-width: 419px) {
       font-size: 1.7rem;
     }
@@ -21,6 +21,7 @@
   h3 {
     font-size: 1.5rem;
     padding-bottom: .3rem;
+    margin-top: 1em;
     border-bottom: 1px solid #eaecef;
   }
 

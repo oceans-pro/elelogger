@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<link rel="stylesheet" href="./vs.css">
+<link rel="stylesheet" href="./atom.css">
+<link rel="stylesheet" href="https://blog-static.cnblogs.com/files/oceans/vscode.css" title="code-theme">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/theme-chalk/index.css">
+<script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/index.js"></script>
+<script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/markdown-it/11.0.0/markdown-it.min.js"></script>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="./style.css">
+<section>
+  <div id="app">
+    <h1 style="text-align: center">简易版本的Markdown编辑器</h1>
+    <el-row>
+      <el-col :span="12" id="left-container">
+        <pre id="markdown"><code class="markdown"></code></pre>
+        <pre id="input"><code contenteditable="true" class="markdown" @input="handleInput">{{ articleMd}}</code></pre>
+      </el-col>
+      <el-col :span="12" id="right-container">
+        <el-card>
+          <div id="output_html"></div>
+        </el-card>
+      </el-col>
+    </el-row>
+  </div>
+</section>
+<script>
+
+  $('link[title=code-theme]').remove()
+  let md = window.markdownit()
+  new Vue({
+    el: '#app',
+    data: {
+      articleMd: '',
+      articleHTML: '',
+      articleMdColorful: '',
+      $
+    },
+    mounted() {
+      this.articleMd =
+`# 一级标题
+## 二级标题
+### 三级标题
+#### 四级标题
+##### 五级标题
+###### 六级标题
+
+---
+
+- 香蕉 🍌
+- 苹果 🍎
+- 西瓜 🍉
+
+1. 北京
+2. 上海
+3. 深圳
+4. 广州
+
+**加粗**
+*倾斜*
+~~删除~~
+
+---
+
+这是\`.md\`
+
+![博客园LOGO](https://common.cnblogs.com/favicon.ico?v=20200522)`
+      this.doIt(this.articleMd)
+    },
+    methods: {
+      handleInput(e) {
+        console.log(e)
+        console.log(e.target.innerText)
+        this.doIt(e.target.innerText)
+      },
+      doIt(text) {
+        setTimeout(function() {
+          this.articleMd = text
+          // -- right
+          let htmlStr = md.render(this.articleMd)
+          this.articleHTML = htmlStr
+          $('#output_html').html(htmlStr)
+          $('#output_html pre').each(function() {
+            window.hljs.highlightBlock($(this)[0])
+          })
+          // -- left
+          let $code = $('#markdown code')
+          $code.html(this.articleMd)
+          window.hljs.highlightBlock($code[0])
+        }, 10)
+      }
+    },
+  })
+</script>
+</body>
+</html>

@@ -25,7 +25,7 @@ $sidebar.scrollAlone() // 防止以小带大
 let $sidebarMain
 $sidebarMain = $('#sideBarMain')
 $sidebarMain.append($('#footer')
-  .html(`Copyright-2020 <a href="https://home.cnblogs.com/u/oceans/">oceans-pro</a>`))
+  .html(`Copyright-2020 <a href="https://home.cnblogs.com/u/${userPath}/">${userPath}</a>`))
 
 $('#sidebar_search h3').text('站内搜索')
 
