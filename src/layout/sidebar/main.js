@@ -94,19 +94,8 @@ if ($('#post_detail').length > 0) {
     })
 
     //开启滚动监听, 监听所有在.nav类下的li
-    $('body').scrollspy()
+    // $('body').scrollspy()
 
-    //  侧边
-    /*
-    $(document).ajaxComplete(function(event, xhr, option) {
-      if (option.url.indexOf("TopLists") > -1) {
-        setTimeout(function() {
-          $('#sidebar_scroller').toggle();
-          toggleContent();
-          toggleMain();
-        }, 300)
-      }
-    })*/
 
     /* 当前目录激活监听 */
     $(window).scroll(function() {

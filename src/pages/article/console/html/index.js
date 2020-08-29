@@ -1,3 +1,9 @@
+/**
+ * 魔法注释
+ * 1. log 展示代码 + 执行代码
+ * 2. log-after 展示代码 + 执行代码
+ * 3. run 不展示代码，将html代码替换到原来的代码显示位置
+ */
 import {deHighlight} from '@/pages/article/console/util'
 
 export default function addPreviewAfterHtmlDemo() {
@@ -10,12 +16,20 @@ export default function addPreviewAfterHtmlDemo() {
     for (let i = 0; i < comments.length; i++) {
       let value = deHighlight(comments[i].innerHTML)
       value = value.replace(/ /g, '')
-      if (value === '<!--log-->') {
+
+
+      console.log(value)
+
+      if (value === '<!--log-->' || value === '<!--log-before-->') {
         flag = 'logBefore'
         break
       }
       if (value === '<!--log-after-->') {
         flag = 'logAfter'
+        break
+      }
+      if (value === '<!--run-->') {
+        flag = 'run'
         break
       }
     }
@@ -25,12 +39,18 @@ export default function addPreviewAfterHtmlDemo() {
     html = deHighlight(codeWithTags)
     const $to = $(this).parents('.copyItem')
     const content = `<div id="html-${index}">${html}</div>`
+
+
     if (flag === 'logAfter') {
       $to.after(content)
       return
     }
     if (flag === 'logBefore') {
       $to.before(content)
+      return
+    }
+    if (flag === 'run') {
+      $to.replaceWith(content)
     }
   })
 }

@@ -1,107 +1,452 @@
-<!doctype html>
-<html lang="en">
+
+<!DOCTYPE html>
+<html lang="zh-cn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta property="og:description" content="### 标题（三级） #### 这是四级标题 ##### 这是五级标题 ###### 这是六级标题 ### 文本 这是一段文本&#xD;**这是加粗的文本**&#xD;_这是倾斜的文本_&#xD;这是带有`code`的文本 " />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>博客园_写作模板_开发用 - oceans-pro - 博客园</title>
+  <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.ico?v=20200522" type="image/x-icon" />
+
+  <link rel="stylesheet" href="/css/blog-common.min.css?v=7Pwqzj5EBy4dBv4DJNI181rFKP8_OF0hT7jO3o8jAa0" />
+
+
+  <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/custom/bundle-custom-mobile.min.css?v=usO6AsdAECy7peUj2-vlt51BZKvOvN1aJZF_Ulh5cz4" />
+
+  <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/oceans/rss" />
+  <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/oceans/rsd.xml" />
+  <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/oceans/wlwmanifest.xml" />
+  <script>
+    var currentBlogId = 616775;
+    var currentBlogApp = 'oceans';
+    var cb_enable_mathjax = false;
+    var isLogined = true;
+    var isBlogOwner = true;
+    var skinName = 'Custom';
+    var visitorUserId = '36350983-b3a9-4341-d579-08d822f03d4a';
+  </script>
+  <script>
+    var currentPostDateAdded = '2020-08-29 01:00';
+  </script>
+  <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+  <script src="/js/blog-common.min.js?v=ZMP-E7oivIbnbdC4Ap-FXPEUrs-k9WrJgvJkU43qwDI"></script>
+
+
+
 </head>
 <body>
-<link rel="stylesheet" href="./vs.css">
-<link rel="stylesheet" href="./atom.css">
-<link rel="stylesheet" href="https://blog-static.cnblogs.com/files/oceans/vscode.css" title="code-theme">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/theme-chalk/index.css">
-<script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/index.js"></script>
-<script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js"></script>
-<script src="https://cdn.bootcdn.net/ajax/libs/markdown-it/11.0.0/markdown-it.min.js"></script>
-<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
-<link rel="stylesheet" href="./style.css">
-<section>
-  <div id="app">
-    <h1 style="text-align: center">简易版本的Markdown编辑器</h1>
-    <el-row>
-      <el-col :span="12" id="left-container">
-        <pre id="markdown"><code class="markdown"></code></pre>
-        <pre id="input"><code contenteditable="true" class="markdown" @input="handleInput">{{ articleMd}}</code></pre>
-      </el-col>
-      <el-col :span="12" id="right-container">
-        <el-card>
-          <div id="output_html"></div>
-        </el-card>
-      </el-col>
-    </el-row>
-  </div>
-</section>
-<script>
+<a name="top"></a>
+<div id="page_begin_html">
+  <style>
+    #page_end_html,
+    #home {
+      display: none;
+    }
+    #loading {
+      width: 50px;
+      height: 50px;
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      margin-top: -25px;;
+      margin-left: -25px;
+      z-index: 9999;
+    }
 
-  $('link[title=code-theme]').remove()
-  let md = window.markdownit()
-  new Vue({
-    el: '#app',
-    data: {
-      articleMd: '',
-      articleHTML: '',
-      articleMdColorful: '',
-      $
-    },
-    mounted() {
-      this.articleMd =
-`# 一级标题
-## 二级标题
-### 三级标题
-#### 四级标题
-##### 五级标题
-###### 六级标题
+    .loading-item {
+      width: 0.3em;
+      height: 0.3em;
+      border-radius: 2px;
+      background: #409EFF;
+      position: absolute;
+      animation: loading-item linear 0.8s infinite;
+      -webkit-animation: loading-item linear 0.8s infinite;
+    }
 
----
+    .loading-item:nth-child(1) {
+      left: 24px;
+      top: 2px;
+      animation-delay: 0s;
+    }
 
-- 香蕉 🍌
-- 苹果 🍎
-- 西瓜 🍉
+    .loading-item:nth-child(2) {
+      left: 40px;
+      top: 8px;
+      animation-delay: 0.1s;
+    }
 
-1. 北京
-2. 上海
-3. 深圳
-4. 广州
+    .loading-item:nth-child(3) {
+      left: 47px;
+      top: 24px;
+      animation-delay: 0.1s;
+    }
 
-**加粗**
-*倾斜*
-~~删除~~
+    .loading-item:nth-child(4) {
+      left: 40px;
+      top: 40px;
+      animation-delay: 0.2s;
+    }
 
----
+    .loading-item:nth-child(5) {
+      left: 24px;
+      top: 47px;
+      animation-delay: 0.4s;
+    }
 
-这是\`.md\`
+    .loading-item:nth-child(6) {
+      left: 8px;
+      top: 40px;
+      animation-delay: 0.5s;
+    }
 
-![博客园LOGO](https://common.cnblogs.com/favicon.ico?v=20200522)`
-      this.doIt(this.articleMd)
-    },
-    methods: {
-      handleInput(e) {
-        console.log(e)
-        console.log(e.target.innerText)
-        this.doIt(e.target.innerText)
-      },
-      doIt(text) {
-        setTimeout(function() {
-          this.articleMd = text
-          // -- right
-          let htmlStr = md.render(this.articleMd)
-          this.articleHTML = htmlStr
-          $('#output_html').html(htmlStr)
-          $('#output_html pre').each(function() {
-            window.hljs.highlightBlock($(this)[0])
-          })
-          // -- left
-          let $code = $('#markdown code')
-          $code.html(this.articleMd)
-          window.hljs.highlightBlock($code[0])
-        }, 10)
+    .loading-item:nth-child(7) {
+      left: 2px;
+      top: 24px;
+      animation-delay: 0.6s;
+    }
+
+    .loading-item:nth-child(8) {
+      left: 8px;
+      top: 8px;
+      animation-delay: 0.7s;
+    }
+
+    @keyframes loading-item {
+      0%, 40%, 100% {
+        transform: scale(1);
       }
-    },
-  })
-</script>
+      20% {
+        transform: scale(3);
+      }
+    }
+
+    @-webkit-keyframes loading-item {
+      0%, 40%, 100% {
+        transform: scale(1);
+      }
+      20% {
+        transform: scale(3);
+      }
+    }
+  </style>
+  <div id="loading">
+    <div class="loading-item"></div>
+    <div class="loading-item"></div>
+    <div class="loading-item"></div>
+    <div class="loading-item"></div>
+    <div class="loading-item"></div>
+    <div class="loading-item"></div>
+    <div class="loading-item"></div>
+    <div class="loading-item"></div>
+  </div>
+
+
+</div>
+
+<!--done-->
+<div id="home">
+  <div id="header">
+    <div id="blogTitle">
+      <a id="lnkBlogLogo" href="https://www.cnblogs.com/oceans/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>
+
+      <!--done-->
+      <h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/oceans/">oceans</a>
+      </h1>
+      <h2>
+        oceans
+      </h2>
+
+
+
+
+
+    </div><!--end: blogTitle 博客的标题和副标题 -->
+    <div id="navigator">
+
+      <ul id="navList">
+        <li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+          博客园</a>
+        </li>
+        <li>
+          <a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/oceans/">
+            首页</a>
+        </li>
+        <li>
+
+          <a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+            新随笔</a>
+        </li>
+        <li>
+          <a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/oceans-pro">
+            联系</a></li>
+        <li>
+
+          <!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+        <li>
+          <a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+            管理</a>
+        </li>
+      </ul>
+
+
+      <div class="blogStats">
+
+			<span id="stats_post_count">随笔 -
+18&nbsp; </span>
+        <span id="stats_article_count">文章 -
+0&nbsp; </span>
+        <span id="stats-comment_count">评论 -
+5</span>
+
+
+      </div><!--end: blogStats -->
+    </div><!--end: navigator 博客导航栏 -->
+  </div><!--end: header 头部 -->
+
+  <div id="main">
+    <div id="mainContent">
+      <div class="forFlow">
+        <div id="post_detail">
+          <!--done-->
+          <div id="topics">
+            <div class="post">
+              <h1 class = "postTitle">
+
+                <a id="cb_post_title_url" class="postTitle2 vertical-middle" href="https://www.cnblogs.com/oceans/p/13581889.html">
+                  <span>博客园_写作模板_开发用</span>
+
+
+
+                </a>
+
+              </h1>
+              <div class="clear"></div>
+              <div class="postBody">
+
+                <div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+                  <h3 id="标题（三级）">标题（三级）</h3>
+                  <h4 id="这是四级标题">这是四级标题</h4>
+                  <h5 id="这是五级标题">这是五级标题</h5>
+                  <h6 id="这是六级标题">这是六级标题</h6>
+                  <h3 id="文本">文本</h3>
+                  <p>这是一段文本<br>
+                    <strong>这是加粗的文本</strong><br>
+                    <em>这是倾斜的文本</em><br>
+                    这是带有<code>code</code>的文本</p>
+                  <h3 id="列表">列表</h3>
+                  <ul>
+                    <li>北京</li>
+                    <li>上海</li>
+                    <li>深圳</li>
+                  </ul>
+                  <ol>
+                    <li>西瓜 🍉</li>
+                    <li>草莓 🍓</li>
+                    <li>樱桃 🍒</li>
+                  </ol>
+                  <h3 id="代码块">代码块</h3>
+                  <pre><code class="language-js">// js代码
+function test(){
+  console.log('js')
+}
+test()
+</code></pre>
+                  <h3 id="表格">表格</h3>
+                  <table>
+                    <thead>
+                    <tr>
+                      <th style="text-align:left">左对齐</th>
+                      <th style="text-align:right">右对齐</th>
+                      <th style="text-align:center">居中对齐</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td style="text-align:left">单元格</td>
+                      <td style="text-align:right">单元格</td>
+                      <td style="text-align:center">单元格</td>
+                    </tr>
+                    <tr>
+                      <td style="text-align:left">单元格</td>
+                      <td style="text-align:right">单元格</td>
+                      <td style="text-align:center">单元格</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                  <h3 id="引用">引用</h3>
+                  <p>这是一段区块</p>
+                  <blockquote>
+                    <p>[1] 菜鸟教程 <a href="https://www.runoob.com/">https://www.runoob.com/</a></p>
+                  </blockquote>
+                  <p>这是一个链接<br>
+                    <a href="https://www.runoob.com/">点我</a></p>
+
+                </div>
+                <div id="MySignature"></div>
+                <div class="clear"></div>
+                <div id="blog_post_info_block">
+                  <div id="blog_post_info"></div>
+                  <div class="clear"></div>
+                  <div id="post_next_prev"></div>
+                </div>
+              </div>
+              <div class="postDesc">posted @
+                <span id="post-date">2020-08-29 13:00</span>&nbsp;
+                <a href="https://www.cnblogs.com/oceans/">oceans-pro</a>&nbsp;
+                阅读(<span id="post_view_count">0</span>)&nbsp;
+                评论(<span id="post_comment_count">0</span>)&nbsp;
+                <a href="https://www.cnblogs.com/oceans/p/13581889.md" target="_blank">MD</a>&nbsp;
+                <a href="https://i.cnblogs.com/EditPosts.aspx?postid=13581889" rel="nofollow">编辑</a>&nbsp;
+                <a href="javascript:void(0)" onclick="AddToWz(13581889);return false;">收藏</a></div>
+            </div>
+
+
+          </div><!--end: topics 文章、评论容器-->
+        </div>
+        <script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+        <script>markdown_highlight();</script>
+        <script>
+          var allowComments = true, cb_blogId = 616775, cb_blogApp = 'oceans', cb_blogUserGuid = '36350983-b3a9-4341-d579-08d822f03d4a';
+          var cb_entryId = 13581889, cb_entryCreatedDate = '2020-08-29 13:00', cb_postType = 1;
+          loadViewCount(cb_entryId);
+        </script><a name="!comments"></a>
+        <div id="blog-comments-placeholder"></div>
+        <script>
+          var commentManager = new blogCommentManager();
+          commentManager.renderComments(0);
+        </script>
+        <div id="comment_form" class="commentform">
+          <a name="commentform"></a>
+          <div id="divCommentShow"></div>
+          <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+          <div id="comment_form_container"></div>
+          <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+          <div id="ad_t2"></div>
+          <div id="opt_under_post"></div>
+          <div id="cnblogs_c1" class="c_ad_block">
+            <div id='div-gpt-ad-1592365906576-0' style='width: 300px; height: 250px;'></div>
+          </div>
+          <div id="under_post_news"></div>
+          <div id="cnblogs_c2" class="c_ad_block">
+            <div id='div-gpt-ad-1592366332455-0' style='width: 468px; height: 60px;'></div>
+          </div>
+          <div id="under_post_kb"></div>
+          <div id="HistoryToday" class="c_ad_block"></div>
+          <script type="text/javascript">
+            fixPostBody();
+            deliverBigBanner();
+            deliverT2();
+            deliverC1C2();
+            loadNewsAndKb();
+            loadBlogSignature();
+            LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+            GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+            loadOptUnderPost();
+            GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+          </script>
+        </div>
+      </div><!--end: forFlow -->
+    </div><!--end: mainContent 主体内容容器-->
+
+    <div id="sideBar">
+      <div id="sideBarMain">
+
+
+
+        <div id="sidebar_ad"></div>
+        <div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+
+        <div id="leftcontentcontainer">
+          <div id="blog-sidecolumn"></div>
+          <script>loadBlogSideColumn();</script>
+        </div>
+
+      </div><!--end: sideBarMain -->
+    </div><!--end: sideBar 侧边栏容器 -->
+    <div class="clear"></div>
+  </div><!--end: main -->
+  <div class="clear"></div>
+  <div id="footer">
+    <!--done-->
+    Copyright &copy; 2020 oceans-pro
+    <br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+  </div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+<div id="page_end_html">
+  <script>
+    // 要最先运行的JS。我们要让其最先加载，所以不要使用 $(document).ready()，更不要使用window.onload
+    // -- 图标
+    $('#favicon').replaceWith('<link rel="shortcut icon" href="https://blog-static.cnblogs.com/files/oceans/favicon.ico">')
+    // -- ajax监听
+    init()
+
+    function init() {
+      window.g = {}
+      window.fn = {}
+      g.ajaxStorage = []
+      $(document).ajaxComplete(function(event, xhr, option) {
+        var item = {}
+        item.url = option.url
+        if (g.isBundleJSCome) { // 后来的请求
+          item.later = true
+          $(document).trigger('ajaxLater', item)
+        } else {
+          item.later = false
+        }
+        item.event = event
+        item.xhr = xhr
+        item.option = option
+        item.time = new Date()
+        g.ajaxStorage.push(item)
+      })
+    }
+  </script>
+  <!--********************************************* HTML ***********************************************-->
+  <section class="oceans-sou">
+    <!--  友情链接 -->
+    <a href="https://100jiancai.cn">潍坊百年建材</a>
+  </section>
+  <!--********************************************* CSS ***********************************************-->
+  <link rel="stylesheet" href="https://blog-static.cnblogs.com/files/oceans/vscode.css" title="code-theme">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/theme-chalk/index.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.css">
+  <script>
+    // 防止七牛云缓存，增加时间戳
+    var href = 'https://oceans.100jiancai.cn/main.css?time=' + new Date().getTime()
+    $('head').append('<link rel="stylesheet" href="' + href + '">')
+  </script>
+  <!--********************************************* JavaScript ***********************************************-->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!--<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>-->
+  <!-- UI框架 -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/index.js"></script>
+  <!-- cookie -->
+  <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+  <!-- 组件美化 -->
+  <script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.js"></script>
+  <script src="https://blog-static.cnblogs.com/files/oceans/scroll-spy.js"></script>
+  <!-- 站长统计，请切换为你自己的 -->
+  <div style="display: none;">
+    <script type="text/javascript" src="https://s9.cnzz.com/z_stat.php?id=1279140987&web_id=1279140987"></script>
+  </div>
+  <script>
+    // IIFE
+    (function() {
+      // \script需要加转义
+      var src = 'https://oceans.100jiancai.cn/bundle.js?time=' + new Date().getTime()
+      $('head').append('<script type="text/javascript" src="' + src + '"><\/script>')
+    })()
+  </script>
+</div>
 </body>
 </html>
