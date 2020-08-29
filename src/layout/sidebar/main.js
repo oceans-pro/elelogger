@@ -94,7 +94,7 @@ if ($('#post_detail').length > 0) {
     })
 
     //开启滚动监听, 监听所有在.nav类下的li
-    // $('body').scrollspy()
+    $('body').scrollspy()
 
 
     /* 当前目录激活监听 */

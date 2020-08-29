@@ -4,4 +4,4 @@ node_modules
 build/secret.js
 package-lock.json
 .vscode
-blogs
+dist

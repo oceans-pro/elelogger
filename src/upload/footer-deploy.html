@@ -1,6 +1,7 @@
 <script>
   $('#favicon').replaceWith('<link rel="shortcut icon" href="https://blog-static.cnblogs.com/files/oceans/favicon.ico">')
   init()
+
   function init() {
     window.g = {}
     window.fn = {}
@@ -8,7 +9,7 @@
     $(document).ajaxComplete(function(event, xhr, option) {
       var item = {}
       item.url = option.url
-      if (g.isBundleJSCome) { // 后来的请求
+      if (g.isBundleJSCome) {
         item.later = true
         $(document).trigger('ajaxLater', item)
       } else {
@@ -22,17 +23,13 @@
     })
   }
 </script>
-<!--********************************************* HTML ***********************************************-->
 <!-- 友情链接，请替换成你的 -->
 <section class="oceans-sou">
   <a href="https://100jiancai.cn">潍坊百年建材</a>
 </section>
-<!--********************************************* CSS ***********************************************-->
 <link rel="stylesheet" href="https://blog-static.cnblogs.com/files/oceans/vscode.css" title="code-theme">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/theme-chalk/index.css">
-<!-- main.css应该直接复制 -->
-<!--********************************************* JS ***********************************************-->
 <link rel="stylesheet" href="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.css">
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/index.js"></script>
@@ -44,11 +41,7 @@
   <script type="text/javascript" src="https://s9.cnzz.com/z_stat.php?id=1279140987&web_id=1279140987"></script>
 </div>
 <script>
-  // IIFE
-  (function() {
-    // \script需要加转义
-    var src = 'https://oceans.100jiancai.cn/bundle.js'
-    $('head').append('<script type="text/javascript" src="' + src + '"><\/script>')
-  })()
+  var src = 'https://oceans.100jiancai.cn/bundle.js'
+  $('head').append('<script type="text/javascript" src="' + src + '"><\/script>')
 </script>
 
