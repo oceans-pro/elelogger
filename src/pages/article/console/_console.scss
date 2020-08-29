@@ -79,9 +79,9 @@ section {
 :root[theme=dark] {
   .console {
     border: 0.5px var(--color-white);
-    background-color: #242424 !important; // 夸克浏览器的bug
+    background-color: #242424 !important; // 夸克浏览器的bug，使用!important来解决，下同
     pre {
-      background-color: #242424 !important; // 夸克浏览器的bug
+      background-color: #242424 !important;
     }
 
     .hr {
@@ -89,11 +89,11 @@ section {
     }
 
     .str {
-      color: #f28b54;
+      color: #f28b54 !important;
     }
 
     .num {
-      color: #9df0b0;
+      color: #9df0b0!important;
     }
 
     .obj {

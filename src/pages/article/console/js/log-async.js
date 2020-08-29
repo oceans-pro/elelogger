@@ -15,12 +15,24 @@ export default function logAsync(that, index) {
   window.g = window.g || {}
   window.g.loggers = window.g.loggers || []
   window.g.loggers[index] = logger
-  js = js.replace(/\/\/ log-async/gm, `
-            console.log = value => {
-            clearInterval(g.loggers[${index}].timer)
-            g.loggers[${index}].tip = ''
-            g.loggers[${index}].content += fn.getHtmlStrByValue(value)
-          }
-        `)
+
+  //                           分隔符          唯一有用的部分     分隔符
+  let reg = /(\/\/ log-async)(\s|[\r\n])+(console.log\(.*?\))(;|\s|[\r\n])+/gm
+  let before = `
+  console.log = function(value) {
+    clearInterval(g.loggers[${index}].timer)
+    g.loggers[${index}].tip = ''
+    g.loggers[${index}].content += fn.getHtmlStrByValue(value)
+  }`
+  let after = `
+  console.log = window.fn.log
+  `
+  js = js.replace(reg, function(value, $1, $2, $3, $4) {
+    return `
+    ${before}
+    ${$3}
+    ${after}
+    `
+  })
   evalSafely(js)
 }

@@ -7,6 +7,7 @@
  * @param {boolean} isInit
  */
 export default function initOrToggleTheme(isInit) {
+  window.g = window.g || {}
   const theme = $.cookie('theme')
 
   // -- init
@@ -41,6 +42,7 @@ export default function initOrToggleTheme(isInit) {
     $(document).trigger('themeChange', 'light')
     saveEventName()
     $('.my-el-card').css('box-shadow', '0 2px 12px 0 rgba(0,0,0,.1)')
+    window.g.theme = 'light'
   }
 
 
@@ -48,6 +50,7 @@ export default function initOrToggleTheme(isInit) {
     document.documentElement.setAttribute('theme', 'dark')
     $(document).trigger('themeChange', 'dark')
     saveEventName()
+    window.g.theme = 'dark'
     $('.my-el-card').css('box-shadow', '')
   }
 
@@ -60,7 +63,6 @@ export default function initOrToggleTheme(isInit) {
   }
 
   function saveEventName() {
-    window.g = window.g || {}
     window.g.events = window.g.events || []
     window.g.events.push('themeChange')
   }

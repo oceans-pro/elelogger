@@ -65,6 +65,13 @@ export function getHtmlStrByValue(value) {
     return result
   }
 
+  if (typeof value === 'function') {
+    const str = value.toString()
+    result += `<pre><div class="str">${str}</div></pre>`
+    result += `<div class="hr"></div>`
+    return result
+  }
+
   /**
    *
    * @param {string} str

@@ -6,8 +6,10 @@ import {getHtmlStrByValue} from './util'
 window.fn = window.fn || {}
 window.fn.log = console.log
 window.fn.error = console.error
-window.fn.warn = console.warn()
 window.fn.getHtmlStrByValue = getHtmlStrByValue
 
-addPreviewAfterHtmlDemo()
-addConsoleAfterJavascriptDemo()
+$(document).on('loadAllScriptFinish', function() {
+  addConsoleAfterJavascriptDemo() // 后执行
+})
+addPreviewAfterHtmlDemo() // 先执行
+

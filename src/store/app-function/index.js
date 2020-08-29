@@ -1,6 +1,7 @@
 import isMobile from '@/store/app-function/mobile'
 import clearForHelloPage from '@/store/app-function/clear'
 import invoke from '@/store/app-function/cb'
+import {loadScript, loadScriptWithPromise} from '@/store/app-function/script'
 import alert from '@/store/app-function/alert'
 import './jquery-function-extend'
 
