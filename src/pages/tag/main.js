@@ -17,7 +17,7 @@ export default function modifyTagPage() {
   $down.append($upTitle.HTML())
   $down.append($upList.HTML())
   // --modify
-  let newTitle = $down.find('h3')[0].firstChild.nodeValue.replace('标签', '系列')
+  let newTitle = $down.find('h3')[0].firstChild.nodeValue.replace('标签', '标签（不显示）')
   console.log(newTitle)
   $down.find('h3')[0].firstChild.nodeValue = newTitle
 
@@ -72,13 +72,13 @@ export default function modifyTagPage() {
 
   function hide($up, $down) {
     $up.find('td a').each(function() {
-      if (/^\$/.test($(this).text())) {
+      if (/^_/.test($(this).text())) {
         $(this).parent().remove()
       }
     })
 
     $down.find('td a').each(function() {
-      if (/^\$/.test($(this).text())) {
+      if (/^_/.test($(this).text())) {
         const newText = $(this).text().substring(1)
         $(this).text(newText)
       } else {

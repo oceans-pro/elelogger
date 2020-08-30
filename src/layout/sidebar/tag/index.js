@@ -11,7 +11,7 @@ $(document).on('ajaxLater', function(e, item) {
 function modifyTag() {
   let $li = $('#sidebar_toptags li')
   $li.children('a').each(function() {
-    if (/^\$/.test($(this).text())){
+    if (/^_/.test($(this).text())){
       $(this).parent().remove()
     }
   })
