@@ -35,6 +35,11 @@ export default function modifyTagPage() {
   listenReOrder('#up-tag-area', vueUp, vueUpBtn)
   listenReOrder('#down-tag-area', vueDown, vueDownBtn)
 
+  $main.find('a').attr('target', '_blank')
+  $main.find('a').click(function(e) {
+    // 防止点击内部a，外面的button也被点击
+    e.stopPropagation()
+  })
 
   /**
    * 监听点击事件，统一两个Vue组件的状态
