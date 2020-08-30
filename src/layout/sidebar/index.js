@@ -4,6 +4,7 @@
  * 侧边栏很多元素都是通过XHR动态获取的，十分头疼
  */
 import reasonableForMobile from '@/layout/sidebar/reasonable-for-mobile'
+
 require('./_sidebar.scss')
 require('./_hide.scss')
 require('./_replace.scss')
@@ -22,10 +23,11 @@ $sidebar.scrollAlone() // 防止以小带大
 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
                                                  其他
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
+let year = new Date().getFullYear()
 let $sidebarMain
 $sidebarMain = $('#sideBarMain')
 $sidebarMain.append($('#footer')
-  .html(`Copyright-2020 <a href="https://home.cnblogs.com/u/${userPath}/">${userPath}</a>`))
+  .html(`Copyright-${year} <a id="userPath" href="https://home.cnblogs.com/u/${userPath}/">${userPath}</a>`))
 
 $('#sidebar_search h3').text('站内搜索')
 
