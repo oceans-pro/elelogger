@@ -1,6 +1,4 @@
-import {evalSafely} from '@/pages/article/console/util'
-
 export default function(that) {
-  evalSafely($(that).text())
+  window.eval($(that).text())
   $(that).parents('.copyItem').remove()
 }

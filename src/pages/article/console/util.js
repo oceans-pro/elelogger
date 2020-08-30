@@ -22,6 +22,7 @@ export function evalSafely(js) {
   window.eval(javascript)
 }
 
+
 /**
  * @param value 要输入的值
  * @return {string} 转换的HTML字符串 | 或不转换
