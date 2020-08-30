@@ -1,6 +1,7 @@
 <script>
   $('#favicon').replaceWith('<link rel="shortcut icon" href="https://blog-static.cnblogs.com/files/oceans/favicon.ico">')
   init()
+
   function init() {
     window.g = {}
     window.fn = {}
@@ -8,7 +9,7 @@
     $(document).ajaxComplete(function(event, xhr, option) {
       var item = {}
       item.url = option.url
-      if (g.isBundleJSCome) { // 后来的请求
+      if (g.isBundleJSCome) {
         item.later = true
         $(document).trigger('ajaxLater', item)
       } else {
@@ -22,6 +23,7 @@
     })
   }
 </script>
+<!-- it is stable -->
 <link rel="stylesheet" href="https://blog-static.cnblogs.com/files/oceans/vscode.css" title="code-theme">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/theme-chalk/index.css">
@@ -30,13 +32,13 @@
 <script src="https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/index.js"></script>
 <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 <script src="https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.js"></script>
-<script src="https://blog-static.cnblogs.com/files/oceans/scroll-spy.js"></script>
-<div style="display: none;">
-  <script type="text/javascript" src="https://s9.cnzz.com/z_stat.php?id=1279140987&web_id=1279140987"></script>
-</div>
 <script>
   (function() {
-    var src = 'https://oceans.100jiancai.cn/bundle.js'
+    // it is stable
+    var src = 'https://blog-static.cnblogs.com/files/oceans/bundle.js'
     $('head').append('<script type="text/javascript" src="' + src + '"><\/script>')
   })()
 </script>
+<div style="display: none;">
+  <script type="text/javascript" src="https://s9.cnzz.com/z_stat.php?id=1279140987&web_id=1279140987"></script>
+</div>

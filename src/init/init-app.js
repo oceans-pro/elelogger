@@ -10,6 +10,7 @@ window.ele = new Vue({
   el: '#ele',
 })
 
+require('./scroll-spy')
 initOrToggleSidebar(true)
 initOrToggleTheme(true)
 initOrToggleCodeColor(true)

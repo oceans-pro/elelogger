@@ -1,9 +1,17 @@
 const fs = require('fs')
 const path = require('path')
 
-deleteFile(path.join(__dirname, '../dist/bundle.js'))
-deleteFile(path.join(__dirname, '../dist/index.html'))
+// deleteFile(path.join(__dirname, '../dist/bundle.js'))
+// deleteFile(path.join(__dirname, '../dist/index.html'))
 
+
+deleteFolderRecursive(path.join(__dirname, '../dist'))
+
+
+/**
+ * 删除文件
+ * @param filePath
+ */
 function deleteFile(filePath) {
   if (fs.existsSync(filePath)) {
     fs.unlinkSync(filePath)

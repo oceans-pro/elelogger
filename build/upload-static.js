@@ -8,8 +8,6 @@ qiniuConfig.zone = qiniu.zone.Zone_z1
 
 console.log('--------------------------------upload-qiniu-start-------------------------------------------')
 uploadDirectory(path.join(__dirname, '../dist'))
-uploadFile('footer.txt', path.join(__dirname, '../src/upload/footer-deploy.html'))
-uploadFile('header.txt', path.join(__dirname, '../src/upload/loading.html'))
 console.log('--------------------------------upload-qiniu-end-------------------------------------------')
 
 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
