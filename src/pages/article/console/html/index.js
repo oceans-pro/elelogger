@@ -5,7 +5,8 @@
  * 3. run 不展示代码，将html代码替换到原来的代码显示位置
  */
 import {deHighlight} from '@/pages/article/console/util'
-import {script} from '@/pages/article/console/html/script'
+import {getSrcList} from '@/pages/article/console/html/function'
+import {loadAllScriptWithPromise} from '@/store/app-function/script'
 
 export default function addPreviewAfterHtmlDemo() {
   const $demos = $('code.language-html')
@@ -22,13 +23,15 @@ export default function addPreviewAfterHtmlDemo() {
       let value = deHighlight(comments[i].innerHTML)
       value = value.replace(/ /g, '')
 
-      if (value === '<!--script-->') {
+      if (value === '<!--script-->' || value === '<!--no-script-->') {
         status = 'needLoadNewScriptFirst'
         otherScriptLength++
         if (otherScriptLength > 1) {
           alert('请将所有的script放到一个html代码块中')
         }
-        break
+        if (value === '<!--no-script-->') {
+          status = 'needLoadNewScriptFirstAndHide'
+        }
       }
       if (value === '<!--log-->' || value === '<!--log-before-->') {
         status = 'logBefore'
@@ -49,10 +52,22 @@ export default function addPreviewAfterHtmlDemo() {
     html = deHighlight(codeWithTags)
     const $to = $(this).parents('.copyItem')
     const content = `<div id="html-${index}">${html}</div>`
-    if (status === 'needLoadNewScriptFirst' && otherScriptLength === 1) {
-      script(that)
-      return
+
+    if (status.indexOf('needLoadNewScriptFirst') >= 0 && otherScriptLength === 1) {
+      let srcList = getSrcList(that)
+      loadAllScriptWithPromise(srcList)
+        .then(_ => {
+          $(document).trigger('loadAllScriptFinish')
+          window.g.events.push('loadAllScriptFinish-有新的script')
+          if (status === 'needLoadNewScriptFirstAndHide') {
+            $(that).parents('.copyItem').remove()
+          }
+        })
+        .catch(err => {
+          alert(err)
+        })
     }
+
     if (status === 'logAfter') {
       $to.after(content)
       return

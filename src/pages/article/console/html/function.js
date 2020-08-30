@@ -1,7 +1,6 @@
-import {loadAllScriptWithPromise} from '@/store/app-function/script'
 import {deHighlight} from '@/pages/article/console/util'
 
-export function script(that) {
+export  function getSrcList(that) {
   const codeWithTags = that.innerHTML
   const html = deHighlight(codeWithTags)
   const $dom = $(`<div>${html}</div>`)
@@ -12,13 +11,5 @@ export function script(that) {
   })
   window.g = window.g || {}
   window.g.newSrcList = srcList
-
-  loadAllScriptWithPromise(srcList)
-    .then(_ => {
-      $(document).trigger('loadAllScriptFinish')
-      window.g.events.push('loadAllScriptFinish-有新的script')
-    })
-    .catch(err => {
-      alert(err)
-    })
+  return srcList
 }

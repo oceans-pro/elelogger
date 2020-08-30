@@ -1,4 +1,4 @@
-# eleBlog：一款简洁明快的博客园主题
+# eleLogger：一款简洁明快的博客园主题
 
 [主题首页](https://www.cnblogs.com/oceans/p/ele.html)
 
@@ -11,9 +11,8 @@ npm install -g tree-node-cli
 treee -L 3 -I "node_modules|.idea|.vscode|blogs|.git" -a --dirs-first > out.txt
 ```
 
-
-```sh
-cnblog
+```text
+eleLogger
 ├── build # 构建用的脚本
 │   ├── delete.js # 删除dist的缓存
 │   ├── secret.js # 相关密钥
@@ -45,4 +44,7 @@ cnblog
 ## 项目进展
 
 本主题功能已经实现，但代码仍需继续完善。下一步的工作如下
+
 - 将`src/scss`中的内容重构到`scr/layout`文件夹中
+- 本地搭建服务器，实现本地预览功能`env`文件夹
+- 集成MetaWeblog，搭建自动发布系统。
