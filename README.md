@@ -1,6 +1,6 @@
 # eleLogger：一款简洁明快的博客园主题
 
-[主题首页](https://www.cnblogs.com/oceans/p/ele.html)
+[主题首页](https://www.cnblogs.com/oceans/p/eleLogger.html)
 
 ## 项目目录介绍
 
@@ -46,5 +46,5 @@ eleLogger
 本主题功能已经实现，但代码仍需继续完善。下一步的工作如下
 
 - 将`src/scss`中的内容重构到`scr/layout`文件夹中
-- 本地搭建服务器，实现本地预览功能`env`文件夹
+- 本地搭建服务器，实现本地预览功能——————`env`文件夹
 - 集成MetaWeblog，搭建自动发布系统。
