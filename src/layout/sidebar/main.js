@@ -6,13 +6,13 @@ if ($('#post_detail').length > 0) {
     // 设置层级为1
     $ph.attr('offset', '1')
     // 添加导航目录的内容
-    $('#leftcontentcontainer').prepend(`
-      <div title="placeholder-for-side-choose" style="height: 55px;"></div>
-    `)
+    // $('#leftcontentcontainer').prepend(`
+    //   <div title="placeholder-for-side-choose" style="height: 55px;"></div>
+    // `)
+    //
     $('#sideBar')
       .prepend(`
-          <div id="sidebar_scroller" class="sidebar-block">
-            <div title="placeholder-for-side-choose" style="height: 60px;"></div>
+          <div id="sideBarOutline" class="sidebar-block">
             <ul class="nav"></ul>
           </div>
         `)
@@ -21,13 +21,14 @@ if ($('#post_detail').length > 0) {
             <a id="sidebar_files" href="javascript:showSide()">文件</a>
             <a id="sidebar_outline" href="javascript:showContent()">大纲</a>
           </div>
+          <div title="placeholder-for-side-choose" style="height: 52px;"></div>
         `)
     $('#sideBarMain').hide()
     showContent()
     //取当前边栏的宽度
-    //$('#sidebar_scroller').css('width', ($('#sideBarMain').width()) + 'px');
+    //$('#sideBarOutline').css('width', ($('#sideBarMain').width()) + 'px');
     //让导航目录停留在页面顶端
-    //  $('#sidebar_scroller').stickUp();
+    //  $('#sideBarOutline').stickUp();
 
     // 遍历文章里每个h标签
     $('#cnblogs_post_body :header')
@@ -59,7 +60,7 @@ if ($('#post_detail').length > 0) {
         }
 
         // 添加h标签的目录内容
-        $('#sidebar_scroller ul').append(
+        $('#sideBarOutline ul').append(
           '<li class="scroller-offset' + $h.attr('offset') + '"><a href="#scroller-' + i + '">' + $h.text() + '</a></li>'
         )
         //最后设置自己为上一个h标签
@@ -99,7 +100,7 @@ if ($('#post_detail').length > 0) {
 
     /* 当前目录激活监听 */
     $(window).scroll(function() {
-      const now = $('#sidebar_scroller').find('.active')
+      const now = $('#sideBarOutline').find('.active')
       const prevNum = now.prevAll().length + 1
       const basicHeight = now.outerHeight()
       $('#sideBar').scrollTop(prevNum * basicHeight)

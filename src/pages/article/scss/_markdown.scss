@@ -33,11 +33,21 @@
   a.header-anchor {
     color: var(--color-primary);
     font-size: .85em;
-    float: left;
-    margin-left: -.87em;
+    margin-left: -0.9em;
     padding-right: .23em;
     margin-top: .125em;
+    display: inline-block;
+    position: absolute;
     opacity: 0;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+
+  h2:hover, h3:hover {
+    a.header-anchor {
+      opacity: 1;
+    }
   }
 
   // -------------------------------------------------- 正文 --------------------------------------------------
@@ -117,7 +127,7 @@
     border: none !important;
     width: 100%;
     font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace !important;
-    font-size: 14px!important;
+    font-size: 14px !important;
     padding: 1rem 1rem !important;
     border-radius: 6px !important;
     transition: all;

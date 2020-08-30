@@ -66,7 +66,7 @@ export default function initOrToggleSidebar(isInit) {
  */
 export function showSide() {
   $('#sideBarMain').show()
-  $('#sidebar_scroller').hide()
+  $('#sideBarOutline').hide()
   $('#sidebar_files').addClass('active')
   $('#sidebar_outline').removeClass('active')
 }
@@ -76,7 +76,7 @@ export function showSide() {
  */
 export function showContent() {
   $('#sideBarMain').hide()
-  $('#sidebar_scroller').show()
+  $('#sideBarOutline').show()
   $('#sidebar_files').removeClass('active')
   $('#sidebar_outline').addClass('active')
 }

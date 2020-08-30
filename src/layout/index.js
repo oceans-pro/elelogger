@@ -6,3 +6,5 @@ require('./top-nav')
 require('./float-button')
 require('./sidebar')
 
+// 解决点击RSS无反应的bug，这个方法是从 blog-common.min.js找到的
+window.initBlogSubscribeManager('blog_nav_rss')

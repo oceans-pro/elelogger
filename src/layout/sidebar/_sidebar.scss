@@ -1,10 +1,3 @@
-#sideBar{
-  #footer{
-    width: 100%;
-  }
-}
-
-
 
 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
                                                  侧边栏
@@ -26,7 +19,7 @@
     font-family: FontAwesome;
   }
 
-  #sidebar_scroller {
+  #sideBarOutline {
     margin: 0 !important
   }
 
@@ -108,7 +101,7 @@
 
 .sidebar-block,
 #sidebar_news,
-#sidebar_scroller {
+#sideBarOutline {
   padding: 0;
   background: var(--color-white);
   border-radius: 0;
