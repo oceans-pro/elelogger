@@ -6,9 +6,10 @@ const mac = new qiniu.auth.digest.Mac(accessKey, secretKey)
 const qiniuConfig = new qiniu.conf.Config()
 qiniuConfig.zone = qiniu.zone.Zone_z1
 
-const uploadPath = path.join(__dirname, '../dist')
 console.log('--------------------------------upload-qiniu-start-------------------------------------------')
-uploadDirectory(uploadPath)
+uploadDirectory(path.join(__dirname, '../dist'))
+uploadFile('footer.txt', path.join(__dirname, '../src/upload/footer-deploy.html'))
+uploadFile('header.txt', path.join(__dirname, '../src/upload/loading.html'))
 console.log('--------------------------------upload-qiniu-end-------------------------------------------')
 
 /*+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
@@ -49,12 +50,12 @@ function uploadDirectory(directoryPath, prefix) {
       console.log('==> key:' + key)
       console.log('==> filePath:' + filePath)
       uploadFile(key, filePath)
-          .then(response => {
-            // console.log(response)
-          })
-          .catch(error => {
-            console.log(error)
-          })
+        .then(response => {
+          // console.log(response)
+        })
+        .catch(error => {
+          console.log(error)
+        })
     }
   })
 }
