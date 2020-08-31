@@ -13,13 +13,23 @@ export function deHighlight(codeWithTags) {
   return result
 }
 
+/**
+ * 1. 提供独立作用域
+ * 2. 保证eval执行失败也不会影响后面的代码
+ * @param js 要执行的JS代码
+ */
 export function evalSafely(js) {
   const javascript = `
     !function(){
     ${js}
     }()
   `
-  window.eval(javascript)
+  try {
+    window.eval(javascript)
+  } catch (e) {
+    window.console.error('eval报错了 => evalSafely => // log-async or // log')
+    window.console.error(e)
+  }
 }
 
 

@@ -34,5 +34,13 @@ export default function logAsync(that, index) {
     ${after}
     `
   })
+  js = `
+      try {
+        ${js}
+      } catch (e) {
+        console.log('错_错-错[' + e.name + ': ' + e.message + ']')
+        fn.error(e.stack)
+      }`
+
   evalSafely(js)
 }

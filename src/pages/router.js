@@ -15,7 +15,7 @@ export default function whichPage() {
     return 'home'
   }
 
-  if (pathname === `/${userPath}/tag/`) {
+  if (pathname === `/${g.userPath}/tag/`) {
     return 'tag'
   }
 }

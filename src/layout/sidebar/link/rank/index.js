@@ -5,7 +5,7 @@ export default function addEventForRanks() {
      */
     e.preventDefault()
     for (const item of g.ajaxStorage) {
-      if (item.url === `/${userPath}/ajax/TopLists.aspx`) {
+      if (item.url === `/${g.userPath}/ajax/TopLists.aspx`) {
         showNotice(item.xhr.responseText)
       }
     }

@@ -21,7 +21,7 @@ addEventForScore()
                                            监听后来的Ajax
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-*/
 $(document).on('ajaxLater', function(e, item) {
-  if (item.url === `/${userPath}/ajax/sidecolumn.aspx`) {
+  if (item.url === `/${g.userPath}/ajax/sidecolumn.aspx`) {
     modifyLinks()
     addUseful()
     addEventForCalendar()
@@ -41,10 +41,10 @@ function modifyLinks() {
   // --改字
   $ul.find('li:contains(最新评论) a').text('随笔评论')
 
-  $ul.append(`<li><a id="my-calendar" href="https://www.cnblogs.com/${userPath}/ajax/calendar.aspx?dateStr=">写作日历</a></li>`)
-  $ul.append(`<li><a id="my-score" href="https://www.cnblogs.com/${userPath}/ajax/sidecolumn.aspx">我的积分</a></li>`)
+  $ul.append(`<li><a id="my-calendar" href="https://www.cnblogs.com/${g.userPath}/ajax/calendar.aspx?dateStr=">写作日历</a></li>`)
+  $ul.append(`<li><a id="my-score" href="https://www.cnblogs.com/${g.userPath}/ajax/sidecolumn.aspx">我的积分</a></li>`)
   // --新链接
-  $ul.append(`<li><a id="my-rank" href="https://www.cnblogs.com/${userPath}/ajax/TopLists.aspx">相关排行</a></li>`)
-  $ul.append(`<li><a id="my-latest" href="https://www.cnblogs.com/${userPath}/ajax/sidecolumn.aspx">最新随笔</a></li>`)
+  $ul.append(`<li><a id="my-rank" href="https://www.cnblogs.com/${g.userPath}/ajax/TopLists.aspx">相关排行</a></li>`)
+  $ul.append(`<li><a id="my-latest" href="https://www.cnblogs.com/${g.userPath}/ajax/sidecolumn.aspx">最新随笔</a></li>`)
   $ul.find('a').attr('target', '_blank')
 }

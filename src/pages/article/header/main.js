@@ -6,6 +6,6 @@ if ($('#topics').length > 0) {
   $a = $('.postDesc #post-date').next()
   $a.click(function(e) {
     e.preventDefault()
-    location.href = `https://home.cnblogs.com/u/${userPath}/`
+    location.href = `https://home.cnblogs.com/u/${g.userPath}/`
   })
 }

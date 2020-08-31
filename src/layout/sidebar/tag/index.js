@@ -3,7 +3,7 @@ require('./_tag.scss')
 
 modifyTag()
 $(document).on('ajaxLater', function(e, item) {
-  if (item.url === `/${userPath}/ajax/sidecolumn.aspx`) {
+  if (item.url === `/${g.userPath}/ajax/sidecolumn.aspx`) {
     modifyTag()
   }
 })

@@ -1,4 +1,9 @@
 export default function(that) {
-  window.eval($(that).text())
+  try {
+    window.eval($(that).text())
+  } catch (e) {
+    window.console.error('eval报错了 => run')
+    window.console.error(e)
+  }
   $(that).parents('.copyItem').remove()
 }

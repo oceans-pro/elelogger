@@ -1,3 +1,8 @@
 export default function noLog(that) {
-  window.eval($(that).text())
+  try {
+    window.eval($(that).text())
+  } catch (e) {
+    window.console.error('eval报错了 => no-log')
+    window.console.error(e)
+  }
 }

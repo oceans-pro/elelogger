@@ -27,7 +27,7 @@ let year = new Date().getFullYear()
 let $sidebarMain
 $sidebarMain = $('#sideBarMain')
 $sidebarMain.append($('#footer')
-  .html(`Copyright-${year} <a id="userPath" href="https://home.cnblogs.com/u/${userPath}/">${userPath}</a>`))
+  .html(`Copyright-${year} <a id="g.userPath" href="https://home.cnblogs.com/u/${g.userPath}/">${g.userPath}</a>`))
 
 $('#sidebar_search h3').text('站内搜索')
 

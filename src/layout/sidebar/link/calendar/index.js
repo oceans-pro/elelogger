@@ -8,7 +8,7 @@ export default function addEventForCalendar() {
   $('#my-calendar').click(function(e) {
     e.preventDefault()
     for (const item of g.ajaxStorage) {
-      if (item.url.startsWith(`/${userPath}/ajax/calendar.aspx`)) {
+      if (item.url.startsWith(`/${g.userPath}/ajax/calendar.aspx`)) {
         showCalendar(item.xhr.responseText)
         // loadBlogCalendar('2020/09/10'); return false;
         // myLoadBlogCalendar('2020/09/10'); return false;
