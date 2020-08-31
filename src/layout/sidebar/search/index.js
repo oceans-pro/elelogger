@@ -6,6 +6,7 @@ function beautifyZzk() {
   $q.parent()
     .html($q)
     .append('<span class="search-icon" onclick="zzk_go()"><i class="el-icon-search"></i></span>')
+  $('#sidebar_search h3').text('站内搜索')
 }
 
 beautifyZzk()

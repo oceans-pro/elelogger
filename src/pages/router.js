@@ -9,9 +9,9 @@ export default function whichPage() {
     return 'article'
   }
 
-  if (pathname === '/oceans/' ||
-    pathname === '/oceans' ||
-    pathname === '/oceans/default.html') {
+  if (pathname === `/${g.userPath}/` ||
+    pathname === `/${g.userPath}` ||
+    pathname === `/${g.userPath}/default.html`) {
     return 'home'
   }
 
