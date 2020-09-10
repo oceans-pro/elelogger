@@ -15,7 +15,7 @@ module.exports = {
   ],
   entry: './src/index.js',
   mode: 'production',
-  devtool: process.env.NODE_ENV === 'production' ? 'source-map' : 'inline-source-map',
+  devtool: process.env.NODE_ENV === 'production' ? 'source-map' : 'eval-source-map',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
