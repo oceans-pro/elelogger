@@ -1,3 +1,4 @@
+
 const links = [
   {
     url: 'https://www.cnblogs.com/oceans/p/docs-link.html',
@@ -14,10 +15,6 @@ const links = [
   {
     url:'https://www.runoob.com/',
     name:'菜鸟教程'
-  },
-  {
-    url:'https://www.bilibili.com/',
-    name:'哔哩哔哩'
   },
 ]
 export default links

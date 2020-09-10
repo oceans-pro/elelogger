@@ -9,7 +9,7 @@ function resolve(dir) {
 module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'cnblog'
+      title: 'eleLogger'
     }),
     new MiniCssExtractPlugin()
   ],
@@ -23,10 +23,19 @@ module.exports = {
   resolve: {
     alias: {
       '@': resolve('src'),
-    }
+    },
+    extensions: ['.ts', '.js'],
+  },
+  externals: {
+    $: 'jquery' // 因为博客园已经默认引入了jQuery@2.2.0
   },
   module: {
     rules: [
+      {
+        test: /\.ts$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
@@ -65,6 +74,6 @@ module.exports = {
       //     }
       //   ]
       // },
-    ]
+    ],
   }
 }

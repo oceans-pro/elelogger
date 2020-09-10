@@ -12,4 +12,3 @@ require('@/pages') // 路由相关
 let end = new Date().getTime()
 console.log('bundle.js执行结束')
 console.log('共用时' + (end - start) / 1000 + '秒')
-
