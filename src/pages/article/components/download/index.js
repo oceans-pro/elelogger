@@ -1,5 +1,6 @@
-require('./_download.scss')
+import Vue from 'vue'
 
+require('./_download.scss')
 export default function DownloadComponent(
   {
     el = '',
@@ -11,15 +12,15 @@ export default function DownloadComponent(
       el: el,
       template: `
         <div class="download-component">
-          <div class="left">
-            <div class="source-type zip">
-            </div>
-            <div class="source-info">
-              <div id="msg-1">{{ title }}</div>
-              <div id="msg-2">version:{{ version }}</div>
-            </div>
+        <div class="left">
+          <div class="source-type zip">
           </div>
-          <a class="download-btn" :href="href"></a>
+          <div class="source-info">
+            <div id="msg-1">{{ title }}</div>
+            <div id="msg-2">version:{{ version }}</div>
+          </div>
+        </div>
+        <a class="download-btn" :href="href"></a>
         </div>
       `,
       data: {

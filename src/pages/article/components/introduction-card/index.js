@@ -1,3 +1,4 @@
+import Vue from 'vue'
 import './_card.scss'
 
 export default function MyIntroductionCardComponent(

@@ -27,7 +27,10 @@ module.exports = {
     extensions: ['.ts', '.js'],
   },
   externals: {
-    $: 'jquery' // 因为博客园已经默认引入了jQuery@2.2.0
+    // key 包名
+    // value 全局变量名
+    jquery: 'jQuery', // 因为博客园已经默认引入了jQuery@2.2.0
+    vue: 'Vue'
   },
   module: {
     rules: [
