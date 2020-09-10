@@ -45,7 +45,12 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
+            presets: [
+              '@babel/preset-env'
+            ],
+            // 开启babel缓存
+            // 第二次构建时，会读取之前的缓存
+            cacheDirectory: true,
           }
         }
       },
