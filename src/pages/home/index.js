@@ -21,18 +21,14 @@ require('./_home.scss')
 //     carouselList: homeConfig.carouselList
 //   },
 // })
-
-  // -------------------------------------------------- 初始化卡片 --------------------------------------------------
+// -------------------------------------------------- 初始化卡片 --------------------------------------------------
 const size = $('.postTitle').size()
-if (size > 0) {
+if (size > 0 && fn.isMobile()) {
   for (let i = 0; i < size; i++) {
     $(`.postTitle:eq(${i}),.postCon:eq(${i}),.postDesc:eq(${i})`)
       .wrapAll(`<section class="my-el-card"></section>`)
   }
 }
-const $myElCart = $('.my-el-card')
-$myElCart.addClass('my-el-card-shadow')
-
 // -------------------------------------------------- 去除不需要的部分 --------------------------------------------------
 $('.postSeparator').remove()
 $('.postDesc').contents().filter(function() {

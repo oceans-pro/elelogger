@@ -9,20 +9,22 @@ import {getSrcList} from '@/pages/article/console/html/function'
 import {loadAllScriptWithPromise} from '@/store/app-function/script'
 
 export default function addPreviewAfterHtmlDemo() {
-  const $demos = $('code.language-html')
+  // why
+  // 之所以使用code.xml，是因为博客园一次后台bug，无法显示原md的```html中的html
+  const $demos = $('code.language-html, code.xml')
   // -- 遍历所有的代码块
   // that 为 dom对象~code标签
   // index 为当前为第几个代码块
   let otherScriptLength = 0
   $demos.each(function(index, that) {
-    let html, status
+    let html
+    let status = ''
     const comments = $(this).children('.hljs-comment')
 
     // 遍历该代码块的全部注释节点
     for (let i = 0; i < comments.length; i++) {
       let value = deHighlight(comments[i].innerHTML)
       value = value.replace(/ /g, '')
-
       if (value === '<!--script-->' || value === '<!--no-script-->') {
         status = 'needLoadNewScriptFirst'
         otherScriptLength++
@@ -45,6 +47,7 @@ export default function addPreviewAfterHtmlDemo() {
         status = 'run'
         break
       }
+      // 普通代码
     }
 
 

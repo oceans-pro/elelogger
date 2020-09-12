@@ -11,7 +11,7 @@ import run from '@/pages/article/console/js/run'
 import {listenLoggerClick} from '@/pages/article/console/js/helper'
 
 export default function addConsoleAfterJavascriptDemo() {
-  const $demos = $('code.language-js')
+  const $demos = $('code.language-js,code.javascript')
   // that 为 dom对象
   // index 为当前为第几个代码块
   $demos.each(function(index, that) {

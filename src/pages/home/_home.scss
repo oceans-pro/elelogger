@@ -12,11 +12,6 @@
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1)
 }
 
-:root[theme=dark] {
-  .my-el-card {
-    box-shadow: none;
-  }
-}
 
 :root[theme=dark] {
   // 标题
@@ -27,5 +22,9 @@
   // 摘要
   .c_b_p_desc {
     color: var(--color-text-secondary);
+  }
+
+  .my-el-card {
+    box-shadow: none;
   }
 }
